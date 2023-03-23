@@ -1,0 +1,44 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    white-space: nowrap;
+    gap: 1rem;
+    background-color: white;
+    height: 4.5rem;
+    width: 100%;
+    position: absolute;
+}
+
+
+.navLinks{
+    padding: 1.5rem;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.navLinks:hover{
+    border-bottom: 3px solid #2D9CDB;
+}
+
+.navLinks:active{
+    color: #2D9CDB;
+    border-bottom: 3px solid #2D9CDB;
+}
+
+.homeLink{
+    padding: 1.5rem;
+    font-family: 'DM Sans', sans-serif;
+    color: #2D9CDB;
+    border-bottom: 3px solid #2D9CDB; 
+}
+
+.logoLinkHome{
+    color: none;
+    border-bottom: none;
+}
+
+.imgLogo{
+    display: flex;
+    width: 9rem;
+    height: 3rem;
+}
