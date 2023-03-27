@@ -1,0 +1,33 @@
+.mainContainer {
+    display: flex;
+    gap: 10rem;
+    margin-top: 6rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainTextContainer{
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    gap: 1rem;
+}
+
+.mainTextTitle {
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    font-family: 'Poppins', sans-serif;
+    color: #2D9CDB;
+}
+
+.mainTextSubtitle{
+    display: flex;
+    flex-direction: column;
+    font-family: 'DM Sans', sans-serif;
+    color: #4F4F4F;
+}
+
+.mainButton{
+    margin-top: 1rem;
+}
