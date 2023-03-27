@@ -1,3 +1,13 @@
 .mainContainer{
     display: flex;
+    gap: 1rem;
+    margin-top: 6rem;
+}
+
+.maintext{
+    border: 1px solid
+}
+
+.mainPhoto{
+    border: 1px solid;
 }
