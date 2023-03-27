@@ -4,6 +4,7 @@
     margin-top: 6rem;
     justify-content: center;
     align-items: center;
+    /* border-bottom: 1px solid #2D9CDB; */
 }
 
 .mainTextContainer{
@@ -30,4 +31,20 @@
 
 .mainButton{
     margin-top: 1rem;
+}
+
+.calculatorContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    background-color: white;
+}
+
+.calculatorMain{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 25rem;
 }

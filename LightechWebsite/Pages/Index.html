@@ -55,6 +55,37 @@
 
     </div>
 
+    <div class="calculatorContainer">
+        <div class="calculatorMain">
+            Insira a quantidade de funcionarios:
+            <input id="input_funcionarios">
+            Insira qual o salario médio dos funcionarios:
+            <input id="input_salario">
+            Insira a porcentagem de abscenteísmo na sua empresa:
+            <input id="input_abscenteismo">
+            <button id="botao" onclick="solucaoLightech()">Ver Solução</button>
+        </div>
+    </div>
+
 </body>
 
 </html>
+
+<script>
+
+    function solucaoLightech() {
+        var funcionarios = Number(input_funcionarios.value);
+        var salarioMedio = Number(input_salario.value);
+        var porcentagemAbscenteismo = Number(input_abscenteismo.value) / 100;
+        var gastoFuncionario = (salarioMedio * 1.75) * funcionarios;    
+        var gastoAnual = gastoFuncionario * 12;
+        var perdaTotal = gastoAnual * porcentagemAbscenteismo;
+        var perdaSolucao = gastoAnual * (porcentagemAbscenteismo * 0.5);
+
+
+
+        div_exemplo.innerHTML = `<p style = "color: red">Sem a nossa solução sua perda anual com abscenteismo é de ${perdaTotal}</p>`;
+        div_exemplo.innerHTML += `<p style = "color: blue">Com a nossa solução sua perda anual com abscenteismo é de ${perdaSolucao}</p>`;
+    }
+
+</script>
