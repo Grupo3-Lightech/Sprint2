@@ -2,9 +2,10 @@
     display: flex;
     gap: 10rem;
     margin-top: 6rem;
+    padding-bottom: 1rem;
     justify-content: center;
     align-items: center;
-    /* border-bottom: 1px solid #2D9CDB; */
+    border-bottom: 2px solid #2D9CDB;
 }
 
 .mainTextContainer{
@@ -37,14 +38,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-    background-color: white;
+    gap: 8rem;
 }
 
-.calculatorMain{
+.calculatorAnchor{
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculatorText{
+    font-family: 'Poppins', sans-serif;
     width: 25rem;
+    color: #2D9CDB;
+}
+
+.calculatorPhotoContainer img{
+    height: 22rem;
+}
+
+.calculatorButton{
+    padding: 1.5rem;
 }
