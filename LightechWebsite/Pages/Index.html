@@ -8,16 +8,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Styles/Global.css">
-    <link rel="stylesheet" href="../Styles/Components/Header.css">
+    <link rel="stylesheet" href="../Styles/Home.css">
     <link rel="stylesheet" href="../Styles/styles.css">
+    <link rel="stylesheet" href="../Styles/Components/Header.css">
+    <link rel="stylesheet" href="../Styles/Components/Button.css">
     <title>Lightech - Home</title>
 </head>
 
 <body>
-    <header>
+
+    <div class="headerContainer">
         <a class="logoLinkHome" href="Index.html">
-            <img class="imgLogo" src="../Assets/Logo.svg" alt="Logo da Lightech escrito">
+            <img class="imgLogo" src="../Assets/Images/Logo.svg" alt="Logo da Lightech escrito">
         </a>
 
         <nav>
@@ -29,11 +33,45 @@
             <a class="navLinks" href="">Login</a>
             <a class="navLinks" href="">Cadastro</a>
         </nav>
-    </header>
+    </div>
 
     <div class="mainContainer">
 
+        <div class="mainTextContainer">
+            <h1 class="mainTextTitle">
+                Somos a solução para a sua iluminação.
+            </h1>
+
+            <p class="mainTextSubtitle">
+                A iluminação é a chave para criar um ambiente produtivo para a sua empresa.
+            </p>
+
+            <button class="mainButton">Agendar um horário</button>
+        </div>
+
+        <div class="mainPhotoContainer">
+            <img src="../Assets/Images/homeFirstimg.svg" alt="">
+        </div>
     </div>
+
+    <div class="calculatorContainer">
+        <div class="calculatorPhotoContainer">
+            <img src="../Assets/Images/homeCalculatorImg.svg" alt="">
+        </div>
+
+        <div class="calculatorAnchor">
+            <h2 class="calculatorText">
+                Veja o quanto você pode lucrar com a nossa solução.
+            </h2>
+
+            <a href="CalculadoraFinanceira.html">
+                <button class="calculatorButton">
+                    Calcule aqui !
+                </button>
+            </a>
+        </div>
+    </div>
+
 </body>
 
 </html>

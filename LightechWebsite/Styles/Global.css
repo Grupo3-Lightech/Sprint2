@@ -5,8 +5,12 @@
 }
 
 body{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     background-color: #E4E4E4;
     overflow-x: hidden;
+    margin-bottom: 1rem;
 }
 
 a{
