@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../Styles/styles.css">
     <link rel="stylesheet" href="../Styles/Components/Header.css">
     <link rel="stylesheet" href="../Styles/Components/Button.css">
+    <link rel="stylesheet" href="../Styles/Components/Footer.css">
     <title>Lightech - Home</title>
 </head>
 
@@ -25,7 +26,7 @@
         </a>
 
         <nav>
-            <a class="homeLink" href="Index.html">Início</a>
+            <a class="navLinks" href="#mainContainer">Início</a>
             <a class="navLinks" href="">Sobre</a>
             <a class="navLinks" href="">Serviços</a>
             <a class="navLinks" href="">Contato</a>
@@ -35,7 +36,7 @@
         </nav>
     </div>
 
-    <div class="mainContainer">
+    <div class="mainContainer" id="mainContainer">
 
         <div class="mainTextContainer">
             <h1 class="mainTextTitle">
@@ -54,7 +55,7 @@
         </div>
     </div>
 
-    <div class="calculatorContainer">
+    <div class="calculatorContainer" id="calculatorContainer">
         <div class="calculatorPhotoContainer">
             <img src="../Assets/Images/homeCalculatorImg.svg" alt="">
         </div>
@@ -70,8 +71,35 @@
                 </button>
             </a>
         </div>
-    </div>
 
+    </div>
+    
+    <div class="footerContainer">
+        <div class="footerMainContent">
+            <div class="footerImgContainer">
+                <img src="../Assets/Images/LogoFooter.svg" alt="">
+            </div>
+
+            <div class="footerTextContainer">
+                <p>&#169;2023 Grupo Light Tech.</p>
+                <p>Todos os direitos reservados SPTech.</p>
+            </div>
+        </div>
+
+        <div class="footerSocialMediaContainer">
+            <a href="#">
+                <img src="../Assets/Images/instagramLogo.svg" alt="">
+            </a>
+
+            <a href="#">
+                <img src="../Assets/Images/facebookLogo.svg" alt="">
+            </a>
+
+            <a href="#">
+                <img src="../Assets/Images/youtubeLogo.svg" alt="">
+            </a>
+        </div>
+    </div>
 </body>
 
 </html>
