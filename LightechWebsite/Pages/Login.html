@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head> <!-- LINKS QUE CARREGA AS FONTES -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login J3</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../Styles/Login.css" />
+    <link rel="stylesheet" href="../Styles/Global.css">
+    <title>Light Tech - Login</title>
   </head>
 
   <body>
-    <div id="page" class="flex"> <!-- DIV PRINCIPAL -->
-
+    <div id="page" class="flex">
       <div>
-        <header> <!-- HEADER -> MUDAR LOGO -->
-          <h1>Logo Light Tech</h1>
-          <!-- <img src="./assets/logo.svg" alt="" /> -->
+        <header>
+          <img src="../Assets/Images/Logo.svg" alt="">
         </header>
 
         <main>
@@ -32,7 +31,7 @@
             </p>
           </div>
           <form>
-            <div class="input-wrapper"> <!-- INPUT EMAIL -->
+            <div class="input-wrapper"> 
               <label for="email">E-mail</label>
               <input
                 id="email"
@@ -43,22 +42,11 @@
               />
             </div>
 
-            <div class="input-wrapper"> <!-- INPUT DO CPF -->
-              <label for="cpf">CPF</label>
-              <input
-                id="cpf"
-                type="cpf"
-                name="cpf"
-                required
-                placeholder="Digite seu CPF"
-              />
-            </div>
-
             <div class="input-wrapper"> 
               <div class="label-wrapper flex">
                 <label for="senha"> Senha </label>
                 <a href="#"> Esqueceu a senha? </a>
-              </div>                    <!-- INPUT SENHA -->
+              </div>                   
               <input 
                 type="password"
                 id="senha"
@@ -68,13 +56,13 @@
               <img
                 onclick="togglePassword()"
                 class="eye"
-                src="./assets/eye-off.svg"
+                src="../Assets/Images/LoginImages/eye-off.svg"
                 alt=""
               />
               <img
                 onclick="togglePassword()"
                 class="eye hide"
-                src="./assets/eye.svg"
+                src="../Assets/Images/LoginImages/eye.svg"
                 alt=""
               />
             </div>
@@ -89,23 +77,9 @@
         </main>
       </div>
 
-      <img src="./assets/2852498.jpg" alt="" /> <!-- IMAGEM DE FUNDO -> QUE FICA NA LATERAL -->
+      <img src="../Assets/Images/LoginImages/2852498.jpg" alt="" /> 
     </div>
 
-    <script src="index.js">
-      /**
-       * AQUI É o JAVASCRIPT DIRETO NO HTML
-      */
-      function togglePassword() {
-        document
-          .querySelectorAll(".eye")
-          .forEach((eye) => eye.classList.toggle("hide"))
-
-        const type =
-          senha.getAttribute("type") == "password" ? "text" : "password"
-
-        senha.setAttribute("type", type)
-      }
-    </script>
-  </body>
-</html>
+    </body>
+    </html>
+    <script src="../Scripts/Login.js" />

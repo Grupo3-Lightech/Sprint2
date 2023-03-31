@@ -1,9 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    
   }
   
   :root {
@@ -22,7 +20,7 @@
   
   a {
     text-decoration: none;
-    color: #7c3aed;
+    color: #2D9CDB;
     font-weight: 700;
   }
   
@@ -57,7 +55,7 @@
   }
   
   main {
-    margin-top: 11.4rem;
+    margin-top: 5rem;
     max-width: 38.4rem;
   }
   
@@ -126,18 +124,9 @@
     color: #1e293b;
   }
   
-  input:focus,
-  input:hover {
-    border: 0.1rem solid #7c3aed;
+  input:focus, input:hover {
+    border: 0.1rem solid #2D9CDB;
     outline: 0;
-  }
-  
-  input:disabled {
-    opacity: 0.35;
-  }
-  
-  ::-ms-reveal {
-    display: none;
   }
   
   .eye {
@@ -160,7 +149,7 @@
     align-items: center;
     padding: 1.6rem 2.4rem;
   
-    background: #7c3aed;
+    background: #2D9CDB;
     border-radius: 0.4rem;
   
     width: 100%;
@@ -177,32 +166,10 @@
   }
   
   form button:hover {
-    background: #9f67ff;
+    background: #1471a7;
   }
   
   .create-account {
-    color: #475569;
+    color: #2D9CDB;
   }
   
-  @media (max-width: 900px) {
-    #page > * {
-      width: 100%;
-    }
-    #page > img {
-      display: none;
-    }
-  
-    #page > div {
-      padding: 11rem;
-    }
-  
-    main {
-      max-width: 100%;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    #page > div {
-      padding: 4rem;
-    }
-  }
