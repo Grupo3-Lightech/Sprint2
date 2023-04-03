@@ -27,6 +27,8 @@
 
 .imgLogo{
     display: flex;
-    width: 9rem;
-    height: 3rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    width: 12rem;
+    height: 12rem;
 }
