@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="../Styles/Cadastro.css" />
     <link rel="stylesheet" href="../Styles/Global.css">
-    <title>Light Tech - Login</title>
+    <title>Light Tech - Cadastro</title>
   </head>
 
   <body>
@@ -47,7 +47,6 @@
             <div class="input-wrapper"> 
               <div class="label-wrapper flex">
                 <label for="senha"> Senha </label>
-                <a href="#"> Esqueceu a senha? </a>
               </div>                   
               <input 
                 type="password"
@@ -55,25 +54,34 @@
                 placeholder="Digite sua senha"
               />
 
-              <img
-                onclick="togglePassword()"
-                class="eye"
-                src="../Assets/Images/LoginImages/eye-off.svg"
-                alt=""
-              />
-              <img
-                onclick="togglePassword()"
-                class="eye hide"
-                src="../Assets/Images/LoginImages/eye.svg"
-                alt=""
-              />
+              <div class="input-wrapper"> 
+                <div class="label-wrapper flex">
+                  <label for="senha"> Senha </label>
+                </div>                   
+                <input 
+                  type="password"
+                  id="senha"
+                  placeholder="Digite sua senha"
+                />
+
+                <div class="input-wrapper"> 
+                  <div class="label-wrapper flex">
+                    <label for="senha"> Senha </label>
+                  </div>                   
+                  <input 
+                    type="password"
+                    id="senha"
+                    placeholder="Digite sua senha"
+                  />
+
+
             </div>
 
-            <button type="submit">Entrar</button>
+            <button type="submit">Cadastrar</button>
 
             <div class="create-account">
-              Ainda não tem uma conta?
-              <a href="#"> Inscreva-se </a>
+              Já tem uma conta?
+              <a href="Login.html"> Fazer Login </a>
             </div>
           </form>
         </main>
