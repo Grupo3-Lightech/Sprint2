@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,43 +10,78 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Styles/Global.css">
-    <link rel="stylesheet" href="../Styles/styles.css">
+    <link rel="stylesheet" href="../Styles/Calculator.css">
     <link rel="stylesheet" href="../Styles/Components/Header.css">
     <link rel="stylesheet" href="../Styles/Components/Button.css">
-    <title>Lightech - Calculadora Financeira</title>
+    <link rel="stylesheet" href="../Styles/Components/Footer.css">
+    <title>Light Tech - Calculadora Financeira</title>
 </head>
+
 <body>
-    <header>
+    <div class="headerContainer">
         <a class="logoLinkHome" href="Index.html">
-            <img class="imgLogo" src="../Assets/Logo.svg" alt="Logo da Lightech escrito">
+            <img class="imgLogo" src="../Assets/Images/Logo.svg" alt="Logo da Lightech escrito">
         </a>
 
         <nav>
-            <a class="homeLink" href="Index.html">Início</a>
+            <a class="navLinks" href="Index.html">Início</a>
             <a class="navLinks" href="">Sobre</a>
             <a class="navLinks" href="">Serviços</a>
             <a class="navLinks" href="">Contato</a>
             <span>|</span>
-            <a class="navLinks" href="">Login</a>
+            <a class="navLinks" href="Login.html">Login</a>
             <a class="navLinks" href="">Cadastro</a>
         </nav>
-    </header>
-    <br><br><br><br><br>
-Insira a quantidade de funcionarios:
-<input id="input_funcionarios">
-<br>
-Insira qual o salario médio dos funcionarios:
-<input id="input_salario">
-<br>
-Insira a porcentagem de abscenteísmo na sua empresa:
-<input id="input_abscenteismo">
-<br><br>
-<button id="botao" onclick="solucaoLightech()">Ver Solução</button>
-<br><br>
-    <div id="div_exemplo">
+    </div>
 
+    <div class="calculatorContainer">
+        <div class="calculatorInputsContainer">
+            Insira a quantidade de funcionarios:
+            <input id="input_funcionarios">
+            <br>
+            Insira qual o salario médio dos funcionarios:
+            <input id="input_salario">
+            <br>
+            Insira a porcentagem de abscenteísmo na sua empresa:
+            <input id="input_abscenteismo">
+            <br><br>
+        </div>
+
+        <button id="botao" onclick="solucaoLightech()">Ver Solução</button>
+
+        <div id="div_exemplo">
+
+        </div>
+    </div>
+
+    <div class="footerContainer">
+        <div class="footerMainContent">
+            <div class="footerImgContainer">
+                <img src="../Assets/Images/LogoFooter.svg" alt="">
+            </div>
+
+            <div class="footerTextContainer">
+                <p>&#169;2023 Grupo Light Tech.</p>
+                <p>Todos os direitos reservados SPTech.</p>
+            </div>
+        </div>
+
+        <div class="footerSocialMediaContainer">
+            <a href="#">
+                <img src="../Assets/Images/instagramLogo.svg" alt="">
+            </a>
+
+            <a href="#">
+                <img src="../Assets/Images/facebookLogo.svg" alt="">
+            </a>
+
+            <a href="#">
+                <img src="../Assets/Images/youtubeLogo.svg" alt="">
+            </a>
+        </div>
     </div>
 </body>
+
 </html>
 
 <script>
@@ -54,15 +90,16 @@ Insira a porcentagem de abscenteísmo na sua empresa:
         var funcionarios = Number(input_funcionarios.value);
         var salarioMedio = Number(input_salario.value);
         var porcentagemAbscenteismo = Number(input_abscenteismo.value) / 100;
-        var gastoFuncionario = (salarioMedio * 1.75) * funcionarios;    
+        var gastoFuncionario = (salarioMedio * 1.75) * funcionarios;
         var gastoAnual = gastoFuncionario * 12;
         var perdaTotal = gastoAnual * porcentagemAbscenteismo;
         var perdaSolucao = gastoAnual * (porcentagemAbscenteismo * 0.5);
 
 
 
-        div_exemplo.innerHTML = `<p style = "color: red">Sem a nossa solução sua perda anual com abscenteismo é de ${perdaTotal}</p>`;
-        div_exemplo.innerHTML += `<p style = "color: blue">Com a nossa solução sua perda anual com abscenteismo é de ${perdaSolucao}</p>`;
+        div_exemplo.innerHTML = `<p class="semSolucao">Sem a nossa solução sua perda anual com abscenteismo é de: <span>R$ ${perdaTotal}</span></p> <br>`;
+
+        div_exemplo.innerHTML += `<p class="comSolucao">Com a nossa solução sua perda anual com abscenteismo é de: <span>R$${perdaSolucao}</span></p>`;
     }
 
 </script>
