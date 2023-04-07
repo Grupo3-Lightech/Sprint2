@@ -34,6 +34,40 @@
     margin-top: 1rem;
 }
 
+.sobrenosContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.sobrenosImg{
+    
+    width: 522px;
+    height: 492px;
+    left: 68px;
+   
+}
+
+.sobrenosText{
+    width: 610px;
+    height: 312px;
+    left: 635px;
+    top: 227px;
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.sobrenosText-tilulo {
+    font-family: 'Poppins';
+    color: #2D9CDB;
+    font-weight: 700;
+    font-size: 40px;
+
+}
+
 .calculatorContainerHome{
     display: flex;
     justify-content: center;
