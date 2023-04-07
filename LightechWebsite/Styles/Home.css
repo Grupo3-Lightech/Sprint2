@@ -36,6 +36,7 @@
 
 .sobrenosContainer{
     display: flex;
+    height: 40rem;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
@@ -43,17 +44,17 @@
 
 .sobrenosImg{
     
-    width: 522px;
-    height: 492px;
-    left: 68px;
+    width: 32rem;
+    height: 30rem;
+    left: 6rem;
    
 }
 
 .sobrenosText{
-    width: 610px;
-    height: 312px;
-    left: 635px;
-    top: 227px;
+    width: 38rem;
+    height: 19rem;
+    left: 38rem;
+    top: 14rem;
     font-family: 'DM Sans', sans-serif;
     display: flex;
     flex-direction: column;
@@ -64,7 +65,7 @@
     font-family: 'Poppins';
     color: #2D9CDB;
     font-weight: 700;
-    font-size: 40px;
+    font-size: 2rem;
 
 }
 
