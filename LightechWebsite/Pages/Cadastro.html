@@ -1,95 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../Styles/Cadastro.css" />
-    <link rel="stylesheet" href="../Styles/Global.css">
-    <title>Light Tech - Cadastro</title>
-  </head>
 
-  <body>
-    <div id="page" class="flex">
-      <div>
-        <header>
-          <a href="Index.html">
-            <img src="../Assets/Images/Logo.svg" alt="">
-          </a>
-        </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../Styles/Cadastro.css" />
+  <link rel="stylesheet" href="../Styles/Global.css">
+  <title>Light Tech - Cadastro</title>
+</head>
 
-        <main>
-          <div class="headline">
-            <h1>Acesse a plataforma</h1>
-            <p>
-              Faça login ou registre-se para começar a construir seus projetos
-              ainda hoje.
-            </p>
+<body>
+  <div id="page" class="flex">
+    <div>
+      <header>
+        <a href="Index.html">
+          <img src="../Assets/Images/Logo.svg" alt="">
+        </a>
+      </header>
+
+      <main>
+        <div class="headline">
+          <h1>Acesse a plataforma</h1>
+          <p>
+            Faça login ou registre-se para começar a construir seus projetos
+            ainda hoje.
+          </p>
+        </div>
+        <form>
+          <div class="input-wrapper">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" required placeholder="Digite seu nome" />
           </div>
-          <form>
-            <div class="input-wrapper"> 
-              <label for="email">E-mail</label>
-              <input
-                id="email"
-                type="email"
-                name="email"
-                required
-                placeholder="Digite seu e-mail"
-              />
-            </div>
 
-            <div class="input-wrapper"> 
+          <div class="input-wrapper">
+            <div class="label-wrapper flex">
+              <label for="senha"> Senha </label>
+            </div>
+            <input type="password" id="senha" placeholder="Digite sua senha" />
+
+            <div class="input-wrapper">
               <div class="label-wrapper flex">
                 <label for="senha"> Senha </label>
-              </div>                   
-              <input 
-                type="password"
-                id="senha"
-                placeholder="Digite sua senha"
-              />
+              </div>
+              <input type="password" id="senha" placeholder="Digite sua senha" />
 
-              <div class="input-wrapper"> 
+              <div class="input-wrapper">
                 <div class="label-wrapper flex">
                   <label for="senha"> Senha </label>
-                </div>                   
-                <input 
-                  type="password"
-                  id="senha"
-                  placeholder="Digite sua senha"
-                />
-
-                <div class="input-wrapper"> 
-                  <div class="label-wrapper flex">
-                    <label for="senha"> Senha </label>
-                  </div>                   
-                  <input 
-                    type="password"
-                    id="senha"
-                    placeholder="Digite sua senha"
-                  />
+                </div>
+                <input type="password" id="senha" placeholder="Digite sua senha" />
 
 
-            </div>
+              </div>
 
-            <button type="submit">Cadastrar</button>
+              <button type="submit">Cadastrar</button>
 
-            <div class="create-account">
-              Já tem uma conta?
-              <a href="Login.html"> Fazer Login </a>
-            </div>
-          </form>
-        </main>
-      </div>
-
-      <img src="../Assets/Images/LoginImages/2852498.jpg" alt="" /> 
+              <div class="create-account">
+                Já tem uma conta?
+                <a href="Login.html"> Fazer Login </a>
+              </div>
+        </form>
+      </main>
     </div>
 
-    </body>
-    </html>
-    <script src="../Scripts/Login.js" />
+    <img src="../Assets/Images/LoginImages/2852498.jpg" alt="" />
+  </div>
+
+</body>
+
+</html>
+<script src="../Scripts/Login.js" />
