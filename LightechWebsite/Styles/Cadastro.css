@@ -28,36 +28,28 @@
     text-decoration: underline;
   }
   
-  #page {
-    height: 100vh;
-  }
   
-  .flex {
+  .page {
     display: flex;
-  }
-  
-  #page > * {
     width: 50%;
+    height: 100vh;
+    flex-direction: row-reverse;
+    padding: 4rem 11.2rem;
+
   }
   
   img {
+    height: 100%;
     width: 100%;
     object-fit: cover;
+    height: 100%;
   }
   
   header img {
     width: 16rem;
     height: 5.4rem;
   }
-  
-  #page {
-    flex-direction: row-reverse;
-      }
 
-  #page > div {
-    padding: 4rem 11.2rem;
-  }
-  
   main {
     margin-top: 5rem;
     max-width: 38.4rem;
