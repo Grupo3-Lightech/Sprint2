@@ -29,6 +29,12 @@ body {
 
 #myChart2 {
   position: relative;
-  height: 50vh;
-  width: 50vw;
+  height: 30vh;
+  width: 30vw;
+}
+
+#myChart3 {
+  position: relative;
+  height: 30vh;
+  width: 30vw;
 }
