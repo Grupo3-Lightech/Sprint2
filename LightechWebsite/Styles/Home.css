@@ -97,3 +97,44 @@
 .calculatorButton{
     padding: 1.5rem;
 }
+
+.contatoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #F9F9F9;
+    padding: 10rem 0;
+}
+
+.contatoMain{
+    display: flex;
+    align-items: center;
+    gap: 17rem;
+}
+
+.contatoTextContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 25rem;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.contatoTextContainer h1{
+    font-family: 'Poppins', sans-serif;
+    color: #2D9CDB;
+}
+
+.contatoInfoContainer{
+    display: flex;
+    flex-direction: column;
+    height: 8.5rem;
+    gap: 2rem;
+}
+
+.infoBox{
+    display: flex;
+    gap: 1rem;
+    font-family: 'DM Sans', sans-serif;
+}
