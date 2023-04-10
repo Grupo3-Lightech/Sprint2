@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício PI - Chart.Js</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../Styles/Dashboard.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <div class="content">
+      <div id="chart_Linha">
+        <canvas id="myChart"></canvas>
+      </div>
+
+      <div id="chart_Barra">
+        <canvas id="myChart2"></canvas>
+        <canvas id="myChart3"></canvas>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const ctx = document.getElementById("myChart");
+
+    new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: ["00:00", "00:00", "00:00", "00:00", "00:00", "00:00"],
+        datasets: [
+          {
+            label: "Luminosidade por Hora em Lux",
+            data: [600, 700, 700, 1000, 900, 400],
+            borderWidth: 1,
+            backgroundColor: "RGB(45, 156, 219)",
+            borderColor: "RGB(45, 156, 219)",
+          },
+          {
+            label: "Luminosidade por Hora em Watts",
+            data: [22, 33, 12, 45, 23, 45],
+            borderWidth: 1,
+            backgroundColor: "RGB(0, 0, 225)",
+            borderColor: "rgb(0, 0, 255)",
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+
+    const ctx2 = document.getElementById("myChart2");
+
+    new Chart(ctx2, {
+      type: "bar",
+      data: {
+        labels: ["00:00", "00:00", "00:00", "00:00", "00:00", "00:00"],
+        datasets: [
+          {
+            label: "Luminosidade por Hora em Lux",
+            data: [600, 700, 700, 1000, 900, 400],
+            borderWidth: 1,
+            backgroundColor: "RGB(255, 0, 0)",
+            borderColor: "rgb(255, 0, 0)",
+          },
+          {
+            label: "Luminosidade por Hora em Watts",
+            data: [22, 33, 12, 45, 23, 45],
+            borderWidth: 1,
+            backgroundColor: "RGB(0, 0, 225)",
+            borderColor: "rgb(0, 0, 255)",
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+
+    const ctx3 = document.getElementById("myChart3");
+
+new Chart(ctx3, {
+  type: "bar",
+  data: {
+    labels: ["00:00", "00:00", "00:00", "00:00", "00:00", "00:00"],
+    datasets: [
+      {
+        label: "Luminosidade por Hora em Lux",
+        data: [600, 700, 700, 1000, 900, 400],
+        borderWidth: 1,
+        backgroundColor: "RGB(255, 0, 0)",
+        borderColor: "rgb(255, 0, 0)",
+      },
+      {
+        label: "Luminosidade por Hora em Watts",
+        data: [22, 33, 12, 45, 23, 45],
+        borderWidth: 1,
+        backgroundColor: "RGB(0, 0, 225)",
+        borderColor: "rgb(0, 0, 255)",
+      },
+    ],
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  },
+});
+
+    
+  </script>
+</html>
