@@ -8,7 +8,7 @@ body {
   flex-direction: row;
 }
 
-#header {
+#nav_bar {
   height: 100vw;
   width: 20vw;
   background-color: #2d9cdb;
@@ -16,15 +16,29 @@ body {
 
 .content {
   display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.content .graficos{
+  display: flex;
   align-items: center;
   flex-direction: column;
   margin-left: 5vw;
 }
 
+#header {
+  width: 100%;
+  height: 5rem;
+  background-color: rgb(223, 223, 223);
+  border-bottom: 1px solid rgb(9, 3, 97);
+}
+
 #myChart {
   position: relative;
-  height: 60vh;
+  height: 40vh;
   width: 70vw;
+  margin-top: 20px;
 }
 
 #myChart2 {
@@ -37,4 +51,8 @@ body {
   position: relative;
   height: 30vh;
   width: 30vw;
+}
+
+#chart_Barra {
+  display: fle;
 }
