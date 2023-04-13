@@ -39,11 +39,11 @@
     height: 40rem;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    gap: 8rem;
+    border-bottom: 1px solid #2D9CDB;
 }
 
 .sobrenosImg{
-    
     width: 32rem;
     height: 30rem;
     left: 9rem;
@@ -74,7 +74,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8rem;
+    gap: 12rem;
 }
 
 .calculatorAnchor{
