@@ -10,74 +10,89 @@
   <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../Styles/Cadastro.css" />
   <link rel="stylesheet" href="../Styles/Global.css">
+  <link rel="stylesheet" href="../Styles/Components/Button.css">
   <title>Light Tech - Cadastro</title>
 </head>
 
 <body>
-  <div id="page" class="page">
-    <div class="mainContainer">
-      <header>
-        <a href="Index.html">
-          <img src="../Assets/Images/Logo.svg" alt="">
-        </a>
-      </header>
+  <div class="cadastroContainer">
+    <div class="cadastroMainContainer">
+      <img src="../Assets/Images/Logo.svg" alt="">
+      <h1>Acesse nossa plataforma</h1>
+      <h2>Cadastre-se aqui para ter acesso ao painel de controles da Light Tech</h2>
 
-      <main>
-        <div class="headline">
-          <h1>Acesse a plataforma</h1>
-          <p>
-            Faça login ou cadastre-se para começar a construir seus projetos
-            ainda hoje.
-          </p>
+      <form class="cadastroForm">
+        <div class="cadastroInputsAsside">
+          <label for="inputNome">
+            Nome: <br>
+            <input id="inputNome" class="inputNome" required placeholder="Insira seu nome">
+          </label>
+
+          <label for="inputSobrenome">
+            Sobrenome: <br>
+            <input id="inputSobrenome" class="inputSobrenome" required placeholder="Insira seu sobrenome">
+          </label>
         </div>
-        <form>
-          <div class="input-wrapper">
-            <label for="nome">Nome</label>
-            <input id="nome" name="nome" required placeholder="Digite seu nome" />
+
+          <div class="cadastroInputsAsside">
+            <label for="inputTelefoneFixo">
+              Telefone fixo:  <br>
+              <input id="inputTelefoneFixo" class="inputTelefoneFixo" required placeholder="(00)0000-0000">
+            </label>
+            <label for="inputTelefoneCel">
+              Telefone celular:  <br>
+              <input id="inputTelefoneCel" class="inputTelefoneCel" required placeholder="(00)90000-0000">
+            </label>
+          </div>
+          
+          <div class="cadastroInputsAsside">
+            <label for="inputCEP">
+              CEP: <br>
+              <input id="inputCEP" class="inputCEP" required placeholder="Insira o seu CEP">
+            </label>
+
+            <label for="inputRua">
+              Rua: <br>
+              <input id="inputRua" class="inputRua" required placeholder="Insira o nome da sua rua">
+            </label>
+
           </div>
 
-          <div class="input-wrapper">
-            <div class="label-wrapper flex">
-              <label for="sobrenome"> Sobrenome </label>
-            </div>
-            <input id="sobrenome" placeholder="Digite seu sobrenome" />
+          <div class="cadastroInputsAsside">
+            
+            <label for="inputNumero">
+              Número <br>
+              <input id="inputNumero" class="inputNumero" required placeholder="Insira o número da sua casa">
+            </label>
 
-            <div class="input-wrapper">
-              <div class="label-wrapper flex">
-                <label for="email"> Email </label>
-              </div>
-              <input type="email" id="email" placeholder="Digite seu email" />
+            <label for="inputBairro">
+              Bairro: <br>
+              <input id="inputBairro" class="inputBairro" required placeholder="Insira seu bairro">
+            </label>
+          </div>
 
-              <div class="input-wrapper">
-                <div class="label-wrapper flex">
-                  <label for="senha"> Senha </label>
-                </div>
-                <input type="password" id="senha" placeholder="Digite sua senha" />
+          <div class="cadastroInputsAsside">
+            <label for="inputEmail">
+              E-mail: <br>
+              <input id="inputEmail" class="inputEmail" type="email" required placeholder="Insira seu E-mail">
+            </label>
 
-                <div class="input-wrapper">
-                  <div class="label-wrapper flex">
-                    <label for="confirmar_senha"> Confirmar Senha </label>
-                  </div>
-                  <input type="password" id="confirmar_senha" placeholder="Digite novamente sua senha" />
+            <label for="inputSenha">
+              Senha: <br>
+              <input id="inputSenha" class="inputSenha" type="password" required placeholder="Insira sua senha">
+            </label>
 
+          </div>
 
-              </div>
-
-              <button type="submit">Cadastrar</button>
-
-              <div class="create-account">
-                Já tem uma conta?
-                <a href="Login.html"> Fazer Login </a>
-              </div>
-        </form>
-      </main>
+          <label for="inputEmpresa">
+            Empresa: <br>
+            <input id="inputEmpresa" class="inputEmpresa" required placeholder="Insira o nome da empresa na qual trabalha">
+          </label>
+          
+          <button type="submit">Cadastrar</button>
+      </form>
     </div>
-
-   <div class="imgContainer">
-    <img src="../Assets/Images/LoginImages/2852498.jpg" alt="" />
-   </div>
   </div>
-
 </body>
 
 </html>
