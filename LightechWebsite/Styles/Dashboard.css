@@ -37,6 +37,12 @@ body {
   justify-content: space-evenly;
   gap: 30rem;
   align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+#bem_vindo {
+  font-weight: bold;
+  font-size: large;
 }
 
 #header #texto {
