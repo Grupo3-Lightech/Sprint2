@@ -1,131 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercício PI - Chart.Js</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="../Styles/Dashboard.css" />
-  </head>
-  <body>
-    <div id="nav_bar"></div>
 
-    <div class="content">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercício PI - Chart.Js</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="../Styles/Dashboard.css" />
+</head>
 
-<div id="header">
-  <div id="texto"><span id="bem_vindo">Bem vindo usuárioX!<span> <br> Muito bom te ver!</div>
-  <div id="nav_bar_header">lupa  notificaçao imagem usuario</div>
-</div>
+<body>
+  <div id="nav_bar"></div>
 
-      <div class="graficos">
-        <div id="chart_Linha">
-          <canvas id="myChart"></canvas>
-        </div>
+  <div class="content">
 
-        <div id="chart_Barra">
-          <canvas id="myChart2"></canvas>
-          <canvas id="myChart3"></canvas>
-        </div>
+    <div id="header">
+      <div id="texto"><span id="bem_vindo">Bem vindo usuárioX!<span> <br> Muito bom te ver!</div>
+      <div id="nav_bar_header">lupa notificaçao imagem usuario</div>
+    </div>
+
+    <div class="graficos">
+      <div id="chart_linha">
+      <canvas id="myChart"></canvas>
+    </div>
+      <div id="chart_Barra">
+  
+        <canvas id="myChart2"></canvas>
+        <canvas id="myChart3"></canvas>
       </div>
     </div>
-  </body>
 
-  <script>
-    const ctx = document.getElementById("myChart");
+</div>
+</body>
 
-    new Chart(ctx, {
-      type: "line",
-      data: {
-        labels: ["00:00", "00:00", "00:00", "00:00", "00:00", "00:00"],
-        datasets: [
-          {
-            label: "Luminosidade por Hora em Lux",
-            data: [600, 700, 700, 1000, 900, 400],
-            borderWidth: 1,
-            backgroundColor: "RGB(45, 156, 219)",
-            borderColor: "RGB(45, 156, 219)",
-          },
-          {
-            label: "Luminosidade por Hora em Watts",
-            data: [22, 33, 12, 45, 23, 45],
-            borderWidth: 1,
-            backgroundColor: "RGB(0, 0, 225)",
-            borderColor: "rgb(0, 0, 255)",
-          },
-        ],
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
+<script>
+  const ctx = document.getElementById("myChart");
+
+  new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:59"],
+      datasets: [
+        {
+          label: "Luminosidade por Hora em Lux",
+          data: [400, 400, 400, 400, 450, 600, 600, 700, 700, 750, 850, 1020, 1030, 1050, 1000, 950, 900, 800, 700, 600, 550, 450, 400],
+          borderWidth: 1,
+          backgroundColor: "RGB(45, 156, 219)",
+          borderColor: "RGB(45, 156, 219)",
+        },
+        {
+          label: "Mínimo de lux por Hora",
+          data: [500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500],
+          borderWidth: 1,
+          backgroundColor: "RGB(0, 0, 225)",
+          borderColor: "rgb(0, 0, 255)",
+        },
+        {
+          label: "Maxímo de lux por Hora",
+          data: [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000],
+          borderWidth: 1,
+          backgroundColor: "RGB(255,0,0)",
+          borderColor: "rgb(255,0,0)",
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
         },
       },
-    });
+    },
+  });
 
-    const ctx2 = document.getElementById("myChart2");
+  const ctx2 = document.getElementById("myChart2");
 
-    new Chart(ctx2, {
-      type: "bar",
-      data: {
-        labels: ["00:00", "00:00", "00:00", "00:00", "00:00", "00:00"],
-        datasets: [
-          {
-            label: "Luminosidade por Hora em Lux",
-            data: [600, 700, 700, 1000, 900, 400],
-            borderWidth: 1,
-            backgroundColor: "RGB(255, 0, 0)",
-            borderColor: "rgb(255, 0, 0)",
-          },
-          {
-            label: "Luminosidade por Hora em Watts",
-            data: [22, 33, 12, 45, 23, 45],
-            borderWidth: 1,
-            backgroundColor: "RGB(0, 0, 225)",
-            borderColor: "rgb(0, 0, 255)",
-          },
-        ],
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
+  new Chart(ctx2, {
+    type: "bar",
+    data: {
+      labels: ["Verão", "Outono", "Inverno", "Primavera"],
+      datasets: [
+        {
+          label: "Luminosidade por Hora em Lux",
+          data: [600, 1000, 900, 400],
+          borderWidth: 1,
+          backgroundColor: "RGB(255, 0, 0)",
+          borderColor: "rgb(255, 0, 0)",
+
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
         },
       },
-    });
+    },
+  });
+  const ctx3 = document.getElementById('myChart3');
+  new Chart(ctx3, {
+    type: 'bar',
+    data: {
+      labels: ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro" ,"dezembro"],
+      datasets: [{
+        label: 'lux mensal',
+        data: [560,750,900,800,900,850,900,950,700,900,950,990],
+        borderWidth: 1,
+        backgroundColor: "RGB(0,0,255)",
+        borderColor: "RGB(0,0,255)"
+      }]
+    },
 
-    const ctx3 = document.getElementById("myChart3");
+    options: {
+      indexAxis: 'y',
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
 
-    new Chart(ctx3, {
-      type: "bar",
-      data: {
-        labels: ["00:00", "00:00", "00:00", "00:00", "00:00", "00:00"],
-        datasets: [
-          {
-            label: "Luminosidade por Hora em Lux",
-            data: [600, 700, 700, 1000, 900, 400],
-            borderWidth: 1,
-            backgroundColor: "RGB(255, 0, 0)",
-            borderColor: "rgb(255, 0, 0)",
-          },
-          {
-            label: "Luminosidade por Hora em Watts",
-            data: [22, 33, 12, 45, 23, 45],
-            borderWidth: 1,
-            backgroundColor: "RGB(0, 0, 225)",
-            borderColor: "rgb(0, 0, 255)",
-          },
-        ],
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
-        },
-      },
-    });
-  </script>
 </html>

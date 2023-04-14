@@ -5,7 +5,8 @@
 
 body {
   display: flex;
-  flex-direction: row;
+  width: 100vw;
+  overflow-y: hidden;
 }
 
 #nav_bar {
@@ -20,11 +21,13 @@ body {
   flex-direction: column;
 }
 
-.content .graficos{
+ .graficos{
   display: flex;
-  align-items: center;
+position: relative;
   flex-direction: column;
   margin-left: 5vw;
+  width: 25rem;
+
 }
 
 #header {
@@ -45,33 +48,36 @@ body {
   font-size: large;
 }
 
-#header #texto {
-
-}
-
-#header #nav_bar_header {
-
-}
-
 #myChart {
   position: relative;
-  height: 40vh;
-  width: 70vw;
+  height: vh;
+  width: 50rem;
   margin-top: 20px;
 }
 
 #myChart2 {
-  position: relative;
-  height: 30vh;
+  align-items: right;
+  height: 15vh;
   width: 30vw;
 }
 
 #myChart3 {
-  position: relative;
+  align-items:  left;
   height: 30vh;
   width: 30vw;
 }
 
 #chart_Barra {
-  display: fle;
+  display: flex;
+}
+#grafico_horizontal{
+  width: 30vh;
+  height: 30vh;
+align-items:  left;
+}
+#chart_linha{
+display: flex;
+width: 50rem;
+height: 30rem;
+
 }
