@@ -28,6 +28,21 @@
     white-space: nowrap;
   }
 
+  .cadastroIndexadoLogin{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cadastroIndexadoLogin p{
+    color: #2D9CDB;
+    font-weight: bold;
+  }
+
+  .cadastroIndexadoLogin a{
+    text-decoration: underline;
+  }
+
   .cadastroForm{
     display: flex;
     flex-direction: column;
@@ -53,6 +68,13 @@
 
   label{
     font-size: 1.5rem;
+  }
+
+  button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
   }
 
   
