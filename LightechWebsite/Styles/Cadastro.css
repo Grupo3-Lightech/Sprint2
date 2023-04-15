@@ -28,6 +28,11 @@
     white-space: nowrap;
   }
 
+  .logoIndexHome{
+    width: 20rem;
+    height: 20rem;
+  }
+
   .cadastroIndexadoLogin{
     display: flex;
     align-items: center;
