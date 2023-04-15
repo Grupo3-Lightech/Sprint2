@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: #e7e7e7;
+}
+/* 
+nav.menu-lateral {
+    width: 80px;
+    height: 100%;
+    background-color: #202020;
+    padding: 40px 0 40px 1%;
+    box-shadow: 3px 0 0 #396ab4;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: .5s;
+}
+
+nav.menu-lateral.expandir {
+    width: 300px;
+}
+
+.btn-expandir {
+    width: 100%;
+    padding-left: 10px;
+}
+
+.btn-expandir {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul {
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item-menu {
+    transition: .2s;
+}
+
+ul li.ativo {
+    background-color: #6da2f1;
+}
+
+ul li.item-menu:hover {
+    background: #70a2ee;
+}
+
+ul li.item-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 15px;
+    line-height: 40px;
+}
+
+ul li.item-menu a .link-page {
+    margin-left: 70px;
+    transition: 1s;
+    opacity: 0;
+}
+
+nav.menu-lateral.expandir .link-page {
+    margin-left: 30px;
+    opacity: 1;
+}
+
+ul li.item-menu a .icon {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.btn-download {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 140px;
+    height: 60px;
+    border-radius: 8px;
+    border: #526685;
+    background-color: #526685;
+    color: antiquewhite;
+}
+
+.btn-download .icon {
+    padding: 30px;
+} */

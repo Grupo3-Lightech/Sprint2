@@ -9,10 +9,92 @@ body {
   overflow-y: hidden;
 }
 
-#nav_bar {
-  height: 100vw;
-  width: 20vw;
-  background-color: #2d9cdb;
+nav.menu-lateral {
+  width: 80px;
+  height: 90%;
+  background-color: #62bfd6;
+  padding: 30px 0 30px 1%;
+  box-shadow: 3px 0 0 #396ab4;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: .5s;
+}
+
+nav.menu-lateral.expandir {
+  width: 180px;
+}
+
+.btn-expandir {
+  width: 100%;
+  padding-left: 10px;
+}
+
+.btn-expandir {
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+ul {
+  height: 100%;
+  list-style-type: none;
+}
+
+ul li.item-menu {
+  transition: .2s;
+}
+
+ul li.ativo {
+  background-color: #81adf0;
+}
+
+ul li.item-menu:hover {
+  background: #79acf8;
+}
+
+ul li.item-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 20px 4%;
+  display: flex;
+  margin-bottom: 15px;
+  line-height: 40px;
+}
+
+ul li.item-menu a .link-page {
+  margin-left: 60px;
+  transition: 1s;
+  opacity: 0;
+}
+
+nav.menu-lateral.expandir .link-page {
+  margin-left: 25px;
+  opacity: 1;
+}
+
+ul li.item-menu a .icon {
+  font-size: 25px;
+  margin-left: 5px;
+}
+
+.btn-download {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 140px;
+  height: 60px;
+  border-radius: 8px;
+  border: #526685;
+  background-color: #526685;
+  color: antiquewhite;
+}
+
+.btn-download .icon {
+  padding: 30px;
 }
 
 .content {
@@ -23,11 +105,10 @@ body {
 
  .graficos{
   display: flex;
-position: relative;
+  position: relative;
   flex-direction: column;
   margin-left: 5vw;
   width: 25rem;
-
 }
 
 #header {
@@ -50,21 +131,26 @@ position: relative;
 
 #myChart {
   position: relative;
-  height: vh;
+  align-items:  center;
+  height: 30rem;
   width: 50rem;
   margin-top: 20px;
+  margin-left: 90px;
 }
 
 #myChart2 {
-  align-items: right;
+  align-items: center;
   height: 15vh;
   width: 30vw;
+  margin-left: 90px;
 }
 
 #myChart3 {
-  align-items:  left;
+  flex-direction: column;
+  align-items:  center;
   height: 30vh;
   width: 30vw;
+  margin-left: 90px;
 }
 
 #chart_Barra {
@@ -79,5 +165,4 @@ align-items:  left;
 display: flex;
 width: 50rem;
 height: 30rem;
-
 }
