@@ -1,3 +1,11 @@
+html{
+    scroll-behavior: smooth;
+}
+
+:target{
+    scroll-margin-top: 1rem;
+}
+
 .mainContainer {
     display: flex;
     gap: 10rem;
@@ -210,4 +218,6 @@
     gap: 1rem;
     font-family: 'DM Sans', sans-serif;
 }
+
+
 
