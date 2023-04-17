@@ -67,6 +67,7 @@ html{
     font-family: 'DM Sans', sans-serif;
     display: flex;
     flex-direction: column;
+    color: #767676;
     
 }
 
@@ -147,6 +148,33 @@ html{
     height: 28rem;
     align-items: center;
     margin-left: 1rem;
+}
+
+.servicos-texto {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin-top: 3rem;
+
+}
+
+.servicos-texto h1{
+    font-family: 'Poppins';
+    color: #2D9CDB;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-block-end: 3rem;
+}
+
+.servicos-texto p{
+    color: #767676;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    height: 8rem;
+    width: 38rem;
+
 }
 
 .calculatorContainerHome{
