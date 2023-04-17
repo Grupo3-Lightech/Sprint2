@@ -3,7 +3,7 @@ html{
 }
 
 :target{
-    scroll-margin-top: 1rem;
+    scroll-margin-top: 5rem;
 }
 
 .mainContainer {
@@ -48,14 +48,13 @@ html{
     flex-direction: row;
     align-items: center;
     gap: 8rem;
+    border-bottom: 2px solid #2D9CDB;
 }
 
 .sobrenosImg{
     width: 32rem;
     height: 30rem;
-    left: 9rem;
     margin-left: 10rem;
-   
 }
 
 .sobrenosText{
@@ -78,6 +77,49 @@ html{
 
 }
 
+.servicosContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.servicosImageTextContainer{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.servicosText {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin-top: 3rem;
+
+}
+
+.servicosText h1{
+    font-family: 'Poppins';
+    color: #2D9CDB;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-block-end: 3rem;
+}
+
+.servicosText p{
+    color: #767676;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    height: 8rem;
+    width: 38rem;
+
+}
+
+.servicosImg{
+    height: 25rem;
+}
+
 .container-servicos {
     display: flex;
     flex-direction: column;
@@ -96,29 +138,33 @@ html{
 .contextos-servicos{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 5rem;
 }
 
 .container-contexto-servicos {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
+    gap: 1rem;
     width: 15rem;
-    height: 20rem;
-    background: #eeeaea;
+    height: 15rem;
+    padding: 1.5rem;
+    background: #2D9CDB;
+    border-radius: 15px;
 }
 
 
 .container-contexto-servicos h1{
-    color: #767676;
+    color: white;
     font-family: 'Poppins';
     font-weight: 700;
     font-size: 1rem;
 }
 
 .container-contexto-servicos p{
-    color: #767676;
-    width: 10rem;
-    height: 8rem;
+    color: white;
     font-family: 'DM Sans';
     font-weight: 400;
     font-size: 1rem;
@@ -149,34 +195,9 @@ html{
     align-items: center;
     margin-left: 1rem;
     margin-bottom: 1rem;
+    border-radius: 15px;
 }
 
-.servicos-texto {
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    margin-top: 3rem;
-
-}
-
-.servicos-texto h1{
-    font-family: 'Poppins';
-    color: #2D9CDB;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 2rem;
-    margin-block-end: 3rem;
-}
-
-.servicos-texto p{
-    color: #767676;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    height: 8rem;
-    width: 38rem;
-
-}
 
 .calculatorContainerHome{
     display: flex;
