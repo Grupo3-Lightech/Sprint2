@@ -70,6 +70,77 @@
 
 }
 
+.container-servicos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-servicos h1{
+    font-family: 'Poppins';
+    color: #2D9CDB;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.contextos-servicos{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container-contexto-servicos {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    height: 20rem;
+    background: #eeeaea;
+}
+
+
+.container-contexto-servicos h1{
+    color: #767676;
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.container-contexto-servicos p{
+    color: #767676;
+    width: 10rem;
+    height: 8rem;
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+
+.container-diagrama-servicos {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.container-diagrama-servicos h2{
+    font-family: 'Poppins';
+    color: #2D9CDB;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    align-items: center;
+}
+
+.container-foto-servicos {
+    display: flex;
+    width: fit-content;
+    height: 28rem;
+    align-items: center;
+    margin-left: 1rem;
+}
+
 .calculatorContainerHome{
     display: flex;
     justify-content: center;
