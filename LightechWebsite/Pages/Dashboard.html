@@ -23,7 +23,8 @@
 
 <body>
   <nav class="menu-lateral">
-    <!-- <div class="logo"><img src="assents/Light_Tech-removebg.png"> -->
+    <div class="logo">
+      <img src="../Assets/Images/LogoFooter.svg" alt="Logo Lightech" />
     </div>
 
     <div class="btn-expandir">
@@ -55,12 +56,12 @@
           <span class="link-page">Configuração</span>
         </a>
       </li>
-      <li class="item-menu">
+      <!-- <li class="item-menu">
         <a href="#">
           <span class="icon"><i class="bi bi-person-circle"></i></span>
           <span class="link-page">Conta</span>
         </a>
-      </li>
+      </li> -->
 
       <!-- AQUI É MEU BOTÃO PARA DOWNLOAD -->
       <button class="btn-download icon">
@@ -73,16 +74,24 @@
   <div class="content">
 
     <div id="header">
-      <div id="texto"><span id="bem_vindo">Bem vindo usuárioX!<span> <br> Muito bom te ver!</div>
-      <div id="nav_bar_header">lupa notificaçao imagem usuario</div>
+      <div id="texto">
+        <span id="bem_vindo">Seja bem vindo(a) Caramico!<span> <br>
+        <span>Dashboard Light Tech.</span>
+      </div>
+      <div id="nav_bar_header">
+        <a href="#">
+          <span class="icon"><i class="bi bi-person-circle"></i></span>
+          <span class="link-page">Usuário</span>
+        </a>
+      </div>
     </div>
 
     <div class="graficos">
       <div id="chart_linha">
-      <canvas id="myChart"></canvas>
-    </div>
+        <canvas id="myChart"></canvas>
+      </div>
+
       <div id="chart_Barra">
-  
         <canvas id="myChart2"></canvas>
         <canvas id="myChart3"></canvas>
       </div>
@@ -110,15 +119,15 @@
           label: "Mínimo de lux por Hora",
           data: [500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500],
           borderWidth: 1,
-          backgroundColor: "RGB(0, 0, 225)",
-          borderColor: "rgb(0, 0, 255)",
+          backgroundColor: "#FF2D19",
+          borderColor: "#FF2D19",
         },
         {
           label: "Maxímo de lux por Hora",
           data: [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000],
           borderWidth: 1,
-          backgroundColor: "RGB(255,0,0)",
-          borderColor: "rgb(255,0,0)",
+          backgroundColor: "#FF2D19",
+          borderColor: "#FF2D19",
         },
       ],
     },
@@ -140,10 +149,10 @@
       datasets: [
         {
           label: "Luminosidade por Hora em Lux",
-          data: [600, 1000, 900, 400],
+          data: [770, 850, 800, 867],
           borderWidth: 1,
-          backgroundColor: "RGB(255, 0, 0)",
-          borderColor: "rgb(255, 0, 0)",
+          backgroundColor: "#33F076",
+          borderColor: "#00A41A",
 
         },
       ],
@@ -165,8 +174,8 @@
         label: 'lux mensal',
         data: [560,750,900,800,900,850,900,950,700,900,950,990],
         borderWidth: 1,
-        backgroundColor: "RGB(0,0,255)",
-        borderColor: "RGB(0,0,255)"
+        backgroundColor: "#268FA6",
+        borderColor: "#268FA6"
       }]
     },
 
