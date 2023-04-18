@@ -13,7 +13,8 @@ body {
   width: 6.5rem;
 }
 
-nav.menu-lateral {
+.menu-lateral {
+  position: relative;
   width: 100px;
   height: 90%;
   background-color:#3F6A6B;
@@ -26,7 +27,7 @@ nav.menu-lateral {
   transition: .5s;
 }
 
-nav.menu-lateral.expandir {
+.menu-lateral.expandir {
   width: 250px;
 }
 
@@ -74,7 +75,7 @@ ul li.item-menu a .link-page {
   opacity: 0;
 }
 
-nav.menu-lateral.expandir .link-page {
+.menu-lateral.expandir .link-page {
   margin-left: 25px;
   opacity: 1;
 }
@@ -100,61 +101,81 @@ ul li.item-menu a .icon {
   padding: 30px;
 }
 
-.content {
+.conta {
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+.content-page {
   display: flex;
   width: 100%;
   flex-direction: column;
+  position: absolute;
   background-color:#dce8e8 ;
 }
 
- .graficos{
+.header {
   display: flex;
-  position: relative;
-  flex-direction: column;
-  margin-left: 5vw;
-  width: 25rem;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 5%;
+  background-color: #a9cbcc;
+  border-bottom: 1px solid rgb(47, 41, 134);
+  position: flex;
+  right: 0;
+  top: 0;
+  
+}
 
+.header h1 {
+  padding: 10px;
+  color: #526685;
+}
+
+.header p {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.header .alerts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  line-height: 40px;
+  border-radius: 20px;
+  background-color: #526685;
+  color: white;
 }
 
 
+#situacaoRuim {
+  background-color: #ed5252;
+}
 
-#header {
-  width: 100%;
-  height: 5rem;
-  background-color: #7fc2c4;
-  border-bottom: 1px solid rgb(47, 41, 134);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  gap: 30rem;
-  align-items: center;
-  font-family: 'Poppins', sans-serif;
+#situacaoBoa {
+  background-color:rgb(80, 205, 105);
+}
+
+#situacaoRazoavel {
+  background-color: #e68947;
 }
 
 #bem_vindo {
   font-weight: bold;
-  font-size: large;
+  font-size: 20px;
+  color: #526685;
 }
 
-#chart_linha {
+.graficos {
   display: flex;
+  width: 100%;
+  gap: 30px;
+  padding: 20px;
   justify-content: center;
   align-items: center;
-  height: 20rem;
-  width: 38rem;
-  margin-top: 20px;
-  margin-left: 345px;
-}
-
-/* #chart_linha{
-  display: flex;
-  width: 50rem;
-} */
-
-#chart_Barra {
-  display: flex;
-  height: 40rem;
-  width: 34rem;
-  margin-left: 90px;
-  gap: 20px;
 }
