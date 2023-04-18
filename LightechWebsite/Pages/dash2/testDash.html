@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestDash</title>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar {
+            width: 20%;
+            height: 100vh;
+            background-color: #333;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+        }
+
+        .sidebar ul li {
+            padding: 20px;
+            color: white;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #555;
+        }
+
+        .header {
+            width: 80%;
+            height: 10%;
+            background-color: #eee;
+            position: fixed;
+            right: 0;
+            top: 0;
+        }
+
+        .header h1 {
+            padding: 20px;
+        }
+
+        .content {
+            width: 80%;
+            height: 90%;
+            background-color: #fff;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        .content div {
+            width: 50%;
+            height: 50%;
+        }
+
+        .chart1 {
+            border: solid black;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 80%;
+            height: 80%;
+        }
+
+        .chart2 {
+            border: solid black;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 80%;
+            height: 80%;
+        }
+    </style>
+</head>
+
+<body>
+        <div class=“sidebar”>
+            <ul>
+                <li>Home</li>
+                <li>Dashboard</li>
+                <li>Settings</li>
+                <li>Logout</li>
+            </ul>
+        </div>
+
+        <div class=“header”>
+            <h1>Meu site de dashboard</h1>
+        </div>
+
+        <div class=“content”>
+            <div class=“chart1”> <!-- Aqui você pode colocar o seu gráfico de Chart.Js --> </div>
+            <div class=“chart2”> <!-- Aqui você pode colocar o seu gráfico de Chart.Js --> </div>
+        </div>
+    </body>
+
+</html>
