@@ -1,10 +1,10 @@
-function togglePassword() {
-    document
-      .querySelectorAll(".eye")
-      .forEach((eye) => eye.classList.toggle("hide"))
-
-    const type =
-      senha.getAttribute("type") == "password" ? "text" : "password"
-
-    senha.setAttribute("type", type)
+  function redirecionar() {
+    var login = inputEmail.value;
+    var senha = inputSenha.value;
+    
+    if (login == "admin@lighttech.com" && senha == "@Lighttech") {
+      window.location = "../Pages/Dashboard.html"
+    } else{
+      alert("Seu email ou senha não estão corretos!")
+    }
   }

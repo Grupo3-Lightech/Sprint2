@@ -72,12 +72,8 @@
   h1 + p {
     color: #475569;
     margin-top: 1.6rem;
-  }
-  
-  form {
-    margin-top: 4rem;
-  }
-  
+  }  
+
   .input-wrapper {
     position: relative;
   }
@@ -129,20 +125,8 @@
     outline: 0;
   }
   
-  .eye {
-    width: 2rem;
-    height: 2rem;
   
-    position: absolute;
-    top: 55%;
-    right: 5%;
-  }
-  
-  .hide {
-    display: none;
-  }
-  
-  form button {
+  button {
     display: flex;
   
     justify-content: center;
@@ -158,15 +142,6 @@
     color: #ffffff;
   
     margin-block: 3.2rem;
-  }
-  
-  form button:focus {
-    outline: 0.2rem solid black;
-    border-radius: 0.2rem;
-  }
-  
-  form button:hover {
-    background: #1471a7;
   }
   
   .create-account {
