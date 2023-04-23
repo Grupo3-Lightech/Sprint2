@@ -59,14 +59,13 @@ html{
 
 .sobrenosText{
     width: 38rem;
-    height: 19rem;
     left: 38rem;
     top: 14rem;
     font-family: 'DM Sans', sans-serif;
     display: flex;
     flex-direction: column;
     color: #767676;
-    
+    gap: 1rem;
 }
 
 .sobrenosText-tilulo {
@@ -74,8 +73,38 @@ html{
     color: #2D9CDB;
     font-weight: 700;
     font-size: 2rem;
-
 }
+
+.integrantesImgContainer{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.integrantesInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    text-align: center;
+    gap: 1rem;
+}
+
+.integrantesInfo p{
+    color: #2D9CDB;
+    font-size: 1.25rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.integrantesInfo img{
+    border-radius: 50% 4%;
+    height: 8rem;
+    width: fit-content;
+}
+
 
 .servicosContainer{
     display: flex;
