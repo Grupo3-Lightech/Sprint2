@@ -25,8 +25,7 @@
         <p>Caso já tenha conta, <a href="Login.html">faça login.</a></p>
       </div>
       <h2>Cadastre-se aqui para ter acesso ao painel de controles da Light Tech</h2>
-
-      <form class="cadastroForm">
+        <form>
         <div class="cadastroInputsAsside">
           <label for="inputNome">
             Nome: <br>
@@ -42,7 +41,7 @@
         <div class="cadastroInputsAsside">
           <label for="inputCPF">
             CPF: <br>
-            <input id="inputCPF" class="inputCPF" required placeholder="Insira seu CPF">
+            <input id="inputCPF" class="inputCPF" required placeholder="Insira seu CPF com o traço">
           </label>
 
           <label for="inputGenero">
@@ -53,13 +52,13 @@
 
         <label for="inputDtNasc">
           Data de nascimento: <br>
-          <input id="inputDtNasc" class="inputDtNasc" required placeholder="Insira sua data de nascimento">
+          <input id="inputDtNasc" class="inputDtNasc" type="date" required placeholder="Insira sua data de nascimento">
         </label>
 
         <div class="cadastroInputsAsside">
           <label for="inputTelefoneFixo">
             Telefone fixo: <br>
-            <input id="inputTelefoneFixo" class="inputTelefoneFixo" required placeholder="(00)0000-0000">
+            <input id="inputTelefoneFixo" class="inputTelefoneFixo"  placeholder="(00)0000-0000">
           </label>
           <label for="inputTelefoneCel">
             Telefone celular: <br>
@@ -85,12 +84,11 @@
 
         </div>
 
-        <button type="submit">Cadastrar</button>
-
+        <button onclick="validacaoCadastro()" type="submit">Cadastrar</button>
+      </form>
 
     </div>
   </div>
 </body>
-
+<script src="../Scripts/Cadastro.js"></script>
 </html>
-<script src="../Scripts/Login.js" />
