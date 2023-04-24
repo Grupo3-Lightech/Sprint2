@@ -42,8 +42,8 @@
             Insira qual o salario médio dos funcionarios:
             <input id="input_salario">
             <br>
-            Insira a porcentagem de abscenteísmo na sua empresa:
-            <input id="input_abscenteismo">
+            Insira a porcentagem de absenteísmo na sua empresa:
+            <input id="input_absenteismo">
             <br><br>
         </div>
 
@@ -88,13 +88,11 @@
     function solucaoLightech() {
     var funcionarios = Number(input_funcionarios.value);
     var salarioMedio = Number(input_salario.value);
-    var porcentagemAbscenteismo = Number(input_abscenteismo.value) / 100;
+    var porcentagemAbsenteismo = Number(input_absenteismo.value) / 100;
     var gastoFuncionario = (salarioMedio * 1.75) * funcionarios;
     var gastoAnual = gastoFuncionario * 12;
-    var perdaTotal = gastoAnual * porcentagemAbscenteismo;
-    var perdaSolucao = gastoAnual * (porcentagemAbscenteismo * 0.5);
-
-
+    var perdaTotal = gastoAnual * porcentagemAbsenteismo;
+    var perdaSolucao = gastoAnual * (porcentagemAbsenteismo * 0.5);
 
     div_exemplo.innerHTML = `<p class="semSolucao">Sem a nossa solução sua perda anual com abscenteismo é de: <span>R$ ${Math.round(perdaTotal)}</span></p> <br>`;
 
