@@ -1,19 +1,28 @@
+
+var classObj;
+var nome;
+var sobrenome; 
+var CPF; 
+var dtNasc; 
+var telCel; 
+var empresa; 
+var email; 
+var senha; 
 function validacaoCadastro() {
-    var classObj;
-    var nome = inputNome.value;
-    var sobrenome = inputSobrenome.value;
-    var CPF = inputCPF.value;
-    var dtNasc = inputDtNasc.value;
-    var telCel = inputTelefoneCel.value;
-    var empresa = inputEmpresa.value;
-    var email = inputEmail.value;
-    var senha = inputSenha.value;
+    nome = inputNome.value
+    sobrenome = inputSobrenome.value;
+    CPF = inputCPF.value;
+    dtNasc = inputDtNasc.value;
+    telCel = inputTelefoneCel.value;
+    empresa = inputEmpresa.value;
+    email = inputEmail.value;
+    senha = inputSenha.value;
 
     if (nome == "") {
         classObj = document.getElementById("inputNome")
         classObj.classList.remove("inputNome")
         classObj.classList.add("inputError")
-    } else{
+    } else {
         classObj = document.getElementById("inputNome")
         classObj.classList.remove("inputError")
         classObj.classList.add("inputNome")
@@ -23,7 +32,7 @@ function validacaoCadastro() {
         classObj = document.getElementById("inputSobrenome")
         classObj.classList.remove("inputSobrenome")
         classObj.classList.add("inputError")
-    } else{
+    } else {
         classObj = document.getElementById("inputSobrenome")
         classObj.classList.remove("inputError")
         classObj.classList.add("inputSobrenome")
@@ -34,7 +43,7 @@ function validacaoCadastro() {
         classObj.classList.remove("inputCPF")
         classObj.classList.add("inputError")
         alert("Insira seu CPF")
-    } else{
+    } else {
         classObj = document.getElementById("inputCPF")
         classObj.classList.add("inputCPF")
         classObj.classList.remove("inputError")
@@ -51,7 +60,7 @@ function validacaoCadastro() {
         classObj.classList.remove("inputError")
         classObj.classList.add("inputCPF")
     };
-    
+
     if (CPF.length != 9) {
         classObj = document.getElementById("inputCPF")
         classObj.classList.remove("inputCPF")
@@ -62,13 +71,13 @@ function validacaoCadastro() {
         classObj.classList.remove("inputError")
         classObj.classList.add("inputCPF")
     };
-    
+
     if (CPF[5] != "-") {
         classObj = document.getElementById("inputCPF")
         classObj.classList.remove("inputCPF")
         classObj.classList.add("inputError")
         alert("CPF inserido incorretamente!")
-    } else{
+    } else {
         classObj = document.getElementById("inputCPF")
         classObj.classList.remove("inputError")
         classObj.classList.add("inputCPF")
@@ -79,7 +88,7 @@ function validacaoCadastro() {
         classObj.classList.remove("inputDtNasc")
         classObj.classList.add("inputError")
         alert("Insira sua data de nascimento")
-    } else{
+    } else {
         classObj = document.getElementById("inputDtNasc")
         classObj.classList.add("inputDtNasc")
         classObj.classList.remove("inputError")
@@ -90,7 +99,7 @@ function validacaoCadastro() {
         classObj.classList.remove("inputTelefoneCel")
         classObj.classList.add("inputError")
         alert("Insira seu celular")
-    } else{
+    } else {
         classObj = document.getElementById("inputTelefoneCel")
         classObj.classList.add("inputTelefoneCel")
         classObj.classList.remove("inputError")
@@ -123,7 +132,7 @@ function validacaoCadastro() {
         classObj.classList.remove("inputEmpresa")
         classObj.classList.add("inputError")
         alert("Insira a empresa na qual você trabalha")
-    } else{
+    } else {
         classObj = document.getElementById("inputEmpresa")
         classObj.classList.add("inputEmpresa")
         classObj.classList.remove("inputError")
@@ -134,7 +143,7 @@ function validacaoCadastro() {
         classObj.classList.remove("inputEmail")
         classObj.classList.add("inputError")
         alert("Insira seu E-mail!")
-    } else{
+    } else {
         classObj = document.getElementById("inputEmail")
         classObj.classList.add("inputEmail")
         classObj.classList.remove("inputError")
@@ -145,7 +154,7 @@ function validacaoCadastro() {
         classObj.classList.remove("inputSenha")
         classObj.classList.add("inputError")
         alert("Crie uma senha!")
-    } else{
+    } else {
         classObj = document.getElementById("inputSenha")
         classObj.classList.add("inputSenha")
         classObj.classList.remove("inputError")
@@ -156,7 +165,7 @@ function validacaoCadastro() {
         classObj.classList.remove("inputSenha")
         classObj.classList.add("inputError")
         alert("Sua senha deve ter no mínimo 8 carecteres")
-    } else{
+    } else {
         classObj = document.getElementById("inputSenha")
         classObj.classList.add("inputSenha")
         classObj.classList.remove("inputError")
