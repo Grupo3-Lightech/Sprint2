@@ -21,15 +21,11 @@ senha varchar(30),
 dtCadastro datetime default current_timestamp,
 fkEmpresa int, constraint fkEmpresaUsuario foreign key (fkEmpresa) references empresa (idEmpresa));
 
-create table metrica (
-idMetrica int primary key auto_increment,
-nome varchar(45));
-
 create table parametro (
 idParametro int primary key auto_increment,
 minimo decimal(10,2),
-maximo decimal(10,2),
-fkMetrica int, constraint fkMetricaParametro foreign key (fkMetrica) references metrica (idMetrica));
+maximo decimal(10,2)
+);
 
 create table localEmpresa (
 idLocal int primary key auto_increment,
@@ -44,9 +40,7 @@ create table sensor (
 idSensor int auto_increment,
 tipoSensor varchar(50),
 statusSensor varchar(50), constraint chkStatus check (statusSensor in ('Ativo', 'Inativo')),
-fkLocal int, constraint fkLocalSensor foreign key (fkLocal) references localEmpresa (idLocal),
-fkMetrica int, constraint fkMetricaSensor foreign key (fkMetrica) references metrica (idMetrica),
-constraint pkSensor primary key (idSensor, fkMetrica)
+fkLocal int, constraint fkLocalSensor foreign key (fkLocal) references localEmpresa (idLocal)
 );
 
 create table leitura (
@@ -58,7 +52,6 @@ fkSensor int, constraint fkSensorLeitura foreign key (fkSensor) references senso
 
 select * from usuario;
 select * from empresa;
-select * from metrica;
 select * from parametro;
 select * from localEmpresa;
 select * from empresa;
@@ -81,19 +74,6 @@ insert usuario values
 (null, 'Jordana', 'Santos', '45590987094', '2000-01-27', 'F', 'jordana.santos@hesselstore.com', 'jordana3040', null, 5),
 (null, 'Thais', 'Moitinho', '45590987090', '2003-06-20', 'f', 'thais.moitinho@hesselstore.com', 'tha3030', null, 6);
 
-insert localEmpresa values
-(null, 'sala de reunião', 6, 'sala 2', 1, null),
-(null, 'escritorio', 'terreo', 'sala 1', 2, null),
-(null, 'sala de desenvolvimento', 7, 'sala 8', 3, null),
-(null, 'sala de reunião', 2, 'sala 3', 4, null),
-(null, 'estoque', 2, 'sala 1', 5, null),
-(null, 'estoque', 3, 'sala 1', 6, null);
-
-insert into metrica values 
-(null, 'Lux'),
-(null, 'Lumen'),
-(null, 'Watts');
-
 insert into parametro values 
 (null, '500', '1000', 1),
 (null, '200', '500', 1),
@@ -104,6 +84,14 @@ insert into parametro values
 (null, '31', '63', 2),
 (null, '1.6', '3.1', 3),
 (null, '3.1', '6.2', 3);
+
+insert localEmpresa values
+(null, 'sala de reunião', '6', '2', 1, 1),
+(null, 'escritorio', 'terreo', 'sala 1', 2, 1),
+(null, 'sala de desenvolvimento', 7, 'sala 8', 3, 2),
+(null, 'sala de reunião', 2, 'sala 3', 4, 2),
+(null, 'estoque', 2, 'sala 1', 5, 3),
+(null, 'estoque', 3, 'sala 1', 6, 4);
 
 insert into sensor values 
 (null, 'LDR 5mm', 'Ativo', 3, 1),
@@ -123,8 +111,7 @@ insert into leitura values
 (null, null, 900, 4),
 (null, null, 1000, 4),
 (null, null, 500, 5),
-(null, null, 550, 5),
-(null, null, 1.6, 6);
+(null, null, 550, 1);
 
 select * from empresa as filial 
 join empresa as sede on filial.fkSede = sede.idEmpresa;
@@ -144,8 +131,5 @@ join sensor on idLocal = fkLocal;
 select idSensor as 'ID do Sensor',
 tipoSensor as 'Tipo do Sensor',
 statusSensor as 'Status do Sensor',
-metrica.nome as 'Métrica do Sensor',
 localEmpresa.localEmpresa as 'Local do Sensor' from sensor
-join metrica on fkMetrica = idMetrica
 join localEmpresa on fkLocal = idLocal;
-
