@@ -49,40 +49,17 @@ function validacaoCadastro() {
         classObj = document.getElementById("inputCPF")
         classObj.classList.add("inputCPF")
         classObj.classList.remove("inputError")
-    }
-
-    if (CPF.indexOf("-") == -1) {
-        classObj = document.getElementById("inputCPF")
-        classObj.classList.remove("inputCPF")
-        classObj.classList.add("inputError")
-        alert('Insira o "-" no CPF inserido')
-
-    } else {
-        classObj = document.getElementById("inputCPF")
-        classObj.classList.remove("inputError")
-        classObj.classList.add("inputCPF")
     };
 
-    if (CPF.length != 9) {
+    if (CPF[3] != "." || CPF[7] != "." || CPF[11] != "-") {
         classObj = document.getElementById("inputCPF")
         classObj.classList.remove("inputCPF")
         classObj.classList.add("inputError")
-        alert("CPF inserido incorretamente!")
+        alert("Insira a pontuação no CPF")
     } else {
         classObj = document.getElementById("inputCPF")
-        classObj.classList.remove("inputError")
         classObj.classList.add("inputCPF")
-    };
-
-    if (CPF[5] != "-") {
-        classObj = document.getElementById("inputCPF")
-        classObj.classList.remove("inputCPF")
-        classObj.classList.add("inputError")
-        alert("Insira o '-' no lugar certo")
-    } else {
-        classObj = document.getElementById("inputCPF")
         classObj.classList.remove("inputError")
-        classObj.classList.add("inputCPF")
     };
 
     if (dtNasc == "") {

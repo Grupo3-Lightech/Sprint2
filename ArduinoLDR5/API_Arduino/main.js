@@ -20,10 +20,7 @@ const AMBIENTE = 'desenvolvimento';
 
 const serial = async (
     valoresLuminosidade,
-    valoresLuminosidade2,
-    valoresLuminosidade3,
-    valoresLuminosidade4,
-    valoresLuminosidade5
+
 ) => {
     let poolBancoDados = ''
 
@@ -61,20 +58,10 @@ const serial = async (
     });
     arduino.pipe(new serialport.ReadlineParser({ delimiter: '\r\n' })).on('data', async (data) => {
         data = data;
-
-        const valores = data.split(';');
-        const luminosidade = parseFloat(valores[0]);
-        const luminosidade2 = parseFloat(valores[1]);
-        const luminosidade3 = parseFloat(valores[2]);
-        const luminosidade4 = parseFloat(valores[3]);
-        const luminosidade5 = parseFloat(valores[4]);
-
-
+        console.log(data);
+        const luminosidade = parseFloat(data);
         valoresLuminosidade.push(luminosidade);
-        valoresLuminosidade2.push(luminosidade2);
-        valoresLuminosidade3.push(luminosidade3);
-        valoresLuminosidade4.push(luminosidade4);
-        valoresLuminosidade5.push(luminosidade5);
+
 
         
 
@@ -129,10 +116,7 @@ const serial = async (
 // não altere!
 const servidor = (
     valoresLuminosidade,
-    valoresLuminosidade2,
-    valoresLuminosidade3,
-    valoresLuminosidade4,
-    valoresLuminosidade5
+
 ) => {
     const app = express();
     app.use((request, response, next) => {
@@ -147,39 +131,15 @@ const servidor = (
     app.get('/sensores/luminosidade', (_, response) => {
         return response.json(valoresLuminosidade);
     });
-    app.get('/sensores/luminosidade2', (_, response) => {
-        return response.json(valoresLuminosidade2);
-    });
-    app.get('/sensores/luminosidade3', (_, response) => {
-        return response.json(valoresLuminosidade3);
-    });
-    app.get('/sensores/luminosidade4', (_, response) => {
-        return response.json(valoresLuminosidade4);
-    });
-    app.get('/sensores/luminosidade5', (_, response) => {
-        return response.json(valoresLuminosidade5);
-    });
 
 }
 
 (async () => {
     const valoresLuminosidade = [];
-    const valoresLuminosidade2 = [];
-    const valoresLuminosidade3 = [];
-    const valoresLuminosidade4 = [];
-    const valoresLuminosidade5 = [];
     await serial(
-        valoresLuminosidade,
-        valoresLuminosidade2,
-        valoresLuminosidade3,
-        valoresLuminosidade4,
-        valoresLuminosidade5
+        valoresLuminosidade
     );
     servidor(
-        valoresLuminosidade,
-        valoresLuminosidade2,
-        valoresLuminosidade3,
-        valoresLuminosidade4,
-        valoresLuminosidade5
+        valoresLuminosidade
     );
 })();

@@ -37,10 +37,10 @@ fkParametro int, constraint fkParametroLocal foreign key (fkParametro) reference
 );
 
 create table sensor (
-idSensor int auto_increment,
+idSensor int primary key auto_increment,
 tipoSensor varchar(50),
 statusSensor varchar(50), constraint chkStatus check (statusSensor in ('Ativo', 'Inativo')),
-fkLocal int, constraint fkLocalSensor foreign key (fkLocal) references localEmpresa (idLocal)
+fkLocal int, constraint fkLocalSensor foreign key (fkLocal) references localEmpresa(idLocal)
 );
 
 create table leitura (
@@ -49,12 +49,6 @@ dataHora datetime default current_timestamp,
 leitura decimal(10,2),
 fkSensor int, constraint fkSensorLeitura foreign key (fkSensor) references sensor (idSensor)
 );
-
-select * from usuario;
-select * from empresa;
-select * from parametro;
-select * from localEmpresa;
-select * from empresa;
 
 insert empresa values 
 (null,'Brandão Contabilidade LTDA', null, 71563224000150, null),
@@ -75,15 +69,11 @@ insert usuario values
 (null, 'Thais', 'Moitinho', '45590987090', '2003-06-20', 'f', 'thais.moitinho@hesselstore.com', 'tha3030', null, 6);
 
 insert into parametro values 
-(null, '500', '1000', 1),
-(null, '200', '500', 1),
-(null, '1000', '2000', 1),
-(null, '5000', '10000', 1),
-(null, '10000', '20000', 1),
-(null, '16', '31', 2),
-(null, '31', '63', 2),
-(null, '1.6', '3.1', 3),
-(null, '3.1', '6.2', 3);
+(null, '500', '1000'),
+(null, '200', '500'),
+(null, '1000', '2000'),
+(null, '5000', '10000'),
+(null, '10000', '20000');
 
 insert localEmpresa values
 (null, 'sala de reunião', '6', '2', 1, 1),
@@ -94,12 +84,11 @@ insert localEmpresa values
 (null, 'estoque', 3, 'sala 1', 6, 4);
 
 insert into sensor values 
-(null, 'LDR 5mm', 'Ativo', 3, 1),
-(null, 'LDR', 'Ativo', 3, 1),
-(null, 'LDR', 'Ativo', 2, 1),
-(null, 'LDR', 'Ativo', 2, 1),
-(null, 'BH1750FVI Lux', 'Ativo', 1, 1),
-(null, 'X134 Watts', 'Inativo', 1, 3);
+(null, 'LDR 5mm', 'Ativo', 3),
+(null, 'LDR', 'Ativo', 3),
+(null, 'LDR', 'Ativo', 2),
+(null, 'LDR', 'Ativo', 2),
+(null, 'BH1750FVI Lux', 'Ativo', 1);
 
 insert into leitura values
 (null, null, 700, 1),
@@ -112,6 +101,12 @@ insert into leitura values
 (null, null, 1000, 4),
 (null, null, 500, 5),
 (null, null, 550, 1);
+
+select * from usuario;
+select * from empresa;
+select * from parametro;
+select * from localEmpresa;
+select * from empresa;
 
 select * from empresa as filial 
 join empresa as sede on filial.fkSede = sede.idEmpresa;
