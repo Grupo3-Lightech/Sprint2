@@ -22,6 +22,7 @@ function validacaoCadastro() {
         classObj = document.getElementById("inputNome")
         classObj.classList.remove("inputNome")
         classObj.classList.add("inputError")
+        alert("Insira seu nome")
     } else {
         classObj = document.getElementById("inputNome")
         classObj.classList.remove("inputError")
@@ -32,6 +33,7 @@ function validacaoCadastro() {
         classObj = document.getElementById("inputSobrenome")
         classObj.classList.remove("inputSobrenome")
         classObj.classList.add("inputError")
+        alert("Insira seu sobrenome")
     } else {
         classObj = document.getElementById("inputSobrenome")
         classObj.classList.remove("inputError")
@@ -76,7 +78,7 @@ function validacaoCadastro() {
         classObj = document.getElementById("inputCPF")
         classObj.classList.remove("inputCPF")
         classObj.classList.add("inputError")
-        alert("CPF inserido incorretamente!")
+        alert("Insira o '-' no lugar certo")
     } else {
         classObj = document.getElementById("inputCPF")
         classObj.classList.remove("inputError")
@@ -170,4 +172,10 @@ function validacaoCadastro() {
         classObj.classList.add("inputSenha")
         classObj.classList.remove("inputError")
     };
+
+    if (document.getElementsByClassName("inputError").length > 0) {
+        
+    } else{
+        window.location = "../Pages/Login.html"
+    }
 }
