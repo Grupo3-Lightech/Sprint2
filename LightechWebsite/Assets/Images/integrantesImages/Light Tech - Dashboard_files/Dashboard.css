@@ -170,7 +170,7 @@ ul li.item-menu a .icon {
 .graficos {
   display: flex;
   width: 100%;
-  gap: 5rem;
+  gap: 1rem;
   padding: 20px;
   justify-content: center;
   align-items: center;
@@ -187,25 +187,21 @@ ul li.item-menu a .icon {
 .type_line1 {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  width: 40rem;
 }
 
 .type_line2 {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
-}
-
-.grafics{
-  height: 38rem;
+  width: 40rem;
 }
 
 .lineOne {
-  width: 38rem;
+  width: 40rem;
 }
 
 .lineThree {
-  width: 35rem;
+  width: 40rem;
 }
 
 .alertas {
@@ -232,21 +228,27 @@ ul li.item-menu a .icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Poppins", sans-serif;
 }
 
 .alertaAjustavel {
   width: 5rem;
   height: 3rem;
-  background-color: rgb(235, 155, 13);
+  background-color: rgb(211, 232, 14);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Poppins", sans-serif;
-  margin-top: 15%;
 }
 
+.alertaAlerta {
+  width: 5rem;
+  height: 3rem;
+  background-color: rgb(151, 3, 3);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .alertaCritico {
   width: 5rem;
@@ -256,7 +258,4 @@ ul li.item-menu a .icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Poppins", sans-serif;
-  color: white;
-  margin-top: 15%;
 }

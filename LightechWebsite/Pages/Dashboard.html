@@ -113,20 +113,20 @@
           <div class="alertas">
             <div class="alertaIdeal">Ideal</div>
             <div class="alertaAjustavel">Ajustável</div>
-            <div class="alertaAlerta">Alerta</div>
             <div class="alertaCritico">Crítico</div>
           </div>
           <div class="grafics">
-            <div class="type_line">
+            <div class="type_line1">
+              <div class="alertaCritico">Crítico</div>
               <div class="lineOne">
                 <canvas id="myChart"></canvas>
               </div>
-              <div class="lineTwo"><canvas id="myChart2"></canvas></div>
             </div>
 
-            <div class="type_barra">
-              <div class="lineThree"><canvas id="myChart3"></canvas></div>
-              <div class="barOne"><canvas id="myChart4"></canvas></div>
+            <div class="type_line2">
+              <div class="alertaAjustavel">Ajustável</div>
+              <div class="lineThree">
+                <canvas id="myChart3"></canvas></div>
             </div>
           </div>
         </div>
@@ -172,25 +172,15 @@
       ],
       datasets: [
         {
-          label: "Sensor 3 - EscritórioX Sala 2",
+          label: "Escritório Sala 2",
           data: [
             50, 50, 50, 50, 50, 00, 500, 700, 800, 750, 1000, 1100, 1200, 1250,
             1200, 1000, 800, 700, 700, 500, 400, 300, 0, 0,
           ],
           borderWidth: 1,
-          backgroundColor: "rgb(243, 3, 76)",
-          borderColor: "rgb(243, 3, 76)",
-        },
-        {
-          label: "Sensor 6 - EscritórioX Sala 1",
-          data: [
-            0, 0, 0, 0, 0, 300, 400, 560, 650, 759, 830, 1025, 1040, 1050, 1090,
-            1400, 800, 850, 300, 300, 350, 200, 100, 100,
-          ],
-          borderWidth: 1,
-          backgroundColor: "rgb(9, 22, 114)",
-          borderColor: "rgb(9, 22, 114)",
-        },
+          backgroundColor: "rgb(255, 4, 0)",
+          borderColor: "rgb(255, 4, 0)",
+        }
       ],
     },
     options: {
@@ -201,68 +191,7 @@
       },
     },
   });
-  const ctx2 = document.getElementById("myChart2");
-
-  new Chart(ctx2, {
-    type: "line",
-    data: {
-      labels: [
-        "00:00",
-        "01:00",
-        "02:00",
-        "03:00",
-        "04:00",
-        "05:00",
-        "06:00",
-        "07:00",
-        "08:00",
-        "09:00",
-        "10:00",
-        "11:00",
-        "12:00",
-        "13:00",
-        "14:00",
-        "15:00",
-        "16:00",
-        "17:00",
-        "18:00",
-        "19:00",
-        "20:00",
-        "21:00",
-        "22:00",
-        "23:00",
-      ],
-      datasets: [
-        {
-          label: "Sensor 1 - EstúdioX",
-          data: [
-            500, 500, 500, 500, 500, 500, 500, 600, 700, 700, 600, 600, 750,
-            700, 700, 700, 550, 570, 750, 600, 600, 500, 500, 500,
-          ],
-          borderWidth: 1,
-          backgroundColor: "rgb(0, 202, 194)",
-          borderColor: "rgb(0, 202, 194)",
-        },
-        {
-          label: "Sensor 5 - EscritórioY - 7o Andar",
-          data: [
-            790, 790, 790, 790, 790, 790, 790, 990, 950, 990, 900, 1090, 1090,
-            1090, 900, 950, 950, 850, 790, 790, 790, 790, 790, 790,
-          ],
-          borderWidth: 1,
-          backgroundColor: "rgb(85, 22, 239)",
-          borderColor: "rgb(85, 22, 239)",
-        },
-      ],
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
-    },
-  });
+  
   const ctx3 = document.getElementById("myChart3");
 
   new Chart(ctx3, {
@@ -296,20 +225,10 @@
       ],
       datasets: [
         {
-          label: "Sensor 2 - GalpãoX",
+          label: "Sala de reunião - 12º Andar",
           data: [
-            750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750,
-            750, 750, 750, 750, 750, 750, 750, 750, 750, 750, 750,
-          ],
-          borderWidth: 1,
-          backgroundColor: "rgb(4, 78, 13)",
-          borderColor: "rgb(4, 78, 13)",
-        },
-        {
-          label: "Sensor 4 - Sala de reuniãoY - 12o Andar",
-          data: [
-            900, 900, 900, 900, 900, 900, 900, 900, 900, 900, 900, 900, 900,
-            900, 900, 900, 900, 900, 900, 900, 900, 900, 900, 900,
+            900, 900, 850, 900, 900, 850, 900, 900, 900, 850, 900, 850, 900,
+            900, 900, 850, 900, 900, 900, 900, 850, 900, 900, 900,
           ],
           borderWidth: 1,
           backgroundColor: "rgb(235, 155, 13)",
@@ -318,39 +237,6 @@
       ],
     },
     options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
-    },
-  });
-
-  const ctx4 = document.getElementById("myChart4");
-  new Chart(ctx4, {
-    type: "bar",
-    data: {
-      labels: [
-        "sensor 1",
-        "sensor 2",
-        "sensor 3",
-        "sensor 4",
-        "sensor 5",
-        "sensor 6",
-      ],
-      datasets: [
-        {
-          label: "nivel de prioridade nas ultimas 24H",
-          data: [3.5, 1, 4.5, 1, 4, 5],
-          borderWidth: 1,
-          backgroundColor: "#268FA6",
-          borderColor: "#268FA6",
-        },
-      ],
-    },
-
-    options: {
-      indexAxis: "y",
       scales: {
         y: {
           beginAtZero: true,
