@@ -106,7 +106,7 @@ select * from usuario;
 select * from empresa;
 select * from parametro;
 select * from localEmpresa;
-select * from empresa;
+select * from leitura;
 
 select * from empresa as filial 
 join empresa as sede on filial.fkSede = sede.idEmpresa;
@@ -128,3 +128,5 @@ tipoSensor as 'Tipo do Sensor',
 statusSensor as 'Status do Sensor',
 localEmpresa.localEmpresa as 'Local do Sensor' from sensor
 join localEmpresa on fkLocal = idLocal;
+
+truncate table leitura;
