@@ -19,7 +19,9 @@ genero char(2), constraint chkGenero check (genero in ('M', 'F', 'ND')),
 email varchar(70), constraint chkEmail check (email like '%@%'),
 senha varchar(30),
 dtCadastro datetime default current_timestamp,
-fkEmpresa int, constraint fkEmpresaUsuario foreign key (fkEmpresa) references empresa (idEmpresa));
+fkEmpresa int, constraint fkEmpresaUsuario foreign key (fkEmpresa) references empresa (idEmpresa),
+fkAdmin int, constraint fkAdminUsuario foreign key (fkAdmin) references usuario (idUsuario)
+);
 
 create table parametro (
 idParametro int primary key auto_increment,
@@ -61,12 +63,12 @@ insert empresa values
 (null,'Hessel Store - Sé', null, 93120918000155, 2);
 
 insert usuario values
-(null, 'Leonardo', 'Barreto', 52267781879, '2003-10-04', 'M', 'leonardo.barreto@brcontabil.com', 'leo3040', null, 1),
-(null, 'Diego', 'Hessel Mota', '45590987689', '2002-01-09', 'M', 'diego.hessel@hesselstore.com', 'di3040', null, 2),
-(null, 'Sthefany', 'Bertolon', '45590987687', '2002-08-02', 'F', 'sthe.bertolon@brcontabil.com', 'sthe9090', null, 3),
-(null, 'João', 'Brandão', '45590987655', '2003-01-16', 'M', 'joao.brandao@brcontabil.com', 'joao3030', null, 4),
-(null, 'Jordana', 'Santos', '45590987094', '2000-01-27', 'F', 'jordana.santos@hesselstore.com', 'jordana3040', null, 5),
-(null, 'Thais', 'Moitinho', '45590987090', '2003-06-20', 'f', 'thais.moitinho@hesselstore.com', 'tha3030', null, 6);
+(null, 'Leonardo', 'Barreto', 52267781879, '2003-10-04', 'M', 'leonardo.barreto@brcontabil.com', 'leo3040', null, 1, null),
+(null, 'Diego', 'Hessel Mota', '45590987689', '2002-01-09', 'M', 'diego.hessel@hesselstore.com', 'di3040', null, 2, null),
+(null, 'Sthefany', 'Bertolon', '45590987687', '2002-08-02', 'F', 'sthe.bertolon@brcontabil.com', 'sthe9090', null, 3, 1),
+(null, 'João', 'Brandão', '45590987655', '2003-01-16', 'M', 'joao.brandao@brcontabil.com', 'joao3030', null, 4, 1),
+(null, 'Jordana', 'Santos', '45590987094', '2000-01-27', 'F', 'jordana.santos@hesselstore.com', 'jordana3040', null, 5, 2),
+(null, 'Thais', 'Moitinho', '45590987090', '2003-06-20', 'f', 'thais.moitinho@hesselstore.com', 'tha3030', null, 6, 2);
 
 insert into parametro values 
 (null, '500', '1000'),
@@ -128,5 +130,3 @@ tipoSensor as 'Tipo do Sensor',
 statusSensor as 'Status do Sensor',
 localEmpresa.localEmpresa as 'Local do Sensor' from sensor
 join localEmpresa on fkLocal = idLocal;
-
-truncate table leitura;
