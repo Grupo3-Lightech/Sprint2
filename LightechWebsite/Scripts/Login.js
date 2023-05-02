@@ -3,7 +3,7 @@
     var senha = inputSenha.value;
     
     if (login == "admin@lighttech.com" && senha == "@Lighttech") {
-      window.location = "../Pages/Dashboard.html"
+      window.location = "../Pages/Dashboard/Dashboard.html"
     } else{
       alert("Seu email ou senha não estão corretos!")
     }
