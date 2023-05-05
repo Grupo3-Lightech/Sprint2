@@ -125,15 +125,19 @@
           
       <div class="grafics">
             <div class="type_line1">
+            
               <div class="alertaCritico">Crítico</div>
+              
               <div class="lineOne">
+               <br> <p>Escritório sala2 com luminosidade Critica nas ultimas 24h</p>
                 <canvas id="myChart"></canvas>
               </div>
             </div>
 
-            <div class="type_line2">
+            <div class="type_line2" >
               <div class="alertaAjustavel">Ajustável</div>
               <div class="lineThree">
+                <br> <p>Sala de reunião com a luminosidade Ajustável nas ultimas 24h</p>
                 <canvas id="myChart3"></canvas></div>
             </div>
           </div>
@@ -146,9 +150,11 @@
 </html>
 
 <script>
+ 
   const ctx = document.getElementById("myChart");
 
   new Chart(ctx, {
+    
     type: "line",
     data: {
       labels: [
@@ -197,7 +203,8 @@
         },
       },
     },
-  });
+  }
+  );
   
   const ctx3 = document.getElementById("myChart3");
 
