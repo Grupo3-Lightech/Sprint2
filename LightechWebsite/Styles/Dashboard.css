@@ -186,11 +186,14 @@ ul li.item-menu a .icon {
   display: flex;
   flex-direction: row;
   gap: 2rem;
+  position: relative;
 }
 
 .type_line2 {
+
   display: flex;
-  flex-direction: row;
+  flex-direction:row;
+  position: relative;
   gap: 2rem;
 }
 
@@ -301,4 +304,9 @@ ul li.item-menu a .icon {
   display: flex;
   align-items: row;
   font-family: "Poppins", sans-serif;
+}
+.validação{
+  display: flex;
+  justify-items: center;
+flex-wrap: wrap
 }
