@@ -133,6 +133,7 @@ ul li.item-menu a .icon {
 
 .graficos {
   display: flex;
+  padding: 2rem;
   height: 100%;
   width: 100%;
   flex-direction: row;
@@ -160,7 +161,7 @@ ul li.item-menu a .icon {
 }
 
 .grafics {
-  top:13rem;
+  top: 13rem;
   display: flex;
   justify-content: center;
   flex-wrap: row;
