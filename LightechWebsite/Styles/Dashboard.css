@@ -20,7 +20,6 @@ body {
   background-color: #2d9cdb;
   padding: 5px 0% 220px 0%;
   box-shadow: 3px 0 0 #1a638c;
-
   top: 0;
   left: 0;
   overflow: hidden;
@@ -136,10 +135,9 @@ ul li.item-menu a .icon {
   display: flex;
   height: 100%;
   width: 100%;
-;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .content2 {
@@ -162,10 +160,12 @@ ul li.item-menu a .icon {
 }
 
 .grafics {
+  top:13rem;
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: row;
   flex-direction: row;
+  position: absolute;
 }
 
 .lineOne {
@@ -173,21 +173,8 @@ ul li.item-menu a .icon {
 }
 
 .lineThree {
-  width: 35rem;
-}
-
-.alertas {
-  height: 100%;
-  width: 80%;
-  bottom: 20rem;
-  gap: 1rem;
-  left: 8rem;
-  display: flex;
-  justify-content: row;
-  align-items: row;
-  flex-direction: center;
-  font-size: 0.9rem;
-  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  width: 69vh;
 }
 
 .alertaAjustavel1 {
@@ -237,7 +224,7 @@ ul li.item-menu a .icon {
 }
 
 .txta1 {
-  color: #f6ff00;
+  color: hsl(66, 96%, 36%);
   display: flex;
   font-family: "Poppins", sans-serif;
   gap: 2rem;
