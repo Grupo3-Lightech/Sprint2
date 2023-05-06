@@ -17,9 +17,9 @@ body {
   position: relative;
   width: 100px;
   height: 90%;
-  background-color: #3f6a6b;
+  background-color: #2d9cdb;
   padding: 5px 0% 220px 0%;
-  box-shadow: 3px 0 0 #396ab4;
+  box-shadow: 3px 0 0 #1a638c;
 
   top: 0;
   left: 0;
@@ -169,10 +169,12 @@ ul li.item-menu a .icon {
 
 .graficos {
   display: flex;
-  height: 12rem;
+  height: 6rem;
   gap: 12rem;
   padding: 3rem;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .content2 {
@@ -193,7 +195,9 @@ ul li.item-menu a .icon {
 }
 
 .grafics {
-  height: 38rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .lineOne {
