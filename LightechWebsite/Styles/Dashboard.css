@@ -173,7 +173,6 @@ ul li.item-menu a .icon {
   gap: 12rem;
   padding: 3rem;
   flex-direction: row;
-  
 }
 
 .content2 {
@@ -193,7 +192,7 @@ ul li.item-menu a .icon {
   gap: 2rem;
 }
 
-.grafics{
+.grafics {
   height: 38rem;
 }
 
@@ -206,19 +205,17 @@ ul li.item-menu a .icon {
 }
 
 .alertas {
-  
-  height: 10rem;
+  width: 100%;
+  height: 100%;
   bottom: 20rem;
   left: 8rem;
   display: flex;
-  justify-content: center ;
-  align-items: center;
-  flex-direction: column;
+  justify-content: row;
+  align-items: row;
+  flex-direction: center;
   font-size: 0.9rem;
   font-family: "Poppins", sans-serif;
-  
-
-;
+  ;
 }
 
 .alertaAjustavel1 {
@@ -230,8 +227,9 @@ ul li.item-menu a .icon {
   align-items: center;
   justify-content: center;
   font-family: "Poppins", sans-serif;
- 
+
 }
+
 .alertaIdeal {
   width: 5rem;
   height: 3rem;
@@ -266,29 +264,26 @@ ul li.item-menu a .icon {
   justify-content: center;
   font-family: "Poppins", sans-serif;
   color: white;
- gap: 1rem;
+  gap: 1rem;
 }
 
 .txta1 {
-
- color: #f6ff00;
+  color: #f6ff00;
   border-radius: 10px;
   display: flex;
   font-family: "Poppins", sans-serif;
   gap: 2rem;
-
 }
+
 .txta2 {
-color: rgb(12, 168, 12);
+  color: rgb(12, 168, 12);
   display: flex;
   align-items: row;
   font-family: "Poppins", sans-serif;
   gap: 2rem;
-
 }
 
 .txta3 {
-  
   color: rgb(235, 155, 13);
   display: flex;
   align-items: row;
@@ -301,4 +296,5 @@ color: rgb(12, 168, 12);
   color: rgb(255, 4, 0);
   display: flex;
   align-items: row;
-  font-family: "Poppins", sans-serif;}
+  font-family: "Poppins", sans-serif;
+}
