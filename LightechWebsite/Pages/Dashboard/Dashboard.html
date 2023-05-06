@@ -24,10 +24,6 @@
 <body>
   <!-- DIV PRINCIPAL QUE ALTERA TODO CONTEXTO DA PAGÍNA -->
   <div class="content-page">
-    <!-- <div class="logo">
-      <img src="../Assets/Images/LogoFooter.svg" alt="Logo Lightech" />
-    </div> -->
-
     <!-- AQUI É TODO MEU HEADER-->
     <div class="header">
       <h1>
@@ -36,8 +32,6 @@
       </h1>
 
       <!-- <div class="alerts-context"> -->
-      <input class="botaoPesquisa" id="pesquisa" placeholder="Pesquise um local" />
-
       <div class="conta">
         <span class="icon"><i class="bi bi-person-circle"></i></span>
         <span class="link-page">Conta</span>
@@ -74,24 +68,6 @@
               <span class="link-page">Cadastrar</span>
             </a>
           </li>
-          <li class="item-menu">
-            <a href="#">
-              <span class="icon"><i class="bi bi-gear"></i></span>
-              <span class="link-page">Configuração</span>
-            </a>
-          </li>
-          <!-- <li class="item-menu">
-          <a href="#">
-            <span class="icon"><i class="bi bi-person-circle"></i></span>
-            <span class="link-page">Conta</span>
-          </a>
-        </li> -->
-
-          <!-- AQUI É MEU BOTÃO PARA DOWNLOAD -->
-          <button class="btn-download icon">
-            <i class="bi bi-database-down"></i>
-            Download
-          </button>
         </ul>
       </div>
 
@@ -113,67 +89,44 @@
           <div class="alertaCritico">Crítico</div>
           <div class="txta4">900lux - 1000 lux</div>
         </div>
-      </div>
-      <div class="validação">
-        <div class="type_line1">
-          
-          <div class="alertaCritico">Crítico</div>
-          
-          <div class="lineOne">
-           <br> <p>Escritório sala2 com luminosidade Critica nas ultimas 24h</p>
-            <canvas id="myChart"></canvas>
-          </div>
-        </div>
+        <div class="grafics">
+          <div class="type_line1">
 
-        <div class="type_line2" >
-          <div class="alertaAjustavel">Ajustável</div>
-          <div class="lineThree">
-            <br> <p>Sala de reunião com a luminosidade Ajustável nas ultimas 24h</p>
-            <canvas id="myChart3"></canvas></div>
+            <div class="alertaCritico">Crítico</div>
+
+            <div class="lineOne">
+              <br>
+              <p>Escritório sala2 com luminosidade Critica nas ultimas 24h</p>
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+          <div class="type_line2">
+            <div class="alertaAjustavel">Ajustável</div>
+            <div class="lineThree">
+              <br>
+              <p>Sala de reunião com a luminosidade Ajustável nas ultimas 24h</p>
+              <canvas id="myChart3"></canvas>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
   <script src="../../Scripts/Dashboard.js"></script>
-        </div>
-  
-  </body>
+</body>
 </html>
 
 <script>
- 
+
   const ctx = document.getElementById("myChart");
 
   new Chart(ctx, {
-    
+
     type: "line",
     data: {
       labels: [
-        "00:00",
-        "01:00",
-        "02:00",
-        "03:00",
-        "04:00",
-        "05:00",
-        "06:00",
-        "07:00",
-        "08:00",
-        "09:00",
-        "10:00",
-        "11:00",
-        "12:00",
-        "13:00",
-        "14:00",
-        "15:00",
-        "16:00",
-        "17:00",
-        "18:00",
-        "19:00",
-        "20:00",
-        "21:00",
-        "22:00",
-        "23:00",
+        "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00",
+        "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00",
       ],
       datasets: [
         {
@@ -197,37 +150,14 @@
     },
   }
   );
-  
+
   const ctx3 = document.getElementById("myChart3");
 
   new Chart(ctx3, {
     type: "line",
     data: {
-      labels: [
-        "00:00",
-        "01:00",
-        "02:00",
-        "03:00",
-        "04:00",
-        "05:00",
-        "06:00",
-        "07:00",
-        "08:00",
-        "09:00",
-        "10:00",
-        "11:00",
-        "12:00",
-        "13:00",
-        "14:00",
-        "15:00",
-        "16:00",
-        "17:00",
-        "18:00",
-        "19:00",
-        "20:00",
-        "21:00",
-        "22:00",
-        "23:00",
+      labels: ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00",
+        "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00",
       ],
       datasets: [
         {
