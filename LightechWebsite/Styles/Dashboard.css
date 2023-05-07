@@ -251,43 +251,66 @@ ul li.item-menu a .icon {
   font-family: "Poppins", sans-serif;
 }
 
-.cadastro{
+.cadastro {
   display: flex;
+  justify-content: space-around;
   flex-direction: row;
+  gap: 5rem;
+  margin-left: 10rem;
   font-family: 'Poppins';
-  margin-top: 55px;
-font-style: normal;
-font-weight: 300;
-font-size: 20px;
-line-height: 30px;
-text-align:start;
+  margin-top: 3rem;
+  font-weight: 300;
+  font-size: 20px;
+  
 
 }
 
-.titulo-cadastro{
+.titulo-cadastro {
   display: flex;
   align-items: start;
-  justify-content:end;
+  justify-content: center;
   color: #1A638C;
 }
 
-.funcionario{
+
+.funcionario {
   display: flex;
   flex-direction: column;
-  align-items: start;
-  width: 300px;
-  height: 300px;
+  align-items:center;
+  width: 25rem;
+  height: 800px;
   background-color: #D9D9D9;
 }
 
-.sensor{
+.sensor {
   display: flex;
   flex-direction: column;
-  margin-top: 50%;
-  margin-left: 70%;
-  width: 50px;
-  height: 70px;
+  align-items: center;
+  justify-content: center;
+  width: 20rem;
+  height: 17rem;
   background-color: #D9D9D9;
+}
+
+
+input{
+  display: flex;
+  height:1.6rem;
+  width: 18rem;
+  border: 2px solid #2D9CDB;
+  border-radius: 5px;
+}
+
+
+button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  margin-top: 1rem;
+  color: #FFFFFF;
+    border-color:#2D9CDB;
+    background-color: #2D9CDB;
 }
 
 
