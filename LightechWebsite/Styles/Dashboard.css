@@ -250,3 +250,44 @@ ul li.item-menu a .icon {
   display: flex;
   font-family: "Poppins", sans-serif;
 }
+
+.cadastro{
+  display: flex;
+  flex-direction: row;
+  font-family: 'Poppins';
+  margin-top: 55px;
+font-style: normal;
+font-weight: 300;
+font-size: 20px;
+line-height: 30px;
+text-align:start;
+
+}
+
+.titulo-cadastro{
+  display: flex;
+  align-items: start;
+  justify-content:end;
+  color: #1A638C;
+}
+
+.funcionario{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 300px;
+  height: 300px;
+  background-color: #D9D9D9;
+}
+
+.sensor{
+  display: flex;
+  flex-direction: column;
+  margin-top: 50%;
+  margin-left: 70%;
+  width: 50px;
+  height: 70px;
+  background-color: #D9D9D9;
+}
+
+
