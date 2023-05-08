@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    display: flex;
+    width: 100%;
+    overflow-y: hidden;
+  }
+  
+  .logo img {
+    width: 6.5rem;
+  }
+  
+  .menu-lateral {
+    position: relative;
+    width: 100px;
+    height: 90%;
+    background-color: #2d9cdb;
+    padding: 5px 0% 220px 0%;
+    box-shadow: 3px 0 0 #1a638c;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  
+  .menu-lateral.expandir {
+    width: 250px;
+  }
+  
+  .btn-expandir {
+    width: 100%;
+    padding-left: 10px;
+  }
+  
+  .btn-expandir {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  ul {
+    height: 100%;
+    list-style-type: none;
+  }
+  
+  ul li.item-menu {
+    transition: 0.2s;
+  }
+  
+  ul li.ativo {
+    background-color: #81adf0;
+  }
+  
+  ul li.item-menu:hover {
+    background: #79acf8;
+  }
+  
+  ul li.item-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 15px;
+    line-height: 40px;
+  }
+  
+  ul li.item-menu a .link-page {
+    margin-left: 60px;
+    transition: 1s;
+    opacity: 0;
+  }
+  
+  .menu-lateral.expandir .link-page {
+    margin-left: 25px;
+    opacity: 1;
+  }
+  
+  ul li.item-menu a .icon {
+    font-size: 25px;
+    margin-left: 5px;
+  }
+  
+  .conta {
+    color: #2d9cdb;
+    font-size: 20px;
+    padding: 10px;
+    margin-right: 20px;
+  }
+  
+  .content-page {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    position: absolute;
+    background-color: #ffffff;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 5%;
+    background-color: white;
+    border-bottom: 1px solid rgb(47, 41, 134);
+    position: flex;
+    right: 0;
+    top: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+  }
+  
+  .header h1 {
+    padding: 10px;
+    color: #2d9cdb;
+  }
+  
+  .header p {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+  }
+  
+  .botaoLocal button {
+    background-color: #4CAF50; /* cor de fundo */
+    border: none; /* sem borda */
+    color: white; /* cor do texto */
+    padding: 10px 20px; /* espaçamento */
+    text-align: center; /* centralizado */
+    text-decoration: none; /* sem decoração de texto */
+    display: inline-block; /* exibição em bloco */
+    font-size: 16px; /* tamanho da fonte */
+    margin: 4px 2px; /* margem */
+    cursor: pointer; /* cursor */
+  }
