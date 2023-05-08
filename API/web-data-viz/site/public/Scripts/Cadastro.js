@@ -8,6 +8,7 @@ var telCel;
 var empresa; 
 var email; 
 var senha; 
+
 function validacaoCadastro() {
     nome = inputNome.value
     sobrenome = inputSobrenome.value;
@@ -106,16 +107,16 @@ function validacaoCadastro() {
         classObj.classList.remove("inputError")
     };
 
-    if (empresa == "") {
-        classObj = document.getElementById("inputEmpresa")
-        classObj.classList.remove("inputEmpresa")
-        classObj.classList.add("inputError")
-        alert("Insira a empresa na qual você trabalha")
-    } else {
-        classObj = document.getElementById("inputEmpresa")
-        classObj.classList.add("inputEmpresa")
-        classObj.classList.remove("inputError")
-    };
+    // if (empresa == "") {
+    //     classObj = document.getElementById("inputEmpresa")
+    //     classObj.classList.remove("inputEmpresa")
+    //     classObj.classList.add("inputError")
+    //     alert("Insira a empresa na qual você trabalha")
+    // } else {
+    //     classObj = document.getElementById("inputEmpresa")
+    //     classObj.classList.add("inputEmpresa")
+    //     classObj.classList.remove("inputError")
+    // };
 
     if (email == "") {
         classObj = document.getElementById("inputEmail")
@@ -156,3 +157,64 @@ function validacaoCadastro() {
         window.location = "../Pages/Login.html"
     }
 }
+
+function cadastrar() {
+    validacaoCadastro();
+
+
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    nome = inputNome.value
+    sobrenome = inputSobrenome.value;
+    CPF = inputCPF.value;
+    dtNasc = inputDtNasc.value;
+    telCel = inputTelefoneCel.value;
+    // empresa = inputEmpresa.value;
+    email = inputEmail.value;
+    senha = inputSenha.value;
+
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            nomeServer: nome,
+            sobrenomeServer: sobrenome,
+            emailServer: email,
+            senhaServer: senha,
+            cpfServer: CPF,
+            dtNascServer: dtNasc,
+            telCelServer: telCel,
+            // empresaServer: empresa
+        })
+    }).then(function (resposta) {
+
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+            
+            console.log(resposta);
+
+            setTimeout(() => {
+                window.location = "../Pages/Login.html";
+            }, "2000")
+
+            limparFormulario();
+            finalizarAguardar();
+        } else {
+            throw ("Houve um erro ao tentar realizar o cadastro!");
+        }
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+    });
+
+    return false;
+}
+

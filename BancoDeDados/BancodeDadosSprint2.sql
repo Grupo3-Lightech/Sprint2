@@ -13,14 +13,15 @@ create table usuario (
 idUsuario int primary key auto_increment,
 nome varchar(70),
 sobrenome varchar(70),
-cpf char(11),
+cpf varchar(45),
 dtNascimento date,
-genero char(2), constraint chkGenero check (genero in ('M', 'F', 'ND')), 
+telCel varchar(45),
+genero varchar(45), 
 email varchar(70), constraint chkEmail check (email like '%@%'),
 senha varchar(30),
-dtCadastro datetime default current_timestamp,
-fkEmpresa int, constraint fkEmpresaUsuario foreign key (fkEmpresa) references empresa (idEmpresa),
-fkAdmin int, constraint fkAdminUsuario foreign key (fkAdmin) references usuario (idUsuario)
+dtCadastro datetime default current_timestamp
+-- fkEmpresa int, constraint fkEmpresaUsuario foreign key (fkEmpresa) references empresa (idEmpresa),
+-- fkAdmin int, constraint fkAdminUsuario foreign key (fkAdmin) references usuario (idUsuario)
 );
 
 create table parametro (
@@ -130,3 +131,5 @@ tipoSensor as 'Tipo do Sensor',
 statusSensor as 'Status do Sensor',
 localEmpresa.localEmpresa as 'Local do Sensor' from sensor
 join localEmpresa on fkLocal = idLocal;
+
+drop database lightTech;

@@ -1,85 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AquaTech | Página Inicial</title>
-
-    <script src="./js/funcoes.js"></script>
-
-    <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Styles/Global.css">
+    <link rel="stylesheet" href="Styles/styles.css">
+    <link rel="stylesheet" href="Styles/Home.css">
+    <link rel="stylesheet" href="Styles/Components/Header.css">
+    <link rel="stylesheet" href="Styles/Components/Button.css">
+    <link rel="stylesheet" href="Styles/Components/Footer.css">
+    <title>Light Tech - Home</title>
 </head>
 
 <body>
-    <div class="header">
-      <div class="container">
-        <h1 class="titulo">AquaTech</h1>
-        <ul class="navbar">
-          <li class="agora">
-            <a href="#">Inicial</a>
-          </li>
-          <li>
-            <a href="simulador.html">Simulador</a>
-          </li>
-          <li>|</li>
-          <li>
-            <a href="login.html">Login</a>
-          </li>
-          <li>
-            <a href="cadastro.html">Cadastro</a>
-          </li>
-        </ul>
-      </div>
+
+    <div class="headerContainer">
+        <a class="logoLinkHome" href="Index.html">
+            <img class="imgLogo" src="Assets/Images/Logo.svg" alt="Logo da Lightech escrito">
+        </a>
+
+        <nav>
+            <a class="navLinks" href="#mainContainer">Início</a>
+            <a class="navLinks" href="#sobreNos" onclick="sobrenos()">Sobre nós</a>
+            <a class="navLinks" href="#servicos" onclick="">Serviços</a>
+            <a class="navLinks" href="#contato">Contato</a>
+            <span>|</span>
+            <a class="navLinks" href="Pages/Login.html">Login</a>
+            <a class="navLinks" href="Pages/Cadastro.html">Cadastro</a>
+        </nav>
     </div>
-  
-    <div class="banner">
-      <div class="container">
-        <p>Preservando <span>hoje</span> para existirem <span>amanhã</span>.</p>
-      </div>
-    </div>
-  
-    <div class="social">
-      <div class="container">
-        <div class="boxes">
-          <div class="box">
-            <img src="assets/imgs/planet-earth_color.png">
-            <h4>Missão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/lightbulb_color.png">
-            <h4>Visão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/growth_color.png">
-            <h4>Valores</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
+
+    <div class="mainContainer" id="mainContainer">
+
+        <div class="mainTextContainer">
+            <h1 class="mainTextTitle">
+                Somos a solução para a sua iluminação.
+            </h1>
+
+            <p class="mainTextSubtitle">
+                A iluminação é a chave para criar um ambiente produtivo para a sua empresa.
+            </p>
+
+            <a href="Cadastro.html">
+                <button class="mainButton">Agendar um horário</button>
+            </a>
         </div>
-      </div>
+
+        <div class="mainPhotoContainer">
+            <img src="Assets/Images/homeFirstimg.svg" alt="">
+        </div>
     </div>
-  
-    <div class="footer">
-      <div class="container">
-        <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-        <span class="version">v1.0.0</span>
-      </div>
+
+    <div class="sobrenosContainer" id="sobreNos">
+        <div class="sobrenosImg">
+            <img src="Assets/Images/sobreNosImg.svg" alt="">
+        </div>
+
+        <div class="sobrenosText">
+            <h1 class="sobrenosText-tilulo">Sobre nós</h1>
+            <p>
+                A Light Tech ingressou no mercado de monitoramento de luminosidade, oferecendo soluções eficientes e em
+                tempo real para controlar a iluminação em ambientes corporativos. Nosso objetivo é reduzir os impactos
+                do absenteísmo decorrente de más condições de iluminação, evitando prejuízos financeiros com a queda de
+                produtividade e o bem-estar dos colaboradores.
+            </p>
+
+            <div class="integrantesImgContainer">
+                <div class="integrantesInfo">
+                    <img src="Assets/Images/integrantesImages/DiegoHessel.svg" alt="">
+                    <p>Diego <br>
+                        Hessel</p>
+                </div>
+
+                <div class="integrantesInfo">
+                    <img src="Assets/Images/integrantesImages/JeremiasBarcelos.svg" alt="">
+                    <p>Jeremias <br>
+                        Barcelos</p>
+                </div>
+
+                <div class="integrantesInfo">
+                    <img src="Assets/Images/integrantesImages/JoaoBrandao.svg" alt="">
+                    <p>João Vitor <br>
+                        Brandão</p>
+                </div>
+
+                <div class="integrantesInfo">
+                    <img src="Assets/Images/integrantesImages/LeoBarreto.svg" alt="">
+                    <p>Leo <br>
+                        Barreto</p>
+                </div>
+
+                <div class="integrantesInfo">
+                    <img src="Assets/Images/integrantesImages/StheBertolon.svg" alt="">
+                    <p>Sthefanny <br>
+                        Bertolon</p>
+                </div>
+
+                <div class="integrantesInfo">
+                    <img src="Assets/Images/integrantesImages/ThaisStefani.svg" alt="">
+                    <p>Thaís <br>
+                    Stefani</p>
+                </div>
+
+            </div>
+        </div>
     </div>
-  </body>
+
+    <div class="servicosContainer" id="servicos">
+        <div class="servicosImageTextContainer">
+            <div class="servicosText">
+                <h1>Serviços</h1>
+                <p>O projeto consiste na instalação de sensores em áreas estratégicas da empresa para coletar dados
+                    sobre a
+                    iluminação em tempo real. Esses dados serão transmitidos para um software de análise, que fornecerá
+                    relatórios com informações precisas e relevantes sobre a iluminação em cada ambiente. O software
+                    também
+                    fornecerá alertas em tempo real para os responsáveis pela manutenção, caso a iluminação esteja
+                    abaixo dos
+                    níveis adequados.</p>
+                <p>Com a implementação do sistema de monitoramento inteligente de iluminação, esperamos reduzir
+                    significativamente os custos decorrentes do absenteísmo e da baixa produtividade. Além disso,
+                    esperamos
+                    melhorar o bem-estar dos colaboradores e criar um ambiente de trabalho mais agradável e produtivo,
+                    contribuindo para o sucesso e crescimento da empresa. </p>
+                <p>Além disso, será oferecido suporte técnico contínuo para garantir o pleno funcionamento do sistema e
+                    a
+                    satisfação dos clientes.</p>
+            </div>
+
+            <div class="servicosImage">
+                <img src="Assets/Images/servicosImg.svg" class="servicosImg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-servicos">
+        <h1>Nosso diferencial</h1>
+    </div>
+
+    <div class="contextos-servicos">
+        <div class="container-contexto-servicos">
+            <h1>LUCRATIVIDADE</h1>
+            <p>Nosso diferencial está na redução do absenteísmo e dos prejuízos financeiros decorrentes de más condições
+                de iluminação, por meio de um monitoramento personalizado e eficiente da luminosidade para a sua
+                empresa.
+            </p>
+        </div>
+
+
+        <div class="container-contexto-servicos">
+            <h1>PRODUTIVIDADE</h1>
+            <p>Com nosso monitoramento de iluminação personalizado, sua empresa poderá obter excelentes condições de
+                iluminação, aumentar a produtividade de colaboradores e alcançar melhores resultados.</p>
+        </div>
+    </div>
+
+    <div class="container-diagrama-servicos">
+        <h2>Quais são as etapas?</h2>
+        <img class="container-foto-servicos" src="Assets/Images/diagramaNegocios.svg" alt="Diagrama de negócio">
+    </div>
+
+
+
+
+    <div class="calculatorContainerHome" id="calculatorContainer">
+        <div class="calculatorPhotoContainer">
+            <img src="Assets/Images/homeCalculatorImg.svg" alt="">
+        </div>
+
+        <div class="calculatorAnchor">
+            <h2 class="calculatorText">
+                Veja o quanto você pode lucrar com a nossa solução.
+            </h2>
+
+            <a href="Pages/CalculadoraFinanceira.html">
+                <button class="calculatorButton">
+                    Calcule aqui !
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <div class="contatoContainer" id="contato">
+        <div class="contatoMain">
+            <div class="contatoTextContainer">
+                <h1>Entre em contato conosco</h1>
+                <p>Entre em contato conosco para agendarmos uma reunião. Caso queira tirar dúvidas, sugerir algo ou
+                    enviar uma crítica, envie-nos um e-mail</p>
+            </div>
+
+            <div class="contatoInfoContainer">
+                <div class="infoBox">
+                    <img src="Assets/Images/contatoIcons/phoneIcon.svg" alt=""> 11 99845-6754
+                </div>
+                <div class="infoBox">
+                    <img src="Assets/Images/contatoIcons/mapPinIcon.svg" alt=""> Rua Haddock Lobo, 595
+                </div>
+                <div class="infoBox">
+                    <img src="Assets/Images/contatoIcons/mailIcon.svg" alt=""> contato@lighttech.com
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footerContainer">
+        <div class="footerMainContent">
+            <div class="footerImgContainer">
+                <img src="Assets/Images/LogoFooter.svg" alt="">
+            </div>
+
+            <div class="footerTextContainer">
+                <p>&copy;2023 Grupo Light Tech.</p>
+                <p>Todos os direitos reservados Light Tech Company.</p>
+            </div>
+        </div>
+
+        <div class="footerSocialMediaContainer">
+            <a href="https://www.instagram.com/">
+                <img src="Assets/Images/instagramLogo.svg" alt="">
+            </a>
+
+            <a href="https://www.facebook.com/">
+                <img src="Assets/Images/facebookLogo.svg" alt="">
+            </a>
+
+            <a href="https://www.youtube.com/">
+                <img src="Assets/Images/youtubeLogo.svg" alt="">
+            </a>
+        </div>
+    </div>
+</body>
 
 </html>
