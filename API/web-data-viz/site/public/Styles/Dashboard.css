@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Titillium Web", sans-serif;
 }
 
 body {
@@ -150,6 +151,7 @@ ul li.item-menu a .icon {
   display: flex;
   flex-direction: row;
   gap: 2rem;
+  align-items: center;
   position: relative;
 }
 
@@ -158,6 +160,7 @@ ul li.item-menu a .icon {
   flex-direction: row;
   position: relative;
   gap: 2rem;
+  align-items: center;
 }
 
 .grafics {
@@ -167,30 +170,50 @@ ul li.item-menu a .icon {
   flex-wrap: row;
   flex-direction: row;
   position: absolute;
+ margin-top: 3rem;
 }
 
 .lineOne {
-  width: 38rem;
+  width: 28rem;
 }
 
 .lineThree {
-  height: 100vh;
-  width: 69vh;
+  
+  width: 28rem;
+}
+.alertaCritc {
+  width: 7.3rem;
+  height: 3rem;
+  background-color: rgb(252, 122, 70);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  gap: 1rem;
 }
 
 .alertaAjustavel1 {
-  width: 5rem;
+  width: 7.7rem;
   height: 3rem;
   background-color: #f6ff00;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Poppins", sans-serif;
+}
+.alertaAjustavel1 {
+  width: 7rem;
+  height: 3rem;
+  background-color: #f6ff00;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .alertaIdeal {
-  width: 5rem;
+  width: 7.7rem;
   height: 3rem;
   background-color: rgb(12, 168, 12);
   border-radius: 10px;
@@ -201,116 +224,59 @@ ul li.item-menu a .icon {
 }
 
 .alertaAjustavel {
-  width: 5rem;
+  width: 7rem;
   height: 3rem;
   background-color: rgb(235, 155, 13);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Poppins", sans-serif;
 }
 
 .alertaCritico {
-  width: 5rem;
+  width: 7.5rem;
   height: 3rem;
   background-color: rgb(255, 4, 0);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Poppins", sans-serif;
-  color: white;
+  color: rgb(0, 0, 0);
   gap: 1rem;
 }
-
+.txta0 {
+  color:rgb(252, 122, 70);
+text-align: center;
+  gap: 2rem;
+}
 .txta1 {
   color: hsl(66, 96%, 36%);
   display: flex;
-  font-family: "Poppins", sans-serif;
   gap: 2rem;
 }
 
 .txta2 {
   color: rgb(12, 168, 12);
   display: flex;
-  font-family: "Poppins", sans-serif;
   gap: 2rem;
 }
 
 .txta3 {
   color: rgb(235, 155, 13);
   display: flex;
-  font-family: "Poppins", sans-serif;
   gap: 2rem;
 }
 
 .txta4 {
   color: rgb(255, 4, 0);
-  display: flex;
-  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+.lineOne p{
+  font-size: 1.1rem;
+text-align: center;
 }
 
-.cadastro {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  gap: 5rem;
-  margin-left: 10rem;
-  font-family: 'Poppins';
-  margin-top: 3rem;
-  font-weight: 300;
-  font-size: 20px;
-  
+.lineThree p{
 
+  text-align: center
 }
-
-.titulo-cadastro {
-  display: flex;
-  align-items: start;
-  justify-content: center;
-  color: #1A638C;
-}
-
-
-.funcionario {
-  display: flex;
-  flex-direction: column;
-  align-items:center;
-  width: 25rem;
-  height: 800px;
-  background-color: #D9D9D9;
-}
-
-.sensor {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 20rem;
-  height: 17rem;
-  background-color: #D9D9D9;
-}
-
-
-input{
-  display: flex;
-  height:1.6rem;
-  width: 18rem;
-  border: 2px solid #2D9CDB;
-  border-radius: 5px;
-}
-
-
-button{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 2rem;
-  margin-top: 1rem;
-  color: #FFFFFF;
-    border-color:#2D9CDB;
-    background-color: #2D9CDB;
-}
-
-
