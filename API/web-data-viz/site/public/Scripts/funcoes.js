@@ -13,7 +13,7 @@ function validarSessao() {
 
         // finalizarAguardar();
     } else {
-        window.location = "../login.html";
+        window.location = "../Pages/Login.html";
     }
 }
 
@@ -21,7 +21,7 @@ function limparSessao() {
     // aguardar();
     sessionStorage.clear();
     // finalizarAguardar();
-    window.location = "../login.html";
+    window.location = "../Pages/Login.html";
 }
 
 // carregamento (loading)
