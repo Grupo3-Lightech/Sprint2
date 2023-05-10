@@ -133,3 +133,5 @@ localEmpresa.localEmpresa as 'Local do Sensor' from sensor
 join localEmpresa on fkLocal = idLocal;
 
 drop database lightTech;
+
+truncate table usuario;
