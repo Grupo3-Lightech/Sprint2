@@ -150,27 +150,36 @@ ul li.item-menu a .icon {
 .type_line1 {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
   position: relative;
+  margin-right: 1rem;
 }
 
 .type_line2 {
   display: flex;
   flex-direction: row;
   position: relative;
-  gap: 2rem;
+  gap: 1rem;
   align-items: center;
 }
-
+.alertasgrafc1{
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
 .grafics {
   top: 13rem;
   display: flex;
+  align-items: center;
   justify-content: center;
   flex-wrap: row;
   flex-direction: row;
   position: absolute;
  margin-top: 3rem;
+ margin-left: 2rem;
+ gap: 1rem;
 }
 
 .lineOne {
@@ -178,7 +187,6 @@ ul li.item-menu a .icon {
 }
 
 .lineThree {
-  
   width: 28rem;
 }
 .alertaCritc {
@@ -193,15 +201,6 @@ ul li.item-menu a .icon {
   gap: 1rem;
 }
 
-.alertaAjustavel1 {
-  width: 7.7rem;
-  height: 3rem;
-  background-color: #f6ff00;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .alertaAjustavel1 {
   width: 7rem;
   height: 3rem;
@@ -234,7 +233,7 @@ ul li.item-menu a .icon {
 }
 
 .alertaCritico {
-  width: 7.5rem;
+  width: 7rem;
   height: 3rem;
   background-color: rgb(255, 4, 0);
   border-radius: 10px;
