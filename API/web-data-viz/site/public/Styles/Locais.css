@@ -18,7 +18,7 @@
     width: 100px;
     height: 90%;
     background-color: #2d9cdb;
-    padding: 5px 0% 220px 0%;
+    padding: 5px 0% 250px 0%;
     box-shadow: 3px 0 0 #1a638c;
     top: 0;
     left: 0;
@@ -175,4 +175,13 @@
   /* ESSA CLASS ESTÁ ENGLOBANDO TODO O CONTEUDO DA PAGINA (menos a navbar)  */
   .content2 {
     width: 100%;
+  }
+
+  .graficos {
+    width: 100%;
+    height: 31rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }

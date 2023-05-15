@@ -1,6 +1,13 @@
 create database lightTech;
 use lightTech;
 
+create table endereco (
+idEndereco int primary key auto_increment,
+cep char(14),
+rua varchar(45),
+num varchar(45)
+);
+
 create table empresa (
 idEmpresa int primary key auto_increment,
 razaoSocial varchar(100),
@@ -31,11 +38,12 @@ maximo decimal(10,2)
 );
 
 create table localEmpresa (
-idLocal int primary key auto_increment,
+idLocalEmpresa int primary key auto_increment,
 localEmpresa varchar(50),
 andar varchar(45),
 numero varchar(45),
 fkEmpresa int, constraint fkEmpresaLocal foreign key (fkEmpresa) references empresa (idEmpresa),
+fkEndereco int, constraint fkEnderecoLocal foreign key (fkEndereco) references endereco (idEndereco),
 fkParametro int, constraint fkParametroLocal foreign key (fkParametro) references parametro (idParametro)
 );
 
@@ -43,7 +51,7 @@ create table sensor (
 idSensor int primary key auto_increment,
 tipoSensor varchar(50),
 statusSensor varchar(50), constraint chkStatus check (statusSensor in ('Ativo', 'Inativo')),
-fkLocal int, constraint fkLocalSensor foreign key (fkLocal) references localEmpresa(idLocal)
+fkLocalEmpresa int, constraint fkLocalEmpresaSensor foreign key (fkLocalEmpresa) references localEmpresa(idLocalEmpresa)
 );
 
 create table leitura (
@@ -77,6 +85,12 @@ insert into parametro values
 (null, '1000', '2000'),
 (null, '5000', '10000'),
 (null, '10000', '20000');
+
+insert into endereco values 
+(null, 01234567891012, 'Rua Haddock Lobo', 1192),
+(null, 09243875293848, 'Rua Sergio Faro', 1233),
+(null, 95987439848753, 'Rua Haddock Lobo', 5137),
+(null, 33337473837577, 'Rua Haddock Lobo', 500);
 
 insert localEmpresa values
 (null, 'sala de reunião', '6', '2', 1, 1),
