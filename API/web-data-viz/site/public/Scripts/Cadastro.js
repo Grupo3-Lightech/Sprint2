@@ -107,16 +107,16 @@ function validacaoCadastro() {
         classObj.classList.remove("inputError")
     };
 
-    // if (empresa == "") {
-    //     classObj = document.getElementById("inputEmpresa")
-    //     classObj.classList.remove("inputEmpresa")
-    //     classObj.classList.add("inputError")
-    //     alert("Insira a empresa na qual você trabalha")
-    // } else {
-    //     classObj = document.getElementById("inputEmpresa")
-    //     classObj.classList.add("inputEmpresa")
-    //     classObj.classList.remove("inputError")
-    // };
+    if (empresa == "") {
+        classObj = document.getElementById("inputEmpresa")
+        classObj.classList.remove("inputEmpresa")
+        classObj.classList.add("inputError")
+        alert("Insira a empresa na qual você trabalha")
+    } else {
+        classObj = document.getElementById("inputEmpresa")
+        classObj.classList.add("inputEmpresa")
+        classObj.classList.remove("inputError")
+    };
 
     if (email == "") {
         classObj = document.getElementById("inputEmail")
@@ -154,7 +154,7 @@ function validacaoCadastro() {
     if (document.getElementsByClassName("inputError").length > 0) {
         
     } else{
-        window.location = "../Pages/Login.html"
+        window.location = "Login.html"
     }
 }
 
@@ -169,8 +169,9 @@ function cadastrar() {
     sobrenome = inputSobrenome.value;
     CPF = inputCPF.value;
     dtNasc = inputDtNasc.value;
+    genero = inputGenero.value;
     telCel = inputTelefoneCel.value;
-    // empresa = inputEmpresa.value;
+    empresa = inputEmpresa.value;
     email = inputEmail.value;
     senha = inputSenha.value;
 
@@ -189,9 +190,10 @@ function cadastrar() {
             emailServer: email,
             senhaServer: senha,
             cpfServer: CPF,
+            generoServer: genero,
             dtNascServer: dtNasc,
             telCelServer: telCel,
-            // empresaServer: empresa
+            empresaServer: empresa
         })
     }).then(function (resposta) {
 

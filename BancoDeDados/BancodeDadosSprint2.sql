@@ -19,9 +19,9 @@ telCel varchar(45),
 genero varchar(45), 
 email varchar(70), constraint chkEmail check (email like '%@%'),
 senha varchar(30),
-dtCadastro datetime default current_timestamp
--- fkEmpresa int, constraint fkEmpresaUsuario foreign key (fkEmpresa) references empresa (idEmpresa),
--- fkAdmin int, constraint fkAdminUsuario foreign key (fkAdmin) references usuario (idUsuario)
+dtCadastro datetime default current_timestamp,
+fkEmpresa int, constraint fkEmpresaUsuario foreign key (fkEmpresa) references empresa (idEmpresa),
+fkAdmin int, constraint fkAdminUsuario foreign key (fkAdmin) references usuario (idUsuario)
 );
 
 create table parametro (
@@ -134,4 +134,4 @@ join localEmpresa on fkLocal = idLocal;
 
 drop database lightTech;
 
-truncate table usuario;
+drop table usuario;

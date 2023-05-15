@@ -69,6 +69,8 @@ function cadastrar(req, res) {
     var cpf = req.body.cpfServer;
     var dtNasc = req.body.dtNascServer;
     var telCel = req.body.telCelServer;
+    var genero = req.body.generoServer;
+    var empresa = req.body.empresaServer
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -88,7 +90,7 @@ function cadastrar(req, res) {
     }
     else {
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, sobrenome, cpf, dtNasc, telCel, email, senha)
+        usuarioModel.cadastrar(nome, sobrenome, cpf, dtNasc, telCel, email, senha, genero, empresa)
             .then(
                 function (resultado) {
                     res.json(resultado);
