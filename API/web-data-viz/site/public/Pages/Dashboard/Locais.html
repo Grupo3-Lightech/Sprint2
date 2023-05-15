@@ -16,6 +16,8 @@
   <link rel="shortcut icon" href="../../assets/icon/favicon2.ico" type="image/x-icon" />
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link
@@ -95,11 +97,27 @@
 
         <div class="botaoLocal">
           <button onclick="adicionarLocal()">LOCAL 1 </button>
-          <button onclick="adicionarLocal()">LOCAL 2 </button>
+          <button onclick="adicionarLocal2()">LOCAL 2 </button>
           <button onclick="adicionarLocal()">LOCAL 3 </button>
           <button onclick="adicionarLocal()">LOCAL 4 </button>
         </div>
+
         <div class="graficos" id="graficosLocais">
+      
+
+
+          <!-- <div class="lineOne">
+            <p><b>Escritório sala 2 com luminosidade Critica nas ultimas 24h</b></p>
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+
+        <div class="type_line2">
+          <div class="alertaAjustavel">Ajustável</div>
+          <div class="lineThree">
+            <p><b>Sala de reunião 12º andar com a luminosidade Ajustável nas ultimas 24h</b></p>
+            <canvas id="myChart3"></canvas>
+          </div> -->
         </div>
 
       </div>
@@ -116,7 +134,65 @@
 </html>
 
 <script>
-  const ctx = document.getElementById("myChart");
+
+  // FUNÇÃO que VAI CRIAR E EXIBIR OS GRAFÍCOS NA TELA!
+  function adicionarLocal() {
+    var div = document.getElementById("graficosLocais");
+
+    div.innerHTML = 
+    `
+        <div class="type_line2">
+          <div class="alertaAjustavel">Ajustável</div>
+          <div class="lineThree">
+            <p><b>Sala de reunião 12º andar com a luminosidade Ajustável nas ultimas 24h</b></p>
+            <canvas id="myChart3"></canvas>
+          </div>
+    `
+
+    const ctx3 = document.getElementById("myChart3");
+
+  new Chart(ctx3, {
+    type: "line",
+    data: {
+      labels: ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00",
+        "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00",
+      ],
+      datasets: [
+        {
+          label: "Sala de reunião - 12º Andar",
+          data: [
+            900, 900, 850, 900, 900, 850, 900, 900, 900, 850, 900, 850, 900,
+            900, 900, 850, 900, 900, 900, 900, 850, 900, 900, 900,
+          ],
+          borderWidth: 1,
+          backgroundColor: "rgb(235, 155, 13)",
+          borderColor: "rgb(235, 155, 13)",
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+  };
+
+
+  function adicionarLocal2() {
+    var div = document.getElementById("graficosLocais");
+
+    div.innerHTML = 
+    `
+          <div class="lineOne">
+            <p><b>Escritório sala 2 com luminosidade Critica nas ultimas 24h</b></p>
+            <canvas id="myChart"></canvas>
+          </div>
+    `
+
+    const ctx = document.getElementById("myChart");
 
   new Chart(ctx, {
 
@@ -148,9 +224,6 @@
     },
   }
   );
-
-  function adicionarLocal() {
-    let graficos = document.getElementById("graficosLocais")
-    graficos.innerHMTL += "<canvas id='myChart' width='400' height='400'></canvas>"
-  }
+  };
+  
 </script>
