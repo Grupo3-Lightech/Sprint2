@@ -127,11 +127,11 @@
 
   /* ESSA CLASE MODIFICA O ELEMENTO QUE ENGLOBA OS BOTOES */
   .botaoLocal {
-    width: 100%;
+    width: 44%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 1rem;
+    justify-content: space-between;
+    padding-top: 1rem;
   }
   /* ESSA CLASSE ESTÁ MODIFICANDO OS BOTÕES EM SI */
   .botaoLocal button {
@@ -168,9 +168,9 @@
   .localSensor {
     width: 100%;
     display: flex;
-    justify-content: space-around;
     flex-direction: column;
     height: 100%;
+    align-items: center;
   }
   /* ESSA CLASS ESTÁ ENGLOBANDO TODO O CONTEUDO DA PAGINA (menos a navbar)  */
   .content2 {
