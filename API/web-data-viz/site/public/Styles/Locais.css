@@ -124,62 +124,55 @@
     align-items: center;
     font-size: 18px;
   }
-  
+
+  /* ESSA CLASE MODIFICA O ELEMENTO QUE ENGLOBA OS BOTOES */
   .botaoLocal {
     width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 1rem;
   }
-
+  /* ESSA CLASSE ESTÁ MODIFICANDO OS BOTÕES EM SI */
   .botaoLocal button {
-
     width: 7.3rem;
     height: 3rem;
     border-radius: 10px;
-    background-color: #2D9CDB; /* cor de fundo */
-    border: none; /* sem borda */
-    color: white; /* cor do texto */
-    padding: 10px 20px; /* espaçamento */
-    text-align: center; /* centralizado */
-    font-size: 1rem; /* tamanho da fonte */
-    margin: 4px 2px; /* margem */
-    cursor: pointer; /* cursor */
+    background-color: #2D9CDB; 
+    border: none; 
+    color: white; 
+    padding: 10px 20px; 
+    text-align: center; 
+    font-size: 1rem; 
+    margin: 4px 2px; 
+    cursor: pointer; 
   }
-
-  .tituloLocais  {
+  /* ESSA CLASSE ESTA ENGLOBANDO O H1 DA PAGINA */
+  .tituloLocal  {
+    margin-top: 15px;
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 3.25rem;
-    color:  #1a638c;
+    color:  #319ddc;
     font-family:"Poppins", sans-serif;
   }
-
-  .tituloLocais h1 {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .botaoPesquisa {
+  /* INPUT DE BUSCA DOS LOCAIS */
+  .inputPesquisa {
     width: 8rem;
     height: 1.5rem;
     font-size: 0.9rem;
     border-radius: 0.5rem;
-    border-color:#49b8f8 ;
-   
-
+    border: 2px solid #49b8f8;
   }
-
+  /* DIV QUE ENGLOBA O H1 E OS BOTÕES */
   .localSensor {
-    display: block;
-
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100%;
   }
-
+  /* ESSA CLASS ESTÁ ENGLOBANDO TODO O CONTEUDO DA PAGINA (menos a navbar)  */
   .content2 {
-    width: 
+    width: 100%;
   }
