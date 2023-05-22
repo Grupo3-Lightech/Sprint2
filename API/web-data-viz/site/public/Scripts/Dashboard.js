@@ -26,7 +26,7 @@ window.onload = obterDadosGraficos();
 
 function obterDadosGraficos() {
     obterDadosGrafico(1)
-    // obterDadosGrafico(2)
+    obterDadosGrafico(2)
     // obterDadosGrafico(3)
     // obterDadosGrafico(4)
 }
@@ -68,7 +68,7 @@ function plotarGrafico(resposta, idAquario) {
             labels: labels,
             datasets: [
               {
-                label: "Escritório Sala 2",
+                label: `${idAquario}`,
                 data: [],
                 borderWidth: 1,
               }
@@ -102,7 +102,7 @@ function plotarGrafico(resposta, idAquario) {
 
     // Adicionando gráfico criado em div na tela
     let myChart = new Chart(
-        document.getElementById("myChart1"),
+        document.getElementById(`myChart${idAquario}`),
         config
     );
 

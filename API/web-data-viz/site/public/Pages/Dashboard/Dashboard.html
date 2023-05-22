@@ -34,7 +34,7 @@
       <!-- <div class="alerts-context"> -->
       <div class="conta">
         <span class="icon"><i class="bi bi-person-circle"></i></span>
-        <span class="link-page">Conta</span>
+        <span id="linkPage" class="link-page"></span>
       </div>
     </div>
 
@@ -109,7 +109,7 @@
             <div class="alertaAjustavel">Ajustável</div>
             <div class="lineThree">
               <p><b>Sala de reunião 12º andar com a luminosidade Ajustável nas ultimas 24h</b></p>
-              <canvas id="myChart3"></canvas>
+              <canvas id="myChart2"></canvas>
             </div>
           </div>
       </div>
@@ -122,28 +122,28 @@
 </body>
 </html>
 <script>
+  var user = sessionStorage.NOME_USUARIO;
+  linkPage.innerHTML = `${user}`
 
-  // const ctx = document.getElementById("myChart");
+  // const ctx3 = document.getElementById("myChart2");
 
-  // new Chart(ctx, {
-
+  // new Chart(ctx3, {
   //   type: "line",
   //   data: {
-  //     labels: [
-  //       "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00",
-  //       "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00",
+  //     labels: ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00",
+  //       "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00",
   //     ],
   //     datasets: [
   //       {
-  //         label: "Escritório Sala 2",
+  //         label: "Sala de reunião - 12º Andar",
   //         data: [
-  //           50, 50, 50, 50, 50, 00, 500, 700, 800, 750, 1000, 1100, 1200, 1250,
-  //           1200, 1000, 800, 700, 700, 500, 400, 300, 0, 0,
+  //           900, 900, 850, 900, 900, 850, 900, 900, 900, 850, 900, 850, 900,
+  //           900, 900, 850, 900, 900, 900, 900, 850, 900, 900, 900,
   //         ],
   //         borderWidth: 1,
-  //         backgroundColor: "rgb(255, 4, 0)",
-  //         borderColor: "rgb(255, 4, 0)",
-  //       }
+  //         backgroundColor: "rgb(235, 155, 13)",
+  //         borderColor: "rgb(235, 155, 13)",
+  //       },
   //     ],
   //   },
   //   options: {
@@ -153,36 +153,5 @@
   //       },
   //     },
   //   },
-  // }
-  // );
-
-  const ctx3 = document.getElementById("myChart3");
-
-  new Chart(ctx3, {
-    type: "line",
-    data: {
-      labels: ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00",
-        "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00",
-      ],
-      datasets: [
-        {
-          label: "Sala de reunião - 12º Andar",
-          data: [
-            900, 900, 850, 900, 900, 850, 900, 900, 900, 850, 900, 850, 900,
-            900, 900, 850, 900, 900, 900, 900, 850, 900, 900, 900,
-          ],
-          borderWidth: 1,
-          backgroundColor: "rgb(235, 155, 13)",
-          borderColor: "rgb(235, 155, 13)",
-        },
-      ],
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
-    },
-  });
+  // });
 </script>

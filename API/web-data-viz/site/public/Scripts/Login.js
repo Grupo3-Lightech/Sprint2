@@ -27,7 +27,7 @@ function redirecionar() {
 
               sessionStorage.EMAIL_USUARIO = json.email;
               sessionStorage.NOME_USUARIO = json.nome;
-              sessionStorage.ID_USUARIO = json.id;
+              sessionStorage.ID_USUARIO = json.idUsuario;
 
               window.location = "../Pages/Dashboard/Dashboard.html";
 

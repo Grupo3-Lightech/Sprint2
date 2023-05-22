@@ -15,6 +15,7 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
                     order by id desc`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `SELECT leitura, DATE_FORMAT(dataHora,'%d/%c/%Y %H:%i:%s') FROM leitura WHERE fkSensor = ${idAquario};`;
+        instrucaoSql = `SELECT leitura, DATE_FORMAT(dataHora,'%d/%c/%Y %H:%i:%s') FROM leitura WHERE fkSensor = ${idAquario};`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return

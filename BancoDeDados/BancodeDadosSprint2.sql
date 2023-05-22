@@ -93,19 +93,16 @@ insert into endereco values
 (null, 33337473837577, 'Rua Haddock Lobo', 500);
 
 insert localEmpresa values
-(null, 'sala de reunião', '6', '2', 1, 1),
-(null, 'escritorio', 'terreo', 'sala 1', 2, 1),
-(null, 'sala de desenvolvimento', 7, 'sala 8', 3, 2),
-(null, 'sala de reunião', 2, 'sala 3', 4, 2),
-(null, 'estoque', 2, 'sala 1', 5, 3),
-(null, 'estoque', 3, 'sala 1', 6, 4);
-
+(null, 'sala de reunião', '6', '2', 1, 1, 1),
+(null, 'escritorio', 'terreo', 'sala 1', 2, 1, 1);
+desc localEmpresa;
+desc sensor;
 insert into sensor values 
-(null, 'LDR 5mm', 'Ativo', 3),
-(null, 'LDR', 'Ativo', 3),
-(null, 'LDR', 'Ativo', 2),
-(null, 'LDR', 'Ativo', 2),
-(null, 'BH1750FVI Lux', 'Ativo', 1);
+(null, 'LDR 5mm', 'Ativo', 6),
+(null, 'LDR', 'Ativo', 5),
+(null, 'LDR', 'Ativo', 6),
+(null, 'LDR', 'Ativo', 5);
+
 
 insert into leitura values
 (null, null, 700, 1),
@@ -124,6 +121,7 @@ select * from empresa;
 select * from parametro;
 select * from localEmpresa;
 select * from leitura;
+select * from sensor;
 
 select * from empresa as filial 
 join empresa as sede on filial.fkSede = sede.idEmpresa;
@@ -146,6 +144,57 @@ statusSensor as 'Status do Sensor',
 localEmpresa.localEmpresa as 'Local do Sensor' from sensor
 join localEmpresa on fkLocal = idLocal;
 
-drop database lightTech;
+INSERT INTO sensor VALUES
+	(null, 'LDR 5', 'Ativo', null),
+    (null, 'LDR 5', 'Ativo', null);
 
-drop table usuario;
+INSERT INTO leitura (leitura, fkSensor) VALUES 
+	(1002,3),
+    (222,3),
+    (777,3),
+    (510,3),
+    (745,3),
+    (755,3),
+    (456,3);
+    
+SELECT * FROM leitura;
+SELECT leitura, dataHora FROM leitura WHERE fkSensor = 1;
+SELECT leitura, fkSensor, DATE_FORMAT(dataHora,'%d/%c/%Y %H:%i:%s') FROM leitura WHERE fkSensor = 1 ORDER BY idLeitura DESC limit 1;
+
+select * from localEmpresa where fkEmpresa = 1;
+
+
+select localEmpresa, round(avg(leitura)), dataHora  from leitura join
+sensor on fkSensor = idSensor join
+localEmpresa on fkLocalEmpresa = idLocalEmpresa join
+empresa on fkEmpresa = idEmpresa  
+group by localEmpresa, dataHora;
+
+
+select localEmpresa, round(avg(leitura)), hour(dataHora)  from leitura join
+sensor on fkSensor = idSensor join
+localEmpresa on fkLocalEmpresa = idLocalEmpresa join
+empresa on fkEmpresa = idEmpresa where 
+day(dataHora) = day(current_timestamp())
+group by localEmpresa, dataHora;
+
+
+select localEmpresa, round(avg(leitura)) from leitura join
+sensor on fkSensor = idSensor join
+localEmpresa on fkLocalEmpresa = idLocalEmpresa join
+empresa on fkEmpresa = idEmpresa where idEmpresa = 1
+and day(dataHora) = day(current_timestamp())
+group by localEmpresa;
+
+
+select localEmpresa, round(avg(leitura)) from leitura join
+sensor on fkSensor = idSensor join
+localEmpresa on fkLocalEmpresa = idLocalEmpresa join
+empresa on fkEmpresa = idEmpresa where idEmpresa = 1
+and day(dataHora) = day(current_timestamp())
+group by localEmpresa;
+
+select * from leitura;
+where day(dataHora) = day(current_timestamp());
+
+select hour(current_timestamp());

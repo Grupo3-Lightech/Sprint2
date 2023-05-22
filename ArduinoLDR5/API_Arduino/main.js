@@ -19,7 +19,8 @@ const HABILITAR_OPERACAO_INSERIR = true;
 const AMBIENTE = 'desenvolvimento';
 
 const serial = async (
-    valoresLuminosidade,
+    valoresLuminosidade1,
+    valoresLuminosidade2
 
 ) => {
     let poolBancoDados = ''
@@ -57,10 +58,12 @@ const serial = async (
         console.log(`A leitura do arduino foi iniciada na porta ${portaArduino.path} utilizando Baud Rate de ${SERIAL_BAUD_RATE}`);
     });
     arduino.pipe(new serialport.ReadlineParser({ delimiter: '\r\n' })).on('data', async (data) => {
-        data = data;
-        console.log(data);
-        const luminosidade = parseFloat(data);
-        valoresLuminosidade.push(luminosidade);
+        const valores = data.split(',')
+        console.log(valores);
+        const luminosidade1 = parseFloat(valores[0]);
+        const luminosidade2 = parseFloat(valores[1]);
+        valoresLuminosidade1.push(luminosidade1);
+        valoresLuminosidade2.push(luminosidade2);
 
 
         
@@ -98,7 +101,11 @@ const serial = async (
                 // >> você deve ter o aquario de id 1 cadastrado.
                 await poolBancoDados.execute(
                     'INSERT INTO leitura (leitura, fkSensor) VALUES (?, 1)',
-                    [luminosidade]
+                    [luminosidade1],
+                );
+                await poolBancoDados.execute(
+                    'INSERT INTO leitura (leitura, fkSensor) VALUES (?, 2)',
+                    [luminosidade2],
                 );
                 
 
@@ -115,7 +122,9 @@ const serial = async (
 
 // não altere!
 const servidor = (
-    valoresLuminosidade,
+    valoresLuminosidade1,
+    valoresLuminosidade2
+    
 
 ) => {
     const app = express();
@@ -129,17 +138,23 @@ const servidor = (
     });
 
     app.get('/sensores/luminosidade', (_, response) => {
-        return response.json(valoresLuminosidade);
+        return response.json(valoresLuminosidade1);
+    });
+    app.get('/sensores/luminosidade2', (_, response) => {
+        return response.json(valoresLuminosidade2);
     });
 
 }
 
 (async () => {
-    const valoresLuminosidade = [];
+    const valoresLuminosidade1 = [];
+    const valoresLuminosidade2 = [];
     await serial(
-        valoresLuminosidade
+        valoresLuminosidade1,
+        valoresLuminosidade2
     );
     servidor(
-        valoresLuminosidade
+        valoresLuminosidade1,
+        valoresLuminosidade2
     );
 })();
