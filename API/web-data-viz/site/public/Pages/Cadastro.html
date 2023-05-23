@@ -27,70 +27,81 @@
       </div>
       <h2>Cadastre-se aqui para ter acesso ao painel de controles da Light Tech</h2>
 
-        
-        <div class="cadastroInputsAsside">
-          <label for="inputNome">
-            Nome: <br>
-            <input id="inputNome" class="inputNome" required placeholder="Insira seu nome">
-          </label>
 
-          <label for="inputSobrenome">
-            Sobrenome: <br>
-            <input id="inputSobrenome" class="inputSobrenome" required placeholder="Insira seu sobrenome">
-          </label>
-        </div>
-
-        <div class="cadastroInputsAsside">
-          <label for="inputCPF">
-            CPF: <br>
-            <input id="inputCPF" class="inputCPF" required placeholder="Insira seu CPF com o traço">
-          </label>
-
-          <label for="inputGenero">
-            Gênero: <br>
-            <input id="inputGenero" class="inputGenero" placeholder="Insira seu gênero (Opcional)">
-          </label>
-        </div>
-
-        <label for="inputDtNasc">
-          Data de nascimento: <br>
-          <input id="inputDtNasc" class="inputDtNasc" type="date" required placeholder="Insira sua data de nascimento">
+      <div class="cadastroInputsAsside">
+        <label for="inputNome">
+          Nome: <br>
+          <input id="inputNome" class="inputNome" required placeholder="Insira seu nome">
         </label>
 
-        <div class="cadastroInputsAsside">
-          <label for="inputTelefoneFixo">
-            Telefone fixo: <br>
-            <input id="inputTelefoneFixo" class="inputTelefoneFixo"  placeholder="(00)0000-0000">
-          </label>
-          <label for="inputTelefoneCel">
-            Telefone celular: <br>
-            <input id="inputTelefoneCel" class="inputTelefoneCel" required placeholder="(00)90000-0000">
-          </label>
-        </div>
+        <label for="inputSobrenome">
+          Sobrenome: <br>
+          <input id="inputSobrenome" class="inputSobrenome" required placeholder="Insira seu sobrenome">
+        </label>
+      </div>
 
-        <label for="inputEmpresa">
-          Empresa: <br>
-          <input id="inputEmpresa" class="inputEmpresa" required placeholder="Insira a empresa na qual trabalha">
-        </label>        
+      <div class="cadastroInputsAsside">
+        <label for="inputCPF">
+          CPF: <br>
+          <input id="inputCPF" class="inputCPF" required placeholder="Insira seu CPF">
+        </label>
 
-        <div class="cadastroInputsAsside">
-          <label for="inputEmail">
-            E-mail: <br>
-            <input id="inputEmail" class="inputEmail" type="email" required placeholder="Insira seu E-mail">
-          </label>
+        <label for="inputGenero">
+          Gênero: <br>
+          <input id="inputGenero" class="inputGenero" placeholder="Insira seu gênero (Opcional)">
+        </label>
+      </div>
 
-          <label for="inputSenha">
-            Senha: <br>
-            <input id="inputSenha" class="inputSenha" type="password" required placeholder="Insira sua senha">
-          </label>
+      <label for="inputDtNasc">
+        Data de nascimento: <br>
+        <input id="inputDtNasc" class="inputDtNasc" type="date" required placeholder="Insira sua data de nascimento">
+      </label>
 
-        </div>
+      <div class="cadastroInputsAsside">
+        <label for="inputTelefoneFixo">
+          Telefone fixo: <br>
+          <input id="inputTelefoneFixo" class="inputTelefoneFixo" placeholder="(00)0000-0000">
+        </label>
+        <label for="inputTelefoneCel">
+          Telefone celular: <br>
+          <input id="inputTelefoneCel" class="inputTelefoneCel" required placeholder="(00)90000-0000">
+        </label>
+      </div>
 
-        <button onclick="cadastrar()">Cadastrar</button>
-      
+      <label for="inputEmpresa">
+        Empresa: <br>
+        <input id="inputEmpresa" class="inputEmpresa" required placeholder="Insira a empresa na qual trabalha">
+      </label>
+
+      <div class="cadastroInputsAsside">
+        <label for="inputEmail">
+          E-mail: <br>
+          <input id="inputEmail" class="inputEmail" type="email" required placeholder="Insira seu E-mail">
+        </label>
+
+        <label for="inputSenha">
+          Senha: <br>
+          <input id="inputSenha" class="inputSenha" type="password" required placeholder="Insira sua senha">
+        </label>
+
+      </div>
+
+      <button onclick="cadastrar()">Cadastrar</button>
+
 
     </div>
   </div>
 </body>
-<script src="../Scripts/Cadastro.js"></script>
+
 </html>
+<script src="../Scripts/Cadastro.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"
+  integrity="sha512-KaIyHb30iXTXfGyI9cyKFUIRSSuekJt6/vqXtyQKhQP6ozZEGY8nOtRS6fExqE4+RbYHus2yGyYg1BrqxzV6YA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  var Cleave = new Cleave('#inputCPF', {
+    blocks: [3, 3, 3, 2],
+    delimiters: ['.', '.', '-'],
+    numericOnly: true
+  });
+</script>

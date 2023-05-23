@@ -55,6 +55,22 @@ function obterDadosGrafico(idAquario) {
             console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
         });
 }
+    fetch(`/medidas/buscarMedidasLocal/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (resposta) {
+                console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                resposta.reverse();
+
+                plotarGrafico(resposta, idAquario);
+            });
+        } else {
+            console.error('Nenhum dado encontrado ou erro na API');
+        }
+    })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+        });
+
 
 function plotarGrafico(resposta, idAquario) {
 
@@ -84,6 +100,7 @@ function plotarGrafico(resposta, idAquario) {
         var registro = resposta[i];
         labels.push(registro["DATE_FORMAT(dataHora,'%d/%c/%Y %H:%i:%s')"]);
         dados.datasets[0].data.push(registro.leitura);
+        
     }
 
     console.log('----------------------------------------------')
@@ -139,14 +156,28 @@ function atualizarGrafico(idAquario, dados, myChart) {
                     dados.labels.shift(); // apagar o primeiro
                     dados.labels.push(novoRegistro[0]["DATE_FORMAT(dataHora,'%d/%c/%Y %H:%i:%s')"]); // incluir um novo momento
 
-                    dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+                    dados.datasets[0].data.shift(novoRegistro[0]);  // apagar o primeiro de umidade
                     dados.datasets[0].data.push(novoRegistro[0].leitura); // incluir uma nova medida de umidade
+
+                    if (novoRegistro[0].leitura < 500) {
+                        typeLine1.innerHTML = `<div class="alertaCritc">Crítico (abaixo)</div>`
+                    } else if (novoRegistro[0].leitura >= 500 && novoRegistro[0].leitura <= 700) {
+                        typeLine1.innerHTML = `<div class="alertaAjustavel1">Ajustável</div>`
+                    } else if (novoRegistro[0].leitura > 700  && novoRegistro[0].leitura <= 800) {
+                        typeLine1.innerHTML = `<div class="alertaIdeal">Ideal</div>`
+                    } else if (novoRegistro[0].leitura > 800  && novoRegistro[0].leitura <= 900) {
+                        typeLine1.innerHTML = `<div class="alertaAjustavel">Ajustável</div>`
+                    } else if (novoRegistro[0].leitura > 900) {
+                        typeLine1.innerHTML = `<div class="alertaCritico">Crítico (Acima)</div>`
+                    }
 
                     // dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
                     // dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
 
                     myChart.update();
                 }
+
+                
 
                 // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
                 proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
