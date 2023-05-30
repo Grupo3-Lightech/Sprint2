@@ -194,10 +194,14 @@ empresa on fkEmpresa = idEmpresa where idEmpresa = 1
 and day(dataHora) = day(current_timestamp())
 group by localEmpresa;
 
+select * from localEmpresa;
+
 select * from leitura
 where day(dataHora) = day(current_timestamp());
 
 select hour(current_timestamp());
+
+SELECT * FROM leitura;
 
 truncate table leitura;
 

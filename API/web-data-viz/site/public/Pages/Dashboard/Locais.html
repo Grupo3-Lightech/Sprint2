@@ -43,7 +43,7 @@
 
       <div class="conta">
         <span class="icon"><i class="bi bi-person-circle"></i></span>
-        <span class="link-page">Conta</span>
+        <span id="linkPage" class="linkPage">Conta</span>
       </div>
     </div>
 
@@ -107,7 +107,7 @@
 
       </div>
 
-      <script src="../../Scripts/Dashboard.js"></script>
+      <script src="../../Scripts/Local1.js"></script>
 
     </div>
 
@@ -118,52 +118,13 @@
 
 <script>
 
+   var user = sessionStorage.NOME_USUARIO;
+  linkPage.innerHTML = `${user}`
+
   // FUNÇÃO que VAI CRIAR E EXIBIR OS GRAFÍCOS NA TELA!
 
   // PRIMEIRO GRAFICO 
-  function adicionarLocal() {
-    var div = document.getElementById("graficosLocais");
-
-    div.innerHTML =
-      `
-        <div class="type_line2">
-          <div class="alertaAjustavel">  Ajustável </div>
-          <div class="lineThree">
-            <p><b>Sala de Reuniões 12º andar - Luminosidade Ajustável nas ultimas 24h</b></p>
-            <canvas id="myChart3"></canvas>
-          </div>
-    `
-
-    const ctx3 = document.getElementById("myChart3");
-
-    new Chart(ctx3, {
-      type: "line",
-      data: {
-        labels: ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00",
-          "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00",
-        ],
-        datasets: [
-          {
-            label: " Sala 3",
-            data: [
-              500, 550, 620, 644, 666, 680, 690, 700, 850, 850, 820, 650, 500,
-              600, 800, 850, 590, 750, 800, 780, 450, 500, 500, 500,
-            ],
-            borderWidth: 1,
-            backgroundColor: "rgb(235, 155, 13)",
-            borderColor: "rgb(235, 155, 13)",
-          },
-        ],
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
-        },
-      },
-    });
-  };
+  
 
   // SEGUNDO GRAFICO
   function adicionarLocal2() {
