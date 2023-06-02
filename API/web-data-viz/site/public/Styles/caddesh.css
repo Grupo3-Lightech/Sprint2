@@ -151,7 +151,7 @@ ul li.item-menu a .icon {
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin-left: 10rem;
+  margin-left: 3rem;
   font-family: "Poppins";
   font-weight: 300;
   font-size: 20px;
@@ -171,41 +171,14 @@ ul li.item-menu a .icon {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 25rem;
   height: 34rem;
   background-color: #d9d9d9;
   border-radius: 1.3rem;
 }
 
-.funcionario2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 25rem;
-  height: 15rem;
-  background-color: #d9d9d9;
-  border-radius: 1.3rem;
-}
 
-.sensor {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 25rem;
-  height: 18rem;
-  background-color: #d9d9d9;
-  border-radius: 1.3rem;
-}
-
-.inputs_juntos {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-}
 
 input {
   display: flex;

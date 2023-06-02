@@ -152,7 +152,7 @@ function validacaoCadastro() {
     };
 
     if (document.getElementsByClassName("inputError").length > 0) {
-        
+        throw("Erro")
     } else{
         window.location = "Login.html"
     }
