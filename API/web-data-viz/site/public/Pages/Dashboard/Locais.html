@@ -98,8 +98,8 @@
         <div class="botaoLocal">
           <button onclick="adicionarLocal()">LOCAL 1 </button>
           <button onclick="adicionarLocal2()">LOCAL 2 </button>
-          <button onclick="adicionarLocal()">LOCAL 3 </button>
-          <button onclick="adicionarLocal()">LOCAL 4 </button>
+          <button onclick="adicionarLocal3()">LOCAL 3 </button>
+          <button onclick="adicionarLocal4()">LOCAL 4 </button>
         </div>
 
         <div class="graficos" id="graficosLocais">
@@ -226,4 +226,93 @@
   );
   };
   
+
+  function adicionarLocal3() {
+    var div = document.getElementById("graficosLocais");
+
+    div.innerHTML = 
+    `
+          <div class="lineOne">
+            <p><b>Escritório sala 2 com luminosidade Critica nas ultimas 24h</b></p>
+            <canvas id="myChart"></canvas>
+          </div>
+    `
+
+    const ctx = document.getElementById("myChart");
+
+  new Chart(ctx, {
+
+    type: "line",
+    data: {
+      labels: [
+        "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00",
+        "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00",
+      ],
+      datasets: [
+        {
+          label: "Escritório Sala 2",
+          data: [
+            50, 50, 50, 50, 50, 00, 500, 700, 800, 750, 1000, 1100, 1200, 1250,
+            1200, 1000, 800, 700, 700, 500, 400, 300, 0, 0,
+          ],
+          borderWidth: 1,
+          backgroundColor: "rgb(12,15,171)",
+          borderColor: "rgb(12,15,171)",
+        }
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  }
+  );
+  };
+  function adicionarLocal4() {
+    var div = document.getElementById("graficosLocais");
+
+    div.innerHTML = 
+    `
+          <div class="lineOne">
+            <p><b>Escritório sala 2 com luminosidade Critica nas ultimas 24h</b></p>
+            <canvas id="myChart"></canvas>
+          </div>
+    `
+
+    const ctx = document.getElementById("myChart");
+
+  new Chart(ctx, {
+
+    type: "line",
+    data: {
+      labels: [
+        "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00",
+        "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00",
+      ],
+      datasets: [
+        {
+          label: "Escritório Sala 2",
+          data: [
+            50, 50, 50, 50, 50, 00, 500, 700, 800, 750, 1000, 1100, 1200, 1250,
+            1200, 1000, 800, 700, 700, 500, 400, 300, 0, 0,
+          ],
+          borderWidth: 1,
+          backgroundColor: "rgb(17,170,30)",
+          borderColor: "rgb(17,170,30)",
+        }
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  }
+  );
+  };
 </script>

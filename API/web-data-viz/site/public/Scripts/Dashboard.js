@@ -26,7 +26,7 @@ window.onload = obterDadosGraficos();
 
 function obterDadosGraficos() {
     obterDadosGrafico(1)
-    // obterDadosGrafico(2)
+    //obterDadosGrafico(2)
     // obterDadosGrafico(3)
     // obterDadosGrafico(4)
 }
