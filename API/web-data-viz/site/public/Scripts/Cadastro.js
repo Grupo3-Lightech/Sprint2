@@ -158,10 +158,9 @@ function validacaoCadastro() {
     }
 }
 
+
 function cadastrar() {
     validacaoCadastro();
-
-
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
