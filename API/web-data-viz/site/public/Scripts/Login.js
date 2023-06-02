@@ -30,7 +30,7 @@ function redirecionar() {
               sessionStorage.ID_USUARIO = json.idUsuario;
               sessionStorage.EMPRESA_USUARIO = json.fkEmpresa;
 
-              window.location = "../Pages/Dashboard/Dashboard.html";
+               window.location = "../Pages/Dashboard/Dashboard.html";
 
           });
 
