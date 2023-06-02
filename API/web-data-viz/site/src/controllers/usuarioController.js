@@ -116,6 +116,8 @@ function cadastrarFuncionario() {
     var telCel = req.body.telCelServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
+    var idUsuario = req.body.idUsuarioServer;
+    var fkEmpresa = req.body.fkEmpresaServer;
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -130,9 +132,13 @@ function cadastrarFuncionario() {
         res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
+    } else if (idUsuario == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } else if (fkEmpresa == undefined) {
+        res.status(400).send("Sua empresa está undefined!");
     } else {
             // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-            usuarioModel.cadastrarFuncionario(nome, sobrenome, telFixo, telCel, email, senha)
+            usuarioModel.cadastrarFuncionario(nome, sobrenome, telFixo, telCel, email, senha, idUsuario, fkEmpresa)
                 .then(
                     function (resultado) {
                         res.json(resultado);

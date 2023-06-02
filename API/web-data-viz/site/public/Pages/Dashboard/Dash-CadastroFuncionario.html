@@ -114,6 +114,9 @@ var telCel;
 var email; 
 var senha; 
 
+var idUsuarioVar = sessionStorage.ID_USUARIO = json.idUsuario;
+var fkEmpresaVar = sessionStorage.EMPRESA_USUARIO = json.fkEmpresa;
+
 function validacaoCadastro() {
     nome = inputNome.value
     sobrenome = inputSobrenome.value;
@@ -121,7 +124,6 @@ function validacaoCadastro() {
     telCel = inputTelefoneCel.value;
     email = inputEmail.value;
     senha = inputSenha.value;
-
     if (nome == "") {
         classObj = document.getElementById("inputNome")
         classObj.classList.remove("inputNome")
@@ -243,6 +245,8 @@ function validacaoCadastro() {
     empresa = inputEmpresa.value;
     email = inputEmail.value;
     senha = inputSenha.value;
+    idUsuario = idUsuarioVar.value;
+    fkEmpresa = fkEmpresaVar.value;
 
 
     // Enviando o valor da nova input
@@ -260,6 +264,8 @@ function validacaoCadastro() {
             telCelServer: telCel,
             emailServer: email,
             senhaServer: senha,
+            idUsuarioServer: idUsuario,
+            fkEmpresaServer: fkEmpresa,
         })
     }).then(function (resposta) {
 
