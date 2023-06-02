@@ -226,6 +226,60 @@ function adicionarLocal(local) {
            <canvas id="myChart1"></canvas>
          </div>
     </div>
+</div>
+  `
+
+    obterDadosGraficos(1)
+    plotarGrafico()
+    atualizarGrafico()
+
+  //   local.innerHTML =
+  //     `
+  //       <div class="type_line2">
+  //         <div class="alertaAjustavel">  Ajustável </div>
+  //         <div class="lineThree">
+  //           <p><b>Sala de Reuniões 12º andar - Luminosidade Ajustável nas ultimas 24h</b></p>
+  //           <canvas id="myChart3"></canvas>
+  //         </div>
+  //   `
+
+  //   const ctx3 = document.getElementById("myChart3");
+
+  //   new Chart(ctx3, {
+  //     type: "line",
+  //     data: {
+  //       labels: ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00",
+  //         "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00",
+  //       ],
+  //       datasets: [
+  //         {
+  //           label: " Sala 3",
+  //           data: [
+  //             500, 550, 620, 644, 666, 680, 690, 700, 850, 850, 820, 650, 500,
+  //             600, 800, 850, 590, 750, 800, 780, 450, 500, 500, 500,
+  //           ],
+  //           borderWidth: 1,
+  //           backgroundColor: "rgb(235, 155, 13)",
+  //           borderColor: "rgb(235, 155, 13)",
+  //         },
+  //       ],
+  //     },
+  //     options: {
+  //       scales: {
+  //         y: {
+  //           beginAtZero: true,
+  //         },
+  //       },
+  //     },
+  //   });
+  };
+
+  function adicionarLocal2(local) {
+    local = document.getElementById("graficosLocais");
+
+    local.innerHTML =
+    `
+    <div class="grafics">
     <div class="type_line2" id="typeLine2">
       <!-- <div class="alertaAjustavel">Ajustável</div> -->
       <div class="line2">
@@ -237,7 +291,7 @@ function adicionarLocal(local) {
 </div>
   `
 
-    obterDadosGraficos(1)
+    obterDadosGraficos(2)
     plotarGrafico()
     atualizarGrafico()
 

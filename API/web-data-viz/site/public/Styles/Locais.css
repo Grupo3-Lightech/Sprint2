@@ -130,13 +130,13 @@
     width: 44%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding-top: 1rem;
   }
   /* ESSA CLASSE ESTÁ MODIFICANDO OS BOTÕES EM SI */
   .botaoLocal button {
     width: 7.3rem;
-    height: 3rem;
+    height: 3.5rem;
     border-radius: 10px;
     background-color: #2D9CDB; 
     border: none; 
@@ -184,4 +184,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  .line1{
+    height: 25rem;
+  }
+
+  .line2{
+    height: 25rem;
   }

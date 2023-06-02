@@ -69,7 +69,7 @@ function buscarMedidasLocal(idAquario, limite_linhas) {
         sensor on fkSensor = idSensor join
         localEmpresa on fkLocalEmpresa = idLocalEmpresa join
         empresa on fkEmpresa = idEmpresa where idEmpresa = 1
-        and day(dataHora) = day(current_timestamp())
+        
         group by localEmpresa;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");

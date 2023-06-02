@@ -38,6 +38,21 @@
       </div>
     </div>
 
+    <div class="mensagensAlertas">
+      <div class="alerta">
+        <div class="alertaTitulo">
+          <h1>Checar Local X!</h1>
+        </div>
+        <div class="alertaMensagem" id="alertaMensagemId">
+
+        </div>
+        <div class="alertaBotoes">
+          <button class="alertaBotao" onclick="sumirAlerta()">Ok</button>
+          <a href="locais.html"><button class="alertaBotao">Acessar Locais</button></a>
+        </div>
+      </div>
+    </div>
+
     <!-- AQUI É TODO MEU MENU LATERAL -->
     <div class="content2">
       <div class="menu-lateral">
@@ -96,23 +111,23 @@
         <div class="grafics">
           <div class="type_line1" id>
             <div class="alertasgrafc1" id="typeLine1">
-            <!-- <div class="alertaCritc">Crítico (abaixo)</div>
+              <!-- <div class="alertaCritc">Crítico (abaixo)</div>
             <div class="alertaCritico">Crítico (Acima)</div> -->
-          </div>
-          <div class="line1">
+            </div>
+            <div class="line1">
               <div id="graphic1"></div>
-                 <p><b>Média da luminosidade dos locais hoje:</b></p>
-                 <canvas id="myChart1"></canvas>
-               </div>
+              <p class="graphicTitle"><b>Média da luminosidade dos locais hoje</b></p>
+              <canvas id="myChart1"></canvas>
+            </div>
           </div>
-      </div>
-       
+
         </div>
       </div>
     </div>
   </div>
   <script src="../../Scripts/Dashboard.js"></script>
 </body>
+
 </html>
 <script>
   var user = sessionStorage.NOME_USUARIO;

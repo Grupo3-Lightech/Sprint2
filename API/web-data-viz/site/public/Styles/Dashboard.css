@@ -31,6 +31,7 @@ body {
   width: 250px;
 }
 
+
 .btn-expandir {
   width: 100%;
   padding-left: 10px;
@@ -152,6 +153,7 @@ ul li.item-menu a .icon {
   flex-direction: row;
   gap: 1rem;
   align-items: center;
+  justify-items: center;
   position: relative;
   margin-right: 1rem;
 }
@@ -182,8 +184,17 @@ ul li.item-menu a .icon {
  gap: 1rem;
 }
 
-.line1 {
-  width: 28rem;
+.graphicTitle{
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#myChart1 {
+  height: 25rem;
+}
+
+#myChart2{
+  height: 25rem;
 }
 
 .line2 {
