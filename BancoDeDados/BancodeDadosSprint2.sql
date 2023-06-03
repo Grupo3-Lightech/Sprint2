@@ -183,7 +183,7 @@ select localEmpresa, round(avg(leitura)) from leitura join
 sensor on fkSensor = idSensor join
 localEmpresa on fkLocalEmpresa = idLocalEmpresa join
 empresa on fkEmpresa = idEmpresa where idEmpresa = 1
-and day(dataHora) = day(current_timestamp())
+-- and day(dataHora) = day(current_timestamp())
 group by localEmpresa;
 
 

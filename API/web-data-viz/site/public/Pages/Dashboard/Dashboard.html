@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <div class="mensagensAlertas">
+    <!-- <div class="mensagensAlertas">
       <div class="alerta">
         <div class="alertaTitulo">
           <h1>Checar Local X!</h1>
@@ -51,7 +51,7 @@
           <a href="locais.html"><button class="alertaBotao">Acessar Locais</button></a>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- AQUI É TODO MEU MENU LATERAL -->
     <div class="content2">
@@ -88,8 +88,8 @@
 
       <!-- AQUI É TODOS GRÁFICOS -->
 
-      <div class="mensagensAlertas">
-        <div class="alerta">
+      <div id="mensagensAlertas" class="mensagensAlertas">
+        <!-- <div class="alerta">
           <div class="alertaTitulo">
             <h1>Checar Local X!</h1>
           </div>
@@ -100,7 +100,7 @@
             <button class="alertaBotao" onclick="sumirAlerta()">Ok</button>
             <a href="locais.html"><button class="alertaBotao">Acessar Locais</button></a>
           </div>
-        </div>
+        </div> -->
       </div>
 
       
@@ -144,93 +144,85 @@
       </div>
     </div>
   </div>
-  <script src="../../Scripts/Dashboard.js"></script>
 </body>
 
 </html>
+<script src="../../Scripts/Dashboard.js"></script>
+<script src="../../Scripts/Alertas.js"></script>
 <script>
   var user = sessionStorage.NOME_USUARIO;
   linkPage.innerHTML = `${user}`
 
-  // const ctx3 = document.getElementById("myChart2");
+  window.onload = obterdados()
 
-  // new Chart(ctx3, {
-  //   type: "line",
-  //   data: {
-  //     labels: ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00",
-  //       "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00",
-  //     ],
-  //     datasets: [
-  //       {
-  //         label: "Sala de reunião - 12º Andar",
-  //         data: [
-  //           900, 900, 850, 900, 900, 850, 900, 900, 900, 850, 900, 850, 900,
-  //           900, 900, 850, 900, 900, 900, 900, 850, 900, 900, 900,
-  //         ],
-  //         borderWidth: 1,
-  //         backgroundColor: "rgb(235, 155, 13)",
-  //         borderColor: "rgb(235, 155, 13)",
-  //       },
-  //     ],
-  //   },
-  //   options: {
-  //     scales: {
-  //       y: {
-  //         beginAtZero: true,
-  //       },
-  //     },
-  //   },
-  // });
-</script>
 
-<script>
-  function sumirAlerta() {
-    document.querySelector(".mensagensAlertas").style.display = "none";
-  }
+//   function sumirAlerta() {
+//     document.querySelector(".mensagensAlertas").style.display = "none";
+//   }
 
-  var intervalo = 0;
-  var leitura = 30000;
+//   function obterdados(idAquario) {
+//     fetch(`/medidas/tempo-real/${idAquario}`)
+//         .then(resposta => {
 
-  document.querySelector(".mensagensAlertas").style.marginLeft = "80rem";
+//             if (resposta.ok) {
+//                 resposta.json().then(resposta => {
 
-  if (leitura <= 500) {
-    alertaMensagemId.innerHTML = `<div class="alertaCritc">Crítico (abaixo)</div>`
-  } else if (leitura > 500 && leitura <= 700) {
-    alertaMensagemId.innerHTML = `<div class="alertaAjustavel1">Ajustável</div>`
-  } else if (leitura > 800 && leitura <= 900) {
-    alertaMensagemId.innerHTML = `<div class="alertaAjustavel">Ajustável</div>`
-  } else if (leitura > 900) {
-    alertaMensagemId.innerHTML = `<div class="alertaCritico">Crítico (Acima)</div>`
-  } else {
-    document.querySelector(".mensagensAlertas").style.display = "none";
-  }
-</script>
+//                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
-<script>
-  function listar() {
-    var idEmpresa = sessionStorage.EMPRESA_USUARIO;
-    console.log("idEmpresa: " + idEmpresa)
-    var url = `/locais/listar/${idEmpresa}`;
-    fetch(url, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        console.log("dados obtidos:" , data[0]);
-        var locais = data;
-        var html = "";
-        for (var i = 0; i < locais.length; i++) {
-          html += `<option value="${locais[i].idLocal}">${locais[i].nomeLocal}</option>`;
-        }
-        document.getElementById("local").innerHTML = html;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
+//                     var leitura = resposta[0]["round(avg(leitura))"];
+//                 });
+//             } else {
+
+//                 console.error('Nenhum dado encontrado ou erro na API');
+//             }
+//         })
+//         .catch(function (error) {
+//             console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
+//         });
+
+// }
+
+//   var intervalo = 0;
+  
+
+//   document.querySelector(".mensagensAlertas").style.marginLeft = "75rem";
+
+//   if (leitura <= 500) {
+//     alertaMensagemId.innerHTML = `<div class="alertaCritc">Crítico (abaixo)</div>`
+//   } else if (leitura > 500 && leitura <= 700) {
+//     alertaMensagemId.innerHTML = `<div class="alertaAjustavel1">Ajustável</div>`
+//   } else if (leitura > 800 && leitura <= 900) {
+//     alertaMensagemId.innerHTML = `<div class="alertaAjustavel">Ajustável</div>`
+//   } else if (leitura > 900) {
+//     alertaMensagemId.innerHTML = `<div class="alertaCritico">Crítico (Acima)</div>`
+//   } else {
+//     document.querySelector(".mensagensAlertas").style.display = "none";
+//   }
+  
+// function listar() {
+//   var idEmpresa = sessionStorage.EMPRESA_USUARIO;
+//   console.log("idEmpresa: " + idEmpresa)
+//   var url = `/locais/listar/${idEmpresa}`;
+//   fetch(url, {
+//     method: "GET",
+//     headers: {
+//       "Content-Type": "application/json;charset=utf-8",
+//     },
+//   })
+//     .then((response) => {
+//       return response.json();
+//     })
+//     .then((data) => {
+//       console.log("dados obtidos:" , data[0]);
+//       var locais = data;
+//       var html = "";
+//       for (var i = 0; i < locais.length; i++) {
+//         html += `<option value="${locais[i].idLocal}">${locais[i].nomeLocal}</option>`;
+//       }
+//       document.getElementById("local").innerHTML = html;
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// }
 </script>

@@ -77,17 +77,68 @@
 
           <div class="funcionario">
             <h4>Funcionario</h4>
-            Nome: <input id="inputNome" required placeholder="Insira seu nome"><br>
 
-            Sobrenome: <input id="inputSobrenome" required placeholder="Insira seu sobrenome"><br>
+            <label for="inputNome">
+              Nome:
+              <input id="inputNome" class="inputNome" required placeholder="Insira seu nome">
+            </label>
 
-            Telefone Fixo: <input id="inputTelefoneFixo" placeholder="(00)0000-0000"><br>
+            <label for="inputSobrenome">
+              Sobrenome:
+              <input id="inputSobrenome" class="inputSobrenome" required placeholder="Insira seu sobrenome">
+            </label>
 
-            Telefone Celular: <input id="inputTelefoneCel" required placeholder="(00)90000-0000"><br>
 
-            E-mail: <input id="inputEmail" required placeholder="Insira seu E-mail"><br>
 
-            Senha: <input id="inputSenha" required placeholder="Insira sua senha"><br>
+            <label for="inputCPF">
+              CPF:
+              <input id="inputCPF" class="inputCPF" required placeholder="Insira seu CPF">
+            </label>
+
+            <label for="inputGenero">
+              Gênero:
+              <input id="inputGenero" class="inputGenero" placeholder="Insira seu gênero (Opcional)">
+            </label>
+
+
+            <label for="inputDtNasc">
+              Data de nascimento:
+              <input id="inputDtNasc" class="inputDtNasc" type="date" required
+                placeholder="Insira sua data de nascimento">
+            </label>
+
+
+            <label for="inputTelefoneFixo">
+              Telefone fixo:
+              <input id="inputTelefoneFixo" class="inputTelefoneFixo" placeholder="(00)0000-0000">
+            </label>
+            <label for="inputTelefoneCel">
+              Telefone celular:
+              <input id="inputTelefoneCel" class="inputTelefoneCel" required placeholder="(00)90000-0000">
+            </label>
+
+
+            <label for="inputEmpresa">
+              Empresa:
+              <input id="inputEmpresa" class="inputEmpresa" required placeholder="Insira a empresa na qual trabalha">
+            </label>
+
+
+            <label for="inputEmail">
+              E-mail:
+              <input id="inputEmail" class="inputEmail" type="email" required placeholder="Insira seu E-mail">
+            </label>
+
+            <label for="inputSenha">
+              Senha:
+              <input id="inputSenha" class="inputSenha" type="password" required placeholder="Insira sua senha">
+            </label>
+
+            <label for="inputAdmin">
+              Administrador:
+              <input id="inputAdmin" class="inputAdmin" required placeholder="Insira seu código de administrador">
+            </label>
+
 
             <button onclick="cadastrarFuncionario()">Cadastrar Usuário</button>
           </div>
@@ -104,193 +155,15 @@
 </body>
 
 </html>
+<script src="../../Scripts/Dashboard.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"
+  integrity="sha512-KaIyHb30iXTXfGyI9cyKFUIRSSuekJt6/vqXtyQKhQP6ozZEGY8nOtRS6fExqE4+RbYHus2yGyYg1BrqxzV6YA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script>
-  
-var classObj;
-var nome;
-var sobrenome; 
-var telFixo;
-var telCel; 
-var email; 
-var senha; 
-
-var idUsuarioVar = sessionStorage.ID_USUARIO = json.idUsuario;
-var fkEmpresaVar = sessionStorage.EMPRESA_USUARIO = json.fkEmpresa;
-
-function validacaoCadastro() {
-    nome = inputNome.value
-    sobrenome = inputSobrenome.value;
-    telFixo = inputTelefoneFixo.value;
-    telCel = inputTelefoneCel.value;
-    email = inputEmail.value;
-    senha = inputSenha.value;
-    if (nome == "") {
-        classObj = document.getElementById("inputNome")
-        classObj.classList.remove("inputNome")
-        classObj.classList.add("inputError")
-        alert("Insira seu nome")
-
-    } else {
-        classObj = document.getElementById("inputNome")
-        classObj.classList.remove("inputError")
-        classObj.classList.add("inputNome")
-    };
-
-    if (sobrenome == "") {
-        classObj = document.getElementById("inputSobrenome")
-        classObj.classList.remove("inputSobrenome")
-        classObj.classList.add("inputError")
-        alert("Insira seu sobrenome")
-        
-    } else {
-        classObj = document.getElementById("inputSobrenome")
-        classObj.classList.remove("inputError")
-        classObj.classList.add("inputSobrenome")
-    };
-
-    if (telFixo == "") {
-        classObj = document.getElementById("inputTelefoneFixo")
-        classObj.classList.remove("inputTelefoneFixo")
-        classObj.classList.add("inputError")
-        alert("Insira seu telefone fixo")
-
-    } else {
-        classObj = document.getElementById("inputTelefoneFixo")
-        classObj.classList.add("inputTelefoneFixo")
-        classObj.classList.remove("inputError")
-    };
-
-    if (telCel == "") {
-        classObj = document.getElementById("inputTelefoneCel")
-        classObj.classList.remove("inputTelefoneCel")
-        classObj.classList.add("inputError")
-        alert("Insira seu celular")
-    } else {
-        classObj = document.getElementById("inputTelefoneCel")
-        classObj.classList.add("inputTelefoneCel")
-        classObj.classList.remove("inputError")
-    };
-
-    if (telCel[0] != "(" && telCel[2] != ")" && telCel[9] != "-") {
-        classObj = document.getElementById("inputTelefoneCel")
-        classObj.classList.remove("inputTelefoneCel")
-        classObj.classList.add("inputError")
-        alert("Insira os caracteres no número")
-    } else {
-        classObj = document.getElementById("inputTelefoneCel")
-        classObj.classList.add("inputTelefoneCel")
-        classObj.classList.remove("inputError")
-    };
-
-    if (telCel.length != 14) {
-        classObj = document.getElementById("inputTelefoneCel")
-        classObj.classList.remove("inputTelefoneCel")
-        classObj.classList.add("inputError")
-        alert("Celular inserido incorretamente")
-    } else {
-        classObj = document.getElementById("inputTelefoneCel")
-        classObj.classList.add("inputTelefoneCel")
-        classObj.classList.remove("inputError")
-    };
-
-    if (email == "") {
-        classObj = document.getElementById("inputEmail")
-        classObj.classList.remove("inputEmail")
-        classObj.classList.add("inputError")
-        alert("Insira seu E-mail!")
-    } else {
-        classObj = document.getElementById("inputEmail")
-        classObj.classList.add("inputEmail")
-        classObj.classList.remove("inputError")
-    };
-
-    if (senha == "") {
-        classObj = document.getElementById("inputSenha")
-        classObj.classList.remove("inputSenha")
-        classObj.classList.add("inputError")
-        alert("Crie uma senha!")
-    } else {
-        classObj = document.getElementById("inputSenha")
-        classObj.classList.add("inputSenha")
-        classObj.classList.remove("inputError")
-    };
-
-    if (senha.length < 8) {
-        classObj = document.getElementById("inputSenha")
-        classObj.classList.remove("inputSenha")
-        classObj.classList.add("inputError")
-        alert("Sua senha deve ter no mínimo 8 carecteres")
-    } else {
-        classObj = document.getElementById("inputSenha")
-        classObj.classList.add("inputSenha")
-        classObj.classList.remove("inputError")
-    };
-
-    if (document.getElementsByClassName("inputError").length > 0) {
-      
-    } else{
-        window.location = "Dashboard.html"
-    }
-  }
-
-    function cadastrarFuncionario() {
-      validacaoCadastro() 
-
-       //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
-    nome = inputNome.value
-    sobrenome = inputSobrenome.value;
-    telFixo = inputTelefoneCel.value;
-    telCel = inputTelefoneCel.value;
-    empresa = inputEmpresa.value;
-    email = inputEmail.value;
-    senha = inputSenha.value;
-    idUsuario = idUsuarioVar.value;
-    fkEmpresa = fkEmpresaVar.value;
-
-
-    // Enviando o valor da nova input
-    fetch("/usuarios/cadastrarFuncionario", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            // crie um atributo que recebe o valor recuperado aqui
-            // Agora vá para o arquivo routes/usuario.js
-            nomeServer: nome,
-            sobrenomeServer: sobrenome,
-            telFixoServer: telFixo,
-            telCelServer: telCel,
-            emailServer: email,
-            senhaServer: senha,
-            idUsuarioServer: idUsuario,
-            fkEmpresaServer: fkEmpresa,
-        })
-    }).then(function (resposta) {
-
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-            
-            console.log(resposta);
-
-            setTimeout(() => {
-                window.location = "Dashboard.html";
-            }, "2000")
-
-            // limparFormulario();
-            // finalizarAguardar();
-        } else {
-            throw ("Houve um erro ao tentar realizar o cadastro!");
-        }
-    }).catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        // finalizarAguardar();
-    });
-
-    return false;
-    
-    }
-
+  var Cleave = new Cleave('#inputCPF', {
+    blocks: [3, 3, 3, 2],
+    delimiters: ['.', '.', '-'],
+    numericOnly: true
+  });
 </script>

@@ -8,8 +8,6 @@ function obterdados(idAquario) {
                 resposta.json().then(resposta => {
 
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                    alertar(resposta, idAquario);
                 });
             } else {
 
@@ -23,51 +21,29 @@ function obterdados(idAquario) {
 }
 
 function alertar(resposta, idAquario) {
-    var Luminosidade = resposta[0].leitura;
+    var Luminosidade = resposta[0]["round(avg(leitura))"];
 
-    console.log(idAquario === resposta[0].fk_aquario)
+    
     
     var grauDeAviso ='';
 
 
-    var limites = {
-        criticoAcima: 900,
-        ajustavelAcima: 800,
-        ideal: 700,
-        ajustavelAbaixo: 500,
-        criticoAbaixo: 500
-    };
 
-    var classeLuminosidade = 'cor-alerta';
-
-    if (Luminosidade >= limites.criticoAcima) {
-        classeLuminosidade = 'cor-alerta perigo-quente';
-        grauDeAviso = 'perigo quente'
-        grauDeAvisoCor = 'cor-alerta perigo-quente'
-        exibirAlerta(Luminosidade, idAquario, grauDeAviso, grauDeAvisoCor)
-    }
-    else if (Luminosidade < limites.criticoAcima && Luminosidade >= limites.ajustavelAcima) {
-        classeLuminosidade = 'cor-alerta alerta-quente';
-        grauDeAviso = 'alerta quente'
-        grauDeAvisoCor = 'cor-alerta alerta-quente'
-        exibirAlerta(Luminosidade, idAquario, grauDeAviso, grauDeAvisoCor)
-    }
-    else if (Luminosidade < limites.ajustavelAcima && Luminosidade >= limites.ideal) {
-        classeLuminosidade = 'cor-alerta ideal';
-        removerAlerta(idAquario);
-    }
-    else if (Luminosidade <= limites.ideal && Luminosidade > limites.ajustavelAbaixo) {
-        classeLuminosidade = 'cor-alerta alerta-frio';
-        grauDeAviso = 'alerta frio'
-        grauDeAvisoCor = 'cor-alerta alerta-frio'
-        exibirAlerta(Luminosidade, idAquario, grauDeAviso, grauDeAvisoCor)
-    }
-    else if (Luminosidade <= limites.criticoAbaixo) {
-        classeLuminosidade = 'cor-alerta perigo-frio';
-        grauDeAviso = 'perigo frio'
-        grauDeAvisoCor = 'cor-alerta perigo-frio'
-        exibirAlerta(Luminosidade, idAquario, grauDeAviso, grauDeAvisoCor)
-    }
+    if (Luminosidade <= 500) {
+    alertaMensagemId.innerHTML = `<div class="alertaCritc">Crítico (abaixo)</div>`
+    exibirAlerta(Luminosidade, idAquario)
+  } else if (Luminosidade > 500 && Luminosidade <= 700) {
+    alertaMensagemId.innerHTML = `<div class="alertaAjustavel1">Ajustável</div>`
+    exibirAlerta(Luminosidade, idAquario)
+  } else if (Luminosidade > 800 && Luminosidade <= 900) {
+    alertaMensagemId.innerHTML = `<div class="alertaAjustavel">Ajustável</div>`
+    exibirAlerta(Luminosidade, idAquario)
+  } else if (Luminosidade > 900) {
+    alertaMensagemId.innerHTML = `<div class="alertaCritico">Crítico (Acima)</div>`
+    exibirAlerta(Luminosidade, idAquario)
+  } else {
+    document.querySelector(".mensagensAlertas").style.display = "none";
+  }
 
     var card;
 
@@ -89,13 +65,13 @@ function alertar(resposta, idAquario) {
     card.className = classeLuminosidade;
 }
 
-function exibirAlerta(Luminosidade, idAquario, grauDeAviso, grauDeAvisoCor) {
+function exibirAlerta(Luminosidade, idAquario) {
     var indice = alertas.findIndex(item => item.idAquario == idAquario);
 
     if (indice >= 0) {
-        alertas[indice] = { idAquario, Luminosidade, grauDeAviso, grauDeAvisoCor }
+        alertas[indice] = { idAquario, Luminosidade}
     } else {
-        alertas.push({ idAquario, Luminosidade, grauDeAviso, grauDeAvisoCor });
+        alertas.push({ idAquario, Luminosidade});
     }
 
     exibirCards();
@@ -110,21 +86,27 @@ function removerAlerta(idAquario) {
 }
  
 function exibirCards() {
-    alerta.innerHTML = '';
+    mensagensAlertas.innerHTML = '';
 
     for (var i = 0; i < alertas.length; i++) {
         var mensagem = alertas[i];
-        alerta.innerHTML += transformarEmDiv(mensagem);
+        mensagensAlertas.innerHTML += transformarEmDiv(mensagem);
     }
 }
 
-function transformarEmDiv({ idAquario, temp, grauDeAviso, grauDeAvisoCor }) {
-    return `<div class="mensagem-alarme">
-    <div class="informacao">
-    <div class="${grauDeAvisoCor}">&#12644;</div> 
-     <h3>Aquário ${idAquario} está em estado de ${grauDeAviso}!</h3>
-    <small>Temperatura ${Luminosidade}.</small>   
+function transformarEmDiv(idAquario, Luminosidade) {
+    return `<div class="mensagensAlertas">
+    <div class="alerta">
+      <div class="alertaTitulo">
+        <h1>Checar ${idAquario}, ${Luminosidade}</h1>
+      </div>
+      <div class="alertaMensagem" id="alertaMensagemId">
+
+      </div>
+      <div class="alertaBotoes">
+        <button class="alertaBotao" onclick="sumirAlerta()">Ok</button>
+        <a href="locais.html"><button class="alertaBotao">Acessar Locais</button></a>
+      </div>
     </div>
-    <div class="alarme-sino"></div>
-    </div>`;
+  </div>`;
 }
