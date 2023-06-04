@@ -62,6 +62,9 @@ function plotarGrafico(resposta, idAquario) {
 
     // Criando estrutura para plotar gráfico - labels
     let labels = [];
+    var cor = [];
+
+    
 
     // Criando estrutura para plotar gráfico - dados
     let dados = {
@@ -71,9 +74,14 @@ function plotarGrafico(resposta, idAquario) {
                 label: "Locais",
                 data: [],
                 borderWidth: 1,
+                backgroundColor: cor
             }
         ],
     };
+
+    
+
+    
 
     console.log('----------------------------------------------')
     console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
@@ -82,8 +90,21 @@ function plotarGrafico(resposta, idAquario) {
     // Inserindo valores recebidos em estrutura para plotar o gráfico
     for (i = 0; i < resposta.length; i++) {
         var registro = resposta[i];
+        var valor = registro["round(avg(leitura))"]
         labels.push(registro.localEmpresa);
-        dados.datasets[0].data.push(registro["round(avg(leitura))"]);
+        dados.datasets[0].data.push(valor);
+
+        if (valor >= 900) {
+            cor.push('#FF0000') 
+        } else if (valor >= 800 && valor < 900) {
+            cor.push('#EB9B0D')
+        } else if (valor >= 700 && valor < 800) {
+            cor.push('#0CA80C')
+        } else if (valor > 500 && valor < 700) {
+            cor.push('#FFFF00')
+        } else if (valor <= 500) {
+            cor.push('#FC7A46') 
+        }
     }
 
     console.log('----------------------------------------------')

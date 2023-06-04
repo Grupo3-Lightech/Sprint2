@@ -99,7 +99,7 @@ function exibirAlerta(temp, local, grauDeAviso, grauDeAvisoCor) {
         alertas.push({ local, temp, grauDeAviso, grauDeAvisoCor });
     }
 
-    exibirCards();
+    exibirCards(temp, local);
     
 // Dentro da div com classe grauDeAvisoCor há um caractere "invisível", 
 // que pode ser inserido clicando com o seu teclado em alt+255 ou pelo código adicionado acima.
@@ -110,16 +110,16 @@ function removerAlerta(local) {
     exibirCards();
 }
  
-function exibirCards() {
+function exibirCards(temp, local) {
     alerta.innerHTML = '';
 
     for (var i = 0; i < alertas.length; i++) {
         var mensagem = alertas[i];
-        alerta.innerHTML += transformarEmDiv(mensagem);
+        alerta.innerHTML += transformarEmDiv(temp, local);
     }
 }
 
-function transformarEmDiv( {local, temp, grauDeAviso, grauDeAvisoCor} ) {
+function transformarEmDiv( local, temp, grauDeAviso, grauDeAvisoCor ) {
     return `<div class="mensagem-alarme">
     <div class="informacao">
     <div class="${grauDeAvisoCor}">&#12644;</div> 

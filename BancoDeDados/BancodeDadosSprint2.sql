@@ -72,12 +72,12 @@ insert empresa values
 (null,'Hessel Store - Sé', null, 93120918000155, 2);
 
 insert usuario values
-(null, 'Leonardo', 'Barreto', 52267781879, '2003-10-04', 'M', 'leonardo.barreto@brcontabil.com', 'leo3040', null, 1, null),
-(null, 'Diego', 'Hessel Mota', '45590987689', '2002-01-09', 'M', 'diego.hessel@hesselstore.com', 'di3040', null, 2, null),
-(null, 'Sthefany', 'Bertolon', '45590987687', '2002-08-02', 'F', 'sthe.bertolon@brcontabil.com', 'sthe9090', null, 3, 1),
-(null, 'João', 'Brandão', '45590987655', '2003-01-16', 'M', 'joao.brandao@brcontabil.com', 'joao3030', null, 4, 1),
-(null, 'Jordana', 'Santos', '45590987094', '2000-01-27', 'F', 'jordana.santos@hesselstore.com', 'jordana3040', null, 5, 2),
-(null, 'Thais', 'Moitinho', '45590987090', '2003-06-20', 'f', 'thais.moitinho@hesselstore.com', 'tha3030', null, 6, 2);
+(null, 'Leonardo', 'Barreto', 52267781879, '2003-10-04', '11 93849-4834', 'M', 'leonardo.barreto@brcontabil.com', 'leo3040', null, 1, null),
+(null, 'Diego', 'Hessel Mota', '45590987689', '2002-01-09', '11 68457-7367', 'M', 'diego.hessel@hesselstore.com', 'di3040', null, 2, null),
+(null, 'Sthefany', 'Bertolon', '45590987687', '2002-08-02', '11 94358-8457', 'F', 'sthe.bertolon@brcontabil.com', 'sthe9090', null, 3, 1),
+(null, 'João', 'Brandão', '45590987655', '2003-01-16', '11 93576-8435', 'M', 'joao.brandao@brcontabil.com', 'joao3030', null, 4, 1),
+(null, 'Jordana', 'Santos', '45590987094', '2000-01-27', '11 93682-2357', 'F', 'jordana.santos@hesselstore.com', 'jordana3040', null, 5, 2),
+(null, 'Thais', 'Moitinho', '45590987090', '2003-06-20', '11 92457-2357', 'F', 'thais.moitinho@hesselstore.com', 'tha3030', null, 6, 2);
 
 insert into parametro values 
 (null, '500', '1000'),
@@ -94,27 +94,41 @@ insert into endereco values
 
 insert localEmpresa values
 (null, 'sala de reunião', '6', '2', 1, 1, 1),
-(null, 'escritorio', 'terreo', 'sala 1', 2, 1, 1);
-desc localEmpresa;
-desc sensor;
-insert into sensor values 
-(null, 'LDR 5mm', 'Ativo', 6),
-(null, 'LDR', 'Ativo', 5),
-(null, 'LDR', 'Ativo', 6),
-(null, 'LDR', 'Ativo', 5);
+(null, 'escritorio', 'terreo', 'sala 1', 2, 1, 1),
+(null, 'Sala de reunião', '4', 'Sala 2', 1, 2, 1),
+(null, 'escritorio', 'terreo', 'sala 1', 1, 3, 1),
+(null, 'escritorio', 'terreo', 'sala 1', 1, 4, 1);
 
+insert into sensor values 
+(null, 'LDR 5mm', 'Ativo', 3),
+(null, 'LDR', 'Ativo', 3),
+(null, 'LDR', 'Ativo', 4),
+(null, 'LDR', 'Ativo', 4);
 
 insert into leitura values
-(null, null, 700, 1),
-(null, null, 750, 1),
-(null, null, 700, 2),
-(null, null, 750, 2),
-(null, null, 900, 3),
-(null, null, 1000, 3),
-(null, null, 900, 4),
-(null, null, 1000, 4),
-(null, null, 500, 5),
-(null, null, 550, 1);
+(null, null, 700, 5),
+(null, null, 750, 5),
+(null, null, 700, 5),
+(null, null, 750, 5),
+(null, null, 900, 6),
+(null, null, 1000, 6),
+(null, null, 900, 6),
+(null, null, 1000, 6),
+(null, null, 500, 6),
+(null, null, 550, 6),
+(null, null, 550, 11),
+(null, null, 550, 11),
+(null, null, 550, 11),
+(null, null, 550, 11),
+(null, null, 550, 11),
+(null, null, 550, 12),
+(null, null, 550, 12),
+(null, null, 550, 12),
+(null, null, 550, 12),
+(null, null, 550, 13),
+(null, null, 550, 13),
+(null, null, 550, 13),
+(null, null, 550, 13);
 
 select * from usuario;
 select * from empresa;
@@ -136,33 +150,32 @@ localEmpresa as 'Locais da Sede',
 tipoSensor as 'Sensores',
 statusSensor as 'Status do Sensor' 
 from empresa join localEmpresa on idEmpresa = fkEmpresa
-join sensor on idLocal = fkLocal;
+join sensor on idLocalEmpresa = fkLocalEmpresa;
 
 select idSensor as 'ID do Sensor',
 tipoSensor as 'Tipo do Sensor',
 statusSensor as 'Status do Sensor',
 localEmpresa.localEmpresa as 'Local do Sensor' from sensor
-join localEmpresa on fkLocal = idLocal;
+join localEmpresa on fkLocalEmpresa = idLocalEmpresa;
 
 INSERT INTO sensor VALUES
 	(null, 'LDR 5', 'Ativo', null),
     (null, 'LDR 5', 'Ativo', null);
 
 INSERT INTO leitura (leitura, fkSensor) VALUES 
-	(1002,3),
-    (222,3),
-    (777,3),
-    (510,3),
-    (745,3),
-    (755,3),
-    (456,3);
+	(1002,5),
+    (222,5),
+    (777,5),
+    (510,5),
+    (745,5),
+    (755,5),
+    (456,5);
     
 SELECT * FROM leitura;
 SELECT leitura, dataHora FROM leitura WHERE fkSensor = 1;
-SELECT leitura, fkSensor, DATE_FORMAT(dataHora,'%d/%c/%Y %H:%i:%s') FROM leitura WHERE fkSensor = 1 ORDER BY idLeitura DESC limit 1;
+SELECT leitura, fkSensor, DATE_FORMAT(dataHora,'%d/%c/%Y %H:%i:%s') FROM leitura WHERE fkSensor = 6 ORDER BY idLeitura DESC limit 1;
 
 select * from localEmpresa where fkEmpresa = 1;
-
 
 select localEmpresa, round(avg(leitura)), dataHora  from leitura join
 sensor on fkSensor = idSensor join
@@ -183,7 +196,7 @@ select localEmpresa, round(avg(leitura)) from leitura join
 sensor on fkSensor = idSensor join
 localEmpresa on fkLocalEmpresa = idLocalEmpresa join
 empresa on fkEmpresa = idEmpresa where idEmpresa = 1
--- and day(dataHora) = day(current_timestamp())
+-- and hour(dataHora) = hour(current_timestamp())
 group by localEmpresa;
 
 
@@ -198,10 +211,3 @@ select * from localEmpresa;
 
 select * from leitura
 where day(dataHora) = day(current_timestamp());
-
-select hour(current_timestamp());
-
-SELECT * FROM leitura;
-
-truncate table leitura;
-

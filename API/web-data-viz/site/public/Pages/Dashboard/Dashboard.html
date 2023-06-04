@@ -110,7 +110,7 @@
       <div class="graficos">
         <div class="alertas">
           <div class="alertaCritc">Crítico (abaixo)</div>
-          <div class="txta0">500 lux</div>
+          <div class="txta0">500 lux < </div>
         </div>
         <div class="alertas1">
           <div class="alertaAjustavel1">Ajustável</div>
@@ -126,7 +126,7 @@
         </div>
         <div class="alertas4">
           <div class="alertaCritico">Crítico (Acima)</div>
-          <div class="txta4">900lux</div>
+          <div class="txta4"> < 900lux</div>
         </div>
         <div class="grafics">
           <div class="type_line1" id>
@@ -136,7 +136,7 @@
             </div>
             <div class="line1">
               <div id="graphic1"></div>
-                 <p><b>Média da luminosidade dos locais hoje:</b></p>
+                 <p style="display: flex; align-items: center; justify-content: center;"><b>Média da luminosidade dos locais nas últimas três horas:</b></p>
                  <canvas id="myChart1"></canvas>
                </div>
           </div>
@@ -150,7 +150,6 @@
 
 </html>
 <script src="../../Scripts/Dashboard.js"></script>
-<script src="../../Scripts/Alertas.js"></script>
 <script>
   var user = sessionStorage.NOME_USUARIO;
   linkPage.innerHTML = `${user}`
