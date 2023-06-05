@@ -20,7 +20,8 @@ const AMBIENTE = 'desenvolvimento';
 
 const serial = async (
     valoresLuminosidade1,
-    valoresLuminosidade2
+    valoresLuminosidade2,
+    valoresLuminosidade3
 
 ) => {
     let poolBancoDados = ''
@@ -62,8 +63,10 @@ const serial = async (
         console.log(valores);
         const luminosidade1 = parseFloat(valores[0]);
         const luminosidade2 = parseFloat(valores[1]);
+        const luminosidade3 = parseFloat(valores[2]);
         valoresLuminosidade1.push(luminosidade1);
         valoresLuminosidade2.push(luminosidade2);
+        valoresLuminosidade3.push(luminosidade3);
 
 
         
@@ -107,6 +110,10 @@ const serial = async (
                     'INSERT INTO leitura (leitura, fkSensor) VALUES (?, 2)',
                     [luminosidade2],
                 );
+                await poolBancoDados.execute(
+                    'INSERT INTO leitura (leitura, fkSensor) VALUES (?, 3)',
+                    [luminosidade3],
+                );
                 
 
             } else {
@@ -123,7 +130,8 @@ const serial = async (
 // não altere!
 const servidor = (
     valoresLuminosidade1,
-    valoresLuminosidade2
+    valoresLuminosidade2,
+    valoresLuminosidade3
     
 
 ) => {
@@ -143,18 +151,24 @@ const servidor = (
     app.get('/sensores/luminosidade2', (_, response) => {
         return response.json(valoresLuminosidade2);
     });
+    app.get('/sensores/luminosidade2', (_, response) => {
+        return response.json(valoresLuminosidade3);
+    });
 
 }
 
 (async () => {
     const valoresLuminosidade1 = [];
     const valoresLuminosidade2 = [];
+    const valoresLuminosidade3 = [];
     await serial(
         valoresLuminosidade1,
-        valoresLuminosidade2
+        valoresLuminosidade2,
+        valoresLuminosidade3
     );
     servidor(
         valoresLuminosidade1,
-        valoresLuminosidade2
+        valoresLuminosidade2,
+        valoresLuminosidade3
     );
 })();

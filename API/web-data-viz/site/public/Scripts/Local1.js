@@ -27,7 +27,7 @@ window.onload = obterDadosGraficos();
 function obterDadosGraficos() {
     obterDadosGrafico(1)
     obterDadosGrafico(2)
-    // obterDadosGrafico(3)
+    obterDadosGrafico(3)
     // obterDadosGrafico(4)
 }
 
@@ -186,6 +186,20 @@ console.log(idAquario)
                         }
                     }
 
+                    if (idAquario == 3) {
+                        if (novoRegistro[0].leitura < 500) {
+                            graphic3.innerHTML = `<div class="alertaCritc">Crítico (abaixo)</div>`
+                        } else if (novoRegistro[0].leitura >= 500 && novoRegistro[0].leitura <= 700) {
+                            graphic3.innerHTML = `<div class="alertaAjustavel1">Ajustável</div>`
+                        } else if (novoRegistro[0].leitura > 700 && novoRegistro[0].leitura <= 800) {
+                            graphic3.innerHTML = `<div class="alertaIdeal">Ideal</div>`
+                        } else if (novoRegistro[0].leitura > 800 && novoRegistro[0].leitura <= 900) {
+                            graphic3.innerHTML = `<div class="alertaAjustavel">Ajustável</div>`
+                        } else if (novoRegistro[0].leitura > 800) {
+                            graphic3.innerHTML = `<div class="alertaCritico">Crítico (Acima)</div>`
+                        }
+                    }
+
                     // dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
                     // dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
 
@@ -222,7 +236,7 @@ function adicionarLocal(local) {
     </div>
     <div class="line1">
         <div id="graphic1"></div>
-           <p><b>Escritório sala 2 com luminosidade Critica nas ultimas 24h</b></p>
+           <p style="display: flex; align-items: center; justify-content: center;"><b>Monitoramento na Sala 3</b></p>
            <canvas id="myChart1"></canvas>
          </div>
     </div>
@@ -284,8 +298,70 @@ function adicionarLocal(local) {
       <!-- <div class="alertaAjustavel">Ajustável</div> -->
       <div class="line2">
         <div id="graphic2"></div>
-        <p><b>Sala de reunião 12º andar com a luminosidade Ajustável nas ultimas 24h</b></p>
+        <p style="display: flex; align-items: center; justify-content: center;"><b>Monitoramento Sala de reunião</b></p>
         <canvas id="myChart2"></canvas>
+      </div>
+    </div>
+</div>
+  `
+
+    obterDadosGraficos(2)
+    plotarGrafico()
+    atualizarGrafico()
+
+  //   local.innerHTML =
+  //     `
+  //       <div class="type_line2">
+  //         <div class="alertaAjustavel">  Ajustável </div>
+  //         <div class="lineThree">
+  //           <p><b>Sala de Reuniões 12º andar - Luminosidade Ajustável nas ultimas 24h</b></p>
+  //           <canvas id="myChart3"></canvas>
+  //         </div>
+  //   `
+
+  //   const ctx3 = document.getElementById("myChart3");
+
+  //   new Chart(ctx3, {
+  //     type: "line",
+  //     data: {
+  //       labels: ["00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00",
+  //         "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00",
+  //       ],
+  //       datasets: [
+  //         {
+  //           label: " Sala 3",
+  //           data: [
+  //             500, 550, 620, 644, 666, 680, 690, 700, 850, 850, 820, 650, 500,
+  //             600, 800, 850, 590, 750, 800, 780, 450, 500, 500, 500,
+  //           ],
+  //           borderWidth: 1,
+  //           backgroundColor: "rgb(235, 155, 13)",
+  //           borderColor: "rgb(235, 155, 13)",
+  //         },
+  //       ],
+  //     },
+  //     options: {
+  //       scales: {
+  //         y: {
+  //           beginAtZero: true,
+  //         },
+  //       },
+  //     },
+  //   });
+  };
+
+  function adicionarLocal3(local) {
+    local = document.getElementById("graficosLocais");
+
+    local.innerHTML =
+    `
+    <div class="grafics">
+    <div class="type_line3" id="typeLine3">
+      <!-- <div class="alertaAjustavel">Ajustável</div> -->
+      <div class="line3">
+        <div id="graphic3"></div>
+        <p style="display: flex; align-items: center; justify-content: center;"><b>Monitoramento Escritório</b></p>
+        <canvas id="myChart3"></canvas>
       </div>
     </div>
 </div>

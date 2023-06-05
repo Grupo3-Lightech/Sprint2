@@ -94,16 +94,14 @@ insert into endereco values
 
 insert localEmpresa values
 (null, 'sala de reunião', '6', '2', 1, 1, 1),
-(null, 'escritorio', 'terreo', 'sala 1', 2, 1, 1),
-(null, 'Sala de reunião', '4', 'Sala 2', 1, 2, 1),
-(null, 'escritorio', 'terreo', 'sala 1', 1, 3, 1),
-(null, 'escritorio', 'terreo', 'sala 1', 1, 4, 1);
+(null, 'sala 3', '3', '3', 1, 1, 1),
+(null, 'Escritorio', '3', '3', 1, 1, 1);
 
 insert into sensor values 
-(null, 'LDR 5mm', 'Ativo', 3),
-(null, 'LDR', 'Ativo', 3),
-(null, 'LDR', 'Ativo', 4),
-(null, 'LDR', 'Ativo', 4);
+(null, 'LDR 5mm', 'Ativo', 1),
+(null, 'LDR 5mm', 'Ativo', 2),
+(null, 'LDR 5mm', 'Ativo', 3);
+
 
 insert into leitura values
 (null, null, 700, 5),
@@ -211,3 +209,6 @@ select * from localEmpresa;
 
 select * from leitura
 where day(dataHora) = day(current_timestamp());
+
+SELECT * FROM leitura;
+
