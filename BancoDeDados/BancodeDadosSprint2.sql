@@ -210,5 +210,5 @@ select * from localEmpresa;
 select * from leitura
 where day(dataHora) = day(current_timestamp());
 
-SELECT * FROM leitura;
+
 

@@ -94,7 +94,7 @@ function plotarGrafico(resposta, idAquario) {
         labels.push(registro.localEmpresa);
         dados.datasets[0].data.push(valor);
 
-        if (valor >= 900) {
+        if (valor >= 1000) {
             cor.push('#FF0000') 
         } else if (valor >= 800 && valor < 1000) {
             cor.push('#EB9B0D')
